@@ -73,25 +73,20 @@
 %\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
 %Co-authors:
 \newcommand{\phil}[1]{\color{red}#1 \color{black}}
-\newcommand{\mike}[1]{\color{green}#1 \color{black}}
-\newcommand{\mat}[1]{\color{magenta}#1 \color{black}}
-\newcommand{\lisa}[1]{\color{cyan}#1 \color{black}}
-\newcommand{\replyanais}[1]{\color{purple}#1 \color{black}}
-\newcommand{\replyravi}[1]{\color{cyan}#1 \color{black}}
-\newcommand{\replydillon}[1]{\color{magenta}#1 \color{black}}
+
 \newcommand{\comment}[1]{\textbf{[#1]}} %comments
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %This if a fix from https://tex.stackexchange.com/questions/249579/pdfendlink-ended-up-in-different-nesting-level-than-pdfstartlink-error-with/249743#249743 to sort hyperref breaking in pdfendlink when a reference spills over a page
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\@combinedblfloats{\box\@outputbox}{\unvbox\@outputbox}{}{%
-  \errmessage{\noexpand\@combinedblfloats could not be patched}%
-}%
-\makeatother
-
-\defcitealias{Smith2019}{S19}
-\defcitealias{Kelly2012}{KK12}
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd\@combinedblfloats{\box\@outputbox}{\unvbox\@outputbox}{}{%
+%  \errmessage{\noexpand\@combinedblfloats could not be patched}%
+%}%
+%\makeatother
+%
+%\defcitealias{Smith2019}{S19}
+%\defcitealias{Kelly2012}{KK12}
 %%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
 
 % Title of the paper, and the short title which is used in the headers.
@@ -103,8 +98,7 @@
 P. Wiseman$^1$\thanks{E-mail: p.s.wiseman@soton.ac.uk (PW)},
  M. Pursiainen$^1$,
  M. Smith$^1$,
- M. J. Childress$^1$, 
- L. Kelsey$^1$,
+ M. J. Childress$^1$,
  and Other Authors$^{1,2}$,
 \newauthor
 (The DES Collaboration)
@@ -148,22 +142,26 @@ keyword1 -- keyword2 -- keyword3
 
 \section{Introduction}
 
-This is a simple template for authors to write new MNRAS papers.
-See \texttt{mnras\_sample.tex} for a more complex example, and \texttt{mnras\_guide.tex}
-for a full user guide.
+The advancement of large-area, deep astronomical sky surveys in the past decade has led to a step change in the study of 
 
-All papers should start with an Introduction section, which sets the work
-in context, cites relevant earlier studies in the field by \citet{Fournier1901},
-and describes the problem the authors aim to solve \citep[e.g.][]{vanDijk1902}.
-Multiple citations can be joined in a simple way like \citet{deLaguarde1903, delaGuarde1904}.
-
-\section{Methods, Observations, Simulations etc.}
+\section{Observations\label{sec:obs}}
 
 Normally the next section describes the techniques the authors used.
 It is frequently split into subsections, such as Section~\ref{sec:maths} below.
 
-\subsection{Maths}
-\label{sec:maths} % used for referring to this section from elsewhere
+\begin{figure*}
+\includegraphics[width=\textwidth]{figs/RET_MZR.png}
+\caption{The mass-metallicity relation (MZR) for RET host galaxies.
+\label{fig:mzr}}
+\end{figure*}
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{figs/}
+\caption{Star-forming galaxy main sequence.
+\label{fig:sfms}}
+\end{figure*}
+\section{Analysis and results}
+\label{sec:analysis} % used for referring to this section from elsewhere
 
 Simple mathematics can be inserted into the flow of the text e.g. $2\times3=6$
 or $v=220$\,km\,s$^{-1}$, but more complicated expressions should be entered
@@ -232,7 +230,7 @@ Try to keep it short.
 % The best way to enter references is to use BibTeX:
 
 \bibliographystyle{mnras}
-\bibliography{example} % if your bibtex file is called example.bib
+\bibliography{PhilMendeley} % if your bibtex file is called example.bib
 
 
 % Alternatively you could enter them by hand, like this:
