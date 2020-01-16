@@ -75,6 +75,16 @@
 \newcommand{\phil}[1]{\color{red}#1 \color{black}}
 
 \newcommand{\comment}[1]{\textbf{[#1]}} %comments
+
+%define some nice astro shortcuts
+\newcommand{\halpha}[0]{H$\alpha$}
+\newcommand{\hbeta}[0]{H$\beta$}
+\newcommand{\OII}[0]{$[\textnormal{\textsc{Oii}}]$}
+\newcommand{\OIII}[0]{$[\textnormal{\textsc{Oiii}}]$}
+\newcommand{\SII}[0]{$[\textnormal{\textsc{Sii}}]$}
+\newcommand{\SIII}[0]{$[\textnormal{\textsc{Siii}}]$}
+\newcommand{\NII}[0]{$[\textnormal{\textsc{Nii}}]$}
+
 \defcitealias{Pursiainen2018}{P18}
 \defcitealias{Pursiainen2020}{P20}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,9 +163,31 @@ In the standard paradigm of stellar evolution, stars with a zero-age main sequen
 
 We derive our sample from the 106 RETs discovered in the 5-year DES-SN transient survey. This number expands upon the 72 of \citetalias{Pursiainen2018} and is presented in a companion work \citetalias{Pursiainen2020}. We refer to the full sample as DES RETs. In order to calculate host galaxy properties Of the 106 objects in the sample, \textbf{n} have a host galaxy detected in deep host galaxy photometry (Section \ref{sec:obs}), of which 49 have a host galaxy spectroscopic redshift. A further two have redshifts 
 
-\section{Host galaxy observations\label{sec:obs}}
+\section{Host galaxy observations \label{sec:obs}}
+\subsection{Photometry \label{subsec:phot}}
 
-The host galaxy photometry for the sample of RETs is taken from the catalogue of \citet{Wiseman2020}, which is based upon deep coadds reaching $g$-band limiting magnitudes of 27.
+The host galaxy photometry for the sample of RETs is taken from the catalogue of \citet{Wiseman2020}, which is based upon deep coadds reaching $r$-band limiting magnitudes of 26.5. The coadds were created using data from all five seasons of DES-SN, but by excluding one season at a time in order for that coadd not to include contamination from the transients in that season. For this sample, the limiting magnitude for obtaining a spectroscopic redshift (\ref{subsec:spec}) is $\sim 24.5$, meaning that all hosts in the sample are detected with a high S/N.
+
+\subsection{Spectroscopy \label{subsec:spec}}
+Accurate redshifts for DES-SN were obtained by OzDES\footnote{Australian (Oz) Dark Energy Survey}, a dedicated DES spectroscopic follow-up campaign based at the $3.9~\textrm{m}$ Anglo-Australian Telescope (AAT) using the AAOmega fibre-fed spectrograph and 2dF fibre positioner. The observation strategy of OzDES was to point at one of the ten DES-SN fields, and place fibres at the positions of transient hosts, continually coadding the spectra of a particular host until a redshift was obtained at which point the fibre could be allocated to a different transient. The spectra have a resolution of 1400-1700 and a wavelength range of 3700$\AA - 8800\AA$, and are reduced using a modified version of 2dfdr \citep{Croom2004} along with internal scripts. Extensive description and discussion of OzDES can be found in \citet{Yuan2015,Childress2017,Lidman2020}.
+
+\section{Estimating host galaxy properties \label{sec:measure}}
+
+\subsection{SED fitting \label{subsec:sedfit}}
+
+To estimate the physical properties of the host galaxies, we generate synthetic photometry in the DES $griz$ bands by combining the individual SEDs of simple stellar population models. 
+
+\subsection{Spectral line fitting \label{subsec:linefit}}
+
+To estimate parameters from the OzDES host galaxy spectra requires several processing steps. We first apply a flux calibration using the method of \citet{Swann2020}, by `mangling' the spectrum such that the integrated flux over the wavelength ranges of the DES photometric bands matches that measured in the photometry. Rather than using global galaxy photometry (i.e. using a Kron aperture), we use a circular aperture of diameter 2\arcsec, matching the size of the spectrograph fibres.  
+
+In order to subtract the stellar component of the host galaxy spectra, we use the Penalized PiXel-Fitting software (\texttt{pPXF}; \citealt{Cappellari2004,Cappellari2012,Cappellari2017}), using the MILES library of single stellar populations \citep{Vazdekis2010}. By subtracting the best-fitting stellar spectrum from the \texttt{pPXF} fit, we are left with a `gas' spectrum, comprising the emission lines. We fit the emission lines using \texttt{PySpecKit} \citep{Ginsburg2011}. In order to estimate the uncertainty on the emission line fluxes, we fit $10^4$ realisations of the line, each time adding a perturbation to the amplitude of the line by drawing from a Gaussian distribution centered on 0, and with a standard deviation equal to the root-mean-square (RMS) of the measured flux noise in that part of the spectrum. We take the mean and standard deviation of the resulting fits as our flux and its uncertainty, respectively.
+
+\subsection{Estimating metallicities \label{subsec:calc_Z}}
+
+The most common method used to estimate the metallicity of galaxies is to use emission line ratios that have been calibrated using theoretical or empirical models in order to approximate the gas-phase oxygen abundance in the interstellar medium. Due to the low S/N of the spectra in this sample, we are constrained to a subset of these diagnostics by the availability of only a handful of the strongest emission lines, namely \halpha, \hbeta, \OII 3727, \OIII 4959 and 5007, \NII 6548 and 6583, and \SII 6717 and 6731. Furthermore, for each host galaxy only a subset of these lines are detected - for example, \halpha, \NII and \SII are redshifted out of the spectral coverage at $z>0.3$, leaving only the oxygen lines available, mandating the use of the R23 diagnostic. For hosts at $z<0.3$ we are able to use the \OIII /\NII (O3N2) and \NII /\halpha (N2) line ratios. 
+
+For the R23 indicator, we use the calibration of \citet{Pettini2004}, while for O3N2 and N2, we use the calibration of \citet{Kubulnicky2004}. In order to compare metallicities from our sample to those field galaxies from the Sloan Digital Sky Survey (SDSS), as well as to the sample of CCSNe from \citet{Kelly2012}, we scale the results to match the calibration of \citet{Tremonti2004} via the scaling factors outlined in \citet{Kewley2008}.
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{figs/RET_MZR.png}
@@ -188,16 +220,19 @@ The host galaxy photometry for the sample of RETs is taken from the catalogue of
 \end{figure}
 
 
-\section{Host galaxy properties}
+\section{Analysis and Discussion}
 \label{sec:analysis} % used for referring to this section from elsewhere
 
-To estimate the physical properties of the host galaxies, we generate synthetic photometry in the DES $griz$ bands by combining the individual SEDs of simple stellar population models. 
+
 
 \subsection{Stellar Mass \label{subsec:res_mass}}
 
 \subsection{Star formation rate \label{subsec:res_sfr}}
 
 \subsection{Metallicity \label{subsec:res_metallicity}}
+
+
+
 
 \section{Discussion \label{sec:disc}}
 
