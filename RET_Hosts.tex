@@ -84,6 +84,8 @@
 \newcommand{\SII}[0]{$[\textnormal{\textsc{Sii}}]$}
 \newcommand{\SIII}[0]{$[\textnormal{\textsc{Siii}}]$}
 \newcommand{\NII}[0]{$[\textnormal{\textsc{Nii}}]$}
+\newcommand{\msun}[0]{M_{\odot}}
+
 
 \defcitealias{Pursiainen2018}{P18}
 \defcitealias{Pursiainen2020}{P20}
@@ -158,10 +160,14 @@ keyword1 -- keyword2 -- keyword3
 In the standard paradigm of stellar evolution, stars with a zero-age main sequence (ZAMS) mass above $8M_{\sun}$ are believed to explode as a result of a catastrophic collapse of their iron cores and are known as core-collapse supernovae (CCSNe). Since the turn of the century, observations of CCSNe have been supplemented by two rarer, more exotic transient classes. Long duration gamma-ray bursts (LGRBs), although first discovered in the 1960s \citep{Klebesadel1973} were only unequivocally linked to collapsing massive stars their associations with broad-lined type Ic SNe \citep{Galama1998,Hjorth2003}. Thought to be caused by accretion onto a newly-formed black hole at the centre of a collapsing, rapidly-rotating massive star \citep[][e.g.]{Woosley1993,Woosley2006a,Woosley2006b}, LGRBs comprise roughly $1\%$ of all SN Ic, themselves making up only 15\% of all CCSNe \citep{Kelly2012,Graham2016}, and are roughly $10^4$ times rarer than  are thought and superluminous supernovae (SLSNe; e.g. \citealt{Quimby2011, Gal-Yam2012}) 
 
 
+It is common also to consider metallicity as a factor driving the production of catastrophic stellar explosions. At the extreme end, both GRBs and SLSNe appear to require a low metallicity: for GRBs this threshold has been observed between 0.5 and 1 times the solar value \citep{Perley2016b,Japelj2016,Vergani2017}, while for SLSNe the value is somewhere around half-solar \citep{Lunnan2014,Chen2016a}.
 
 \section{Sample selection\label{sec:sample}}
 
 We derive our sample from the 106 RETs discovered in the 5-year DES-SN transient survey. This number expands upon the 72 of \citetalias{Pursiainen2018} and is presented in a companion work \citetalias{Pursiainen2020}. We refer to the full sample as DES RETs. In order to calculate host galaxy properties Of the 106 objects in the sample, \textbf{n} have a host galaxy detected in deep host galaxy photometry (Section \ref{sec:obs}), of which 49 have a host galaxy spectroscopic redshift. A further two have redshifts 
+
+\subsection{Comparison samples \label{subsec:comparison}}
+
 
 \section{Host galaxy observations \label{sec:obs}}
 \subsection{Photometry \label{subsec:phot}}
@@ -216,7 +222,7 @@ For the R23 indicator, we use the calibration of \citet{Pettini2004}, while for 
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{figs/cum_sSFR_mike.png}
 \caption{Cumulative distributions of the sSFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
-\label{fig:sfr_cum}}
+\label{fig:ssfr_cum}}
 \end{figure}
 
 
@@ -228,9 +234,17 @@ For the R23 indicator, we use the calibration of \citet{Pettini2004}, while for 
 \subsection{Stellar Mass \label{subsec:res_mass}}
 
 \subsection{Star formation rate \label{subsec:res_sfr}}
+Fig. \ref{fig:sfms_sfr} shows the `star formation main sequence' (SFMS) of RET host galaxies along with that for CCSNe and for the field galaxies of SDSS. RETs and CCSNe both systematically avoid passive galaxies, suggesting that RETs may require the presence of star-formation and thus be linked to massive stars.
+
+In Fig. \ref{fig:sfr_cum} we show the cumulative distributions of the star-formation rate in RETs, CCSNe, and SDSS galaxies. With the exception of three objects, all RETs occured in galaxies with $\textrm{SFR}>0.1 \msun$yr$^{-1}$, and the curve is shifted towards higher SFRs than that for CCSNe. This would imply that a higher SFR is required for RETs to occur - or can be thought of as a higher SFR threshold for the formation of a RET progenitor.
+
+Fig. \ref{fig:sfms_ssfr} is similar to Fig. \ref{fig:sfms_sfr}, except that here SFR has been normalised by stellar mass, and thus shows the specific star-formation rate (sSFR), which is more representative measure of the star-forming nature of the galaxy itself. It is once again clear that RET hosts lie systematically above the majority of SDSS star-forming galaxies. Normalised by mass, it is here perhaps clearer to see that RET hosts lie at higher sSFR than CCSNe hosts.
+
+As for SFR, we show the cumulative distribution of sSFR in Fig. \ref{fig:ssfr_cum}. The RET hosts are clearly shifted higher sSFRs than CCSNe. This result is significant as there are no obvious selection effects which could cause the shift.
 
 \subsection{Metallicity \label{subsec:res_metallicity}}
 
+In the Section \ref{subsec:res_sfr} we demonstrate that RETs occur in galaxies with systematically higher sSFR than CCSNe, to which one explanation is that they are related to more massive stars. A further property that could directly impact the composition of stellar populations harbouring potential RET progenitors is the metallicity. Using the gas-phase oxygen abundances calculated in Section \ref{subsec:calc_Z} as a proxy for metallicity, we sIn Fig. \ref{fig:mzr}
 
 
 
