@@ -290,9 +290,37 @@ In the Section \ref{subsec:res_sfr} we demonstrate that RETs occur in galaxies w
 
 \subsection{Transient - host galaxy correlations}
 
+\subsection{Selection Biases \label{subsec:disc_bias}}
+The properties presented in Section \ref{sec:analysis} are derived from a subset of the total sample of RETs. Of 106 objects, under half (49/106) have secure host galaxy redshifts. Three of these were obtained from transient spectra, for which we are unable to disentangle the host and transient contributions, and six were obtained by programmes for which we do not have access to the spectra. Of the remaining 42, it was possible to derive a metallicity for 37 host galaxies. The observed metallicity distribution could have arisen if the galaxies without redshifts (and metallicities) are systematically higher in metallicity than those for which measurements were possible. This scenario is unlikely. For low SNR objects, redshifts are typically obtained from only two of the strongest lines (e.g. \halpha, \hbeta, \OIII, and \OII), whose absolute luminosity is not strongly dependent on metallicity. It is likely that the redshifts were not obtained because of low SNR, caused by the galaxies being smaller and at higher redshift. We do not envisage a plausible scenario where those galaxies are systematically higher in metallicity.
+
+Another possibility is that the hosts without a redshift are mostly non-starforming, passive galaxies, for which a redshift is typically harder to obtain than for emission-line galaxies \citep{Yuan2015,Childress2017,Lidman2020}. In order to test this possibility, we examined the RETs that do not have a host galaxy redshift. Table \ref{tab:z_cuts} shows the numbers of RETs that failed various stages of the redshifting process. Of the 48 objects without a redshift, 40 of them have host galaxies detected in the SN Deep coadds of \citet{Wiseman2020}. Of more significance is that only 34 have host galaxies in the SVA1 catalogues which were used for targetting during the OzDES campaign. The other, `hostless', objects are either transients that are located remotely from a host that was detected, or are hosted by a galaxy that was not detected. Non-detected hosts are either intrinsically faint and thus low in mass, situated at high redshift, or both. Neither are expected to be systematically higher in metallicity than the detected hosts. Similarly, a further 16 hosts were detected but not targetted by OzDES, due to being too faint to pass the selection criteria ($m_r < 24.5$), leaving 18 that were targetted but no redshift was found. The resulting redshift completeness of targetted objects is 70\% (82\% for objects brighter than $m_r = 24$~mag, which is in line with the average for OzDES as a whole \citep{Lidman2020}.
+In Fig. \ref{fig:g-r} we show the observer-frame $i$-band magnitudes and $g-r$ colours for all RET hosts that were detected. The 40 objects with detected hosts but no redshift lie at fainter magnitudes, and appear to extend to bluer colours than those with secure redshifts. This is contrary to the hypothesis that they are high-redshift and/or passive hosts, but instead are low-mass, star-forming galaxies whose line fluxes were not strong enough to be detected.
+ 
+
+\begin{table}
+    \centering
+    \begin{tabular}{l|l}
+         Cut &  Number of remaining objects \\
+        \toprule
+        All RETs & 106 \\
+        No redshift   & 48\\
+        Host in SN Deep & 40\\
+        Host in SVA1 & 34 \\
+        Targetted by OzDES & 18 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Numbers of RETs passing various cuts relating to redshift targetting.}
+    \label{tab:z_cuts}
+\end{table}
+
 \subsection{Metallicity}
 
-The sample of DES RETs shows a preference for low metallicity host environments. The PDF displays a strong similarity to the hosts of SNe Ibc, as well as LGRBs. There is a clear difference to the PDFs of SNe II, which follow SDSS field galaxies. The aversion of high-metallicity systems is not as strong as for SLSNe. On first viewing, this is suggestive of a stripped-envelope, massive-star origin for RETs. There are however several selection biases that need to be considered. Firstly, metallicity PDF is derived from a subset of the total sample of RETs. under half (49/106) have secure host galaxy redshifts, of which it was possible to derive a metallicity for 37 host galaxies. If the galaxies without redshifts and metallicities are systematically higher in metallicity than those for which measurements were possible, 
+
+The sample of DES RETs shows a preference for low metallicity host environments. The PDF displays a strong similarity to the hosts of SNe Ibc, as well as LGRBs. There is a clear difference to the PDFs of SNe II, which follow SDSS field galaxies, while the aversion of high-metallicity systems is not as strong as for SLSNe. This result is suggestive of a stripped-envelope, massive-star origin for RETs. 
+
+
+
+
 
 \section{Conclusions}
 
