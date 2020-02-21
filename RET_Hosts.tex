@@ -110,8 +110,8 @@
 \author[P. Wiseman et al.]{
 P. Wiseman$^1$\thanks{E-mail: p.s.wiseman@soton.ac.uk (PW)},
  M. Pursiainen$^1$,
- M. Smith$^1$,
  M. J. Childress$^1$,
+ M. Smith$^1$,
  and Other Authors$^{1,2}$,
 \newauthor
 (The DES Collaboration)
@@ -186,9 +186,21 @@ Where applicable, we adopt a spatially flat $\Lambda$CDM cosmology with the para
 \label{fig:z_dist}}
 \end{figure}
 
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figs/SFR_Mike.png}
+\caption{The SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
+\label{fig:sfms_sfr}}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figs/cum_SFR_mike.png}
+\caption{Cumulative distributions of the SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
+\label{fig:sfr_cum}}
+\end{figure}
+
 \section{Sample selection\label{sec:sample}}
 
-We derive our sample from the 106 RETs discovered in the 5-year DES-SN transient survey. This number expands upon the 72 of \citetalias{Pursiainen2018}. and is presented in a companion work \citetalias{Pursiainen2020}. 
+We derive our sample from the 106 RETs discovered in the 5-year DES-SN transient survey. This number expands upon the 72 of \citetalias{Pursiainen2018}. The first reason for the increased sample size is the use of the 5th year of DES-SN, where \citetalias{Pursiainen2018} were only able to make use of the first four years. The second reason is an update to the sample selection technique. In \citetalias{Pursiainen2018}, objects were highlighted based on various lightcurve criteria such as time of rise to peak brightness ($t_{\mathrm{rise}}$), time of decline ($t_{\mathrm{decl}}$), and lightcurve `full-width half-maximum' ($t_{\mathrm{FWHM}}$). Candidates fitting these criteria were then vetted manually in order to make the final sample. The manual vetting included a removing a large number of active galactic nuclei (AGN). In this work, we expand upon this procedure with the introduction of a machine learning technique
 
 
 We refer to the full sample as DES RETs. Of the 106 objects in the sample, 97 have a host galaxy detected in deep host galaxy photometry of \citet{Wiseman2020}, of which 49 have a host galaxy spectroscopic redshift. A further three have redshifts obtained from narrow lines observed in spectra of the transients themselves. We do not consider these three objects for the analysis, since we are unable to separate transient and host contributions to the spectra.
@@ -232,19 +244,6 @@ Due to the redshift range of our sample, and the limited wavelength coverage of 
 
 The samples to which we compare metallicities span different redshift ranges, were observed with different equipment, and in many cases were compiled before certain (particularly the D16) diagnostics were devised. Therefore, in order to compare oxygen abundances between different samples we transform all abundances onto the scale of PP04 (O3N2) using the conversion from \citet{Kewley2008}. This is not possible for the D16 diagnostic, so we discard it from the rest of our analysis, although for completeness we provide for DES RET hosts where available. For samples that quoted multiple diagnostics, or for which sufficient line flux measurements were provided from which to calculate multiple diagnostics, we calculate a weighted mean of the values after transforming them to the PP04 O3N2 scale.
 
-
-\begin{figure}
-\includegraphics[width=0.5\textwidth]{figs/SFR_Mike.png}
-\caption{The SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
-\label{fig:sfms_sfr}}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=0.5\textwidth]{figs/cum_SFR_mike.png}
-\caption{Cumulative distributions of the SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
-\label{fig:sfr_cum}}
-\end{figure}
-
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{figs/sSFR_Mike.png}
 \caption{The sSFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
@@ -272,7 +271,7 @@ In Fig.~\ref{fig:sfr_cum} we show the cumulative distributions of the star-forma
 
 Fig.~\ref{fig:sfms_ssfr} is similar to Fig.~\ref{fig:sfms_sfr}, except that here SFR has been normalised by stellar mass, and thus shows the specific star-formation rate (sSFR), which is more representative measure of the star-forming intensity compared to galaxies of the same mass. It is once again clear that RET hosts lie systematically above the majority of SDSS star-forming galaxies. Normalised by mass, it is here perhaps clearer to see that RET hosts lie at higher sSFR than CCSNe hosts.
 
-As for SFR, we show the cumulative distribution of sSFR in Fig.~\ref{fig:ssfr_cum}. The RET hosts are clearly shifted higher sSFRs than CCSNe. This result is significant as there are no obvious selection effects which could cause the shift.
+As for SFR, we show the cumulative distribution of sSFR in Fig.~\ref{fig:ssfr_cum}. The RET hosts are clearly shifted to higher sSFRs than CCSNe. To compare statistically the host sSFR distribution of RETs with the other samples, we employ the method of \citet{Wiseman2020}. For each pair of samples, we model the PDFs as skewed normal distributions. For both samples, we use identical normal priors for the `mean' and `scale'\footnote{See \citet{Wiseman2020} for a detailed description of the parameters describing the skewed normal distributions}, centred on the mean and twice the standard deviation of the two samples combined. 
 
 \subsection{Metallicity \label{subsec:res_metallicity}}
 \begin{figure}
@@ -293,7 +292,11 @@ As for SFR, we show the cumulative distribution of sSFR in Fig.~\ref{fig:ssfr_cu
 \label{fig:g-i}}
 \end{figure}
 
-In the Section \ref{subsec:res_sfr} we demonstrate that RETs occur in galaxies with systematically higher sSFR than CCSNe, to which one explanation is that they are related to more massive stars. A further property that could directly impact the composition of stellar populations harbouring potential RET progenitors is the metallicity. Using the gas-phase oxygen abundances calculated in Section \ref{subsec:calc_Z} as a proxy for metallicity, we can compare the chemical state of RET host galaxies with CCSNe and star-forming field galaxies. The cumulative distributions of metallicity are displayed in \ref{fig:oh_cum}, and show RET hosts to be consistent with CCSNe and field galaxies. While the RET curve lies at lower metallicity than CCSNe and field galaxies in the $8.4 < \log \left(12+\textrm{O/H}\right)<9.0$ range, this is entirely within the $1\sigma$ uncertainty region for the RET host CDF. In Fig.~\ref{fig:mzr} we show the mass-metallicity relation (MZR) for the RET and comparison samples.
+In the Section \ref{subsec:res_sfr} we demonstrate that RETs occur in galaxies with systematically higher sSFR than CCSNe, to which one explanation is that they are related to more massive stars. A further property that could directly impact the composition of stellar populations harbouring potential RET progenitors is the metallicity. Using the gas-phase oxygen abundances calculated in Section \ref{subsec:calc_Z} as a proxy for metallicity, we can compare the chemical state of RET host galaxies with CCSNe and star-forming field galaxies. The cumulative distributions of metallicity are displayed in \ref{fig:oh_cum}, and show RET hosts to be inconsistent with SNe II and field galaxies. The RET curve lies at lower metallicity than those galaxies, and appears visually similar to the curves for SESNe. RETs occur, on average, in slightly more metal-rich environments than LGRBs and SLSNe.
+
+We compare the metallicity distributions in the same way as the sSFRs. The RET host metallicity distribution is significantly different to the SNe II and SDSS distributions, with no overlap in the posterior distributions for the skewed-normal distribution peak and skewness. On the other hand, simultaneous fits with SESNe show very similar distributions.
+
+In Fig.~\ref{fig:mzr} we show the mass-metallicity relation (MZR) for the RET and comparison samples.
 
 
 
