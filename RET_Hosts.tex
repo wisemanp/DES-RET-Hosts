@@ -137,7 +137,8 @@ $^{2}$Other Institutions\\
 
 % Abstract of the paper
 \begin{abstract}
-Rapidly evolving transients (RETs) are a mysterious class of astrophysical event. They are characterised by lightcurves that decline much faster than standard supernovae (SNe), span vast ranges in peak luminosity and can be seen to redshifts greater than 1. 
+Rapidly evolving transients (RETs) are a mysterious class of astrophysical event. They are characterised by lightcurves that decline much faster than standard supernovae (SNe), span vast ranges in peak luminosity and can be seen to redshifts greater than 1. Their evolution on fast timescales has hindered high quality follow-up observations, such that their origin and explosion/emission mechanism remains unexplained. In this paper, we investigate the host galaxies of the largest RET sample to date from the Dark Energy Survey (DES). Using deep-stacked photometry and emission-lines from OzDES spectroscopy, we derive host galaxy stellar mass, star-formation rate (SFR), and metallicity for 42 hosts. We find that RETs explode almost exclusively in star-forming galaxies and are thus likely associated with massive stars. Comparing RET hosts to samples of host galaxies of other explosive transient as well as field galaxies, we find that RETs prefer galaxies with high specific SFR, indicating a link to young stellar populations stripped-envelope SNe. RET hosts appear to show a lack of chemical enrichment, their metallicities akin to long duration gamma-ray bursts and superluminous SNe host galaxies. 
+
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -174,6 +175,12 @@ The order of the paper is as follows:
 Where applicable, we adopt a spatially flat $\Lambda$CDM cosmology with the parameters H$0=70$ km~s$^{-1}$ and $\Omega_{\textrm{M}}=0.3$.
 
 
+\begin{figure*}
+\includegraphics[width=\textwidth]{figs/RET_Mosaic.png}
+\caption{Selection of DES RET host galaxies in an RGB composite of the DES $gri$ bands. The locations of the transients are indicated with cyan crosses.
+\label{fig:mag_dist}}
+\end{figure*}
+
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{figs/mag_dist.png}
 \caption{Observer-frame $r$-band magnitude distribution for the host galaxies of RETs in DES. The orange histogram represents the 97/106 DES RETs for which a host was detected. The green histogram shows those that did not have a successful redshift measurement, while blue shows those with no redshift despite being targetted by OzDES.
@@ -186,24 +193,28 @@ Where applicable, we adopt a spatially flat $\Lambda$CDM cosmology with the para
 \label{fig:z_dist}}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=0.5\textwidth]{figs/SFR_Mike.png}
-\caption{The SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
-\label{fig:sfms_sfr}}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=0.5\textwidth]{figs/cum_SFR_mike.png}
-\caption{Cumulative distributions of the SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
-\label{fig:sfr_cum}}
-\end{figure}
-
 \section{Sample selection\label{sec:sample}}
 
-We derive our sample from the 106 RETs discovered in the 5-year DES-SN transient survey. This number expands upon the 72 of \citetalias{Pursiainen2018}. The first reason for the increased sample size is the use of the 5th year of DES-SN, where \citetalias{Pursiainen2018} were only able to make use of the first four years. The second reason is an update to the sample selection technique. In \citetalias{Pursiainen2018}, objects were highlighted based on various lightcurve criteria such as time of rise to peak brightness ($t_{\mathrm{rise}}$), time of decline ($t_{\mathrm{decl}}$), and lightcurve `full-width half-maximum' ($t_{\mathrm{FWHM}}$). Candidates fitting these criteria were then vetted manually in order to make the final sample. The manual vetting included a removing a large number of active galactic nuclei (AGN). In this work, we expand upon this procedure with the introduction of a machine learning technique
+We derive our sample from the 106 RETs discovered in the 5-year DES-SN transient survey. This number expands upon the 72 of \citetalias{Pursiainen2018}. The first reason for the increased sample size is the use of the 5th year of DES-SN, where \citetalias{Pursiainen2018} were only able to make use of the first four years. The second reason is an update to the sample selection technique. By imposing the \citetalias{Pursiainen2018} selection criteria on season 5, the sample is increased to 96 objects.
 
+\subsection{Improvements to the search method}
 
-We refer to the full sample as DES RETs. Of the 106 objects in the sample, 97 have a host galaxy detected in deep host galaxy photometry of \citet{Wiseman2020}, of which 49 have a host galaxy spectroscopic redshift. A further three have redshifts obtained from narrow lines observed in spectra of the transients themselves. We do not consider these three objects for the analysis, since we are unable to separate transient and host contributions to the spectra.
+The original method of finding RETs in the DES-SN data (and presented in \citetalias{Pursiainen2018}) was designed to be simple and used light curve modelling with Gaussian and linear fits. The simplistic method made it possible to look for exotic transients without knowing their observed characteristics beforehand and resulted in a large sample of photometrically selected fast transients. However, as the search was simplistic and relied heavily on visual inspection of the available data (etc. images, light curves, host galaxy information), it is impossible to be sure how complete the sample is. For instance, due to the large redshift range within the sample it is entirely possible that distant events could have been missed due to time dilation. Here, a more sophisticated search method is presented. As only a fraction of transients in DES-SN have redshift information from host galaxy, the search must be done in the observer frame.  The key features of RETs that distinguishes them from most traditional SNe types are the fast light curve evolution and blue colour at peak. Even though both of these quantities depend on the redshift of the transient, they still seem to distinguish the the fast events from traditional SN types. 
+
+To assess the distinguishing photometric properties of RETs, we take the sample of 72 from the \citetalias{Pursiainen2018} method along with spectroscopically confirmed SNe of types Ia, Ibc, II, and SLSNe from DES that pass the following criteria:
+\begin{enumerate}
+\item The transient was only detected in one DES-SN observing season.
+\item Maximum observed brightness in both $g$- and $r$-bands was brighter than 24 mag (in the eight `shallow' DES-SN fields) or 25 mag (in the two `deep' fields).
+\item $g$- and $r$-band observations used for the colour had to be taken within 2 days in observer frame.
+\end{enumerate}
+
+Of objects passing these cuts, the RETs cluster at shorter timescales and bluer colours than other SNe, even in the observer frame. However, using photometric data points directly has several problems that can be improved. For one, measuring peak colour is problematic: DES-SN did not always observe $g$- and $r$-bands on the same or even consecutive nights, thus making it impossible to measure the peak colour in a number of cases. Measuring rise times of 10-15 days is difficult to perform with a one week cadence when it has to be done without fitting a light curve model, hence the rise time values are spread over a wide range. To negate this issue, we interpolate the light curves using the method of Gaussian processes (GP). The interpolated light curves have a 0.5 day cadence and every epoch has a flux value, and an associated uncertainty, for each band. Using this technique, SNe Ia and RETs populate two distinct regions of $g-r$-$t_{\mathrm{rise; r}}$ parameter space and are thus easier to separate. We define a region in this parameter space which minimises the contamination of non-RETs (purity) while maximising the total fraction of RETs (completeness). The resulting limits are $-1.5 < g-r < 0.6 $ and $t_{\mathrm{rise; r}} <16.5$.
+
+We process all $\sim 30,000$ DES-SN transient candidates with GP. In order to reduce the contamination from active galactic nuclei (AGN), we use a basic convolutional neural network (CNN) classifier which we train on spectrosopically confirmed objects, and use to separate the sample into two subtypes: AGN-like and SNe-like. The classifier returns SNe-like objects with an accuracy of 0.992 on the test set; the remaining AGN are likely removed by the final manual vetting.
+The SNe passing the CNN classifier are subjected to the LC quality cuts, resulting in 2259 objects, of which 939 lie inside the colour and rise-time region which we defined as RETs. These objects are subject to a further set of cuts. We impose a cut based on a fit of the LC with the \texttt{PSNID} software (\citet{Sako2008}). We use thresholds of \texttt{FITPROB}$<0.91$ and \texttt{PBAYES}$<0.82$ to remove highly-probably SNe Ia, which removes 46 objects from the RET parameter space. In order to further remove longer-lived SNe, the decline time to half of the peak brightness must be $<24$ days. This removes 347 SNe, resulting in 546 objects remaining inside the parameter space. The final 564 transients have been visually inspected, with the majority rejected for being spurious detections, obvious multi-season variability that was not picked up by the CNN, or showing evidence for a longer timescale decline. 
+
+Using the above method recovers N of the 96 rets found using the \citetalias{Pursiainen2018} technique, and adds a further M.
+We refer to the resulting sample as DES RETs. Of the 106 objects in the sample, 97 have a host galaxy detected in deep host galaxy photometry of \citet{Wiseman2020}, of which 49 have a host galaxy spectroscopic redshift. A further three have redshifts obtained from narrow lines observed in spectra of the transients themselves. We do not consider these three objects for the analysis, since we are unable to separate transient and host contributions to the spectra.
 
 \subsection{Comparison samples \label{subsec:comparison}}
 
@@ -236,6 +247,17 @@ To estimate parameters from the OzDES host galaxy spectra requires several proce
 
 In order to subtract the stellar component of the host galaxy spectra, we use the Penalized PiXel-Fitting software (\texttt{pPXF}; \citealt{Cappellari2004,Cappellari2012,Cappellari2017}), using the MILES library of single stellar populations \citep{Vazdekis2010}. By subtracting the best-fitting stellar spectrum from the \texttt{pPXF} fit, we are left with a `gas' spectrum, comprising the emission lines. We fit the emission lines using \texttt{PySpecKit} \citep{Ginsburg2011}. In order to estimate the uncertainty on the emission line fluxes, we fit $10^4$ realisations of the line, each time adding a perturbation to the amplitude of the line by drawing from a Gaussian distribution centered on 0, and with a standard deviation equal to the root-mean-square (RMS) of the measured flux noise in that part of the spectrum. We take the mean and standard deviation of the resulting fits as our flux and its uncertainty, respectively.
 
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figs/SFR_Mike.png}
+\caption{The SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
+\label{fig:sfms_sfr}}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figs/cum_SFR_mike.png}
+\caption{Cumulative distributions of the SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
+\label{fig:sfr_cum}}
+\end{figure}
 \subsection{Estimating metallicities \label{subsec:calc_Z}}
 
 The most common method used to estimate the metallicity of galaxies is to use emission line ratios that have been calibrated using theoretical or empirical models in order to approximate the gas-phase oxygen abundance in the interstellar medium. Due to the low S/N of the spectra in this sample, we are constrained to a subset of these diagnostics by the availability of only a handful of the strongest emission lines, namely \halpha, \hbeta, \OII 3727, \OIII 4959 and 5007, \NII 6548 and 6583, and \SII 6717 and 6731. Furthermore, for each host galaxy only a subset of these lines are detected - for example, \halpha, \NII and \SII are redshifted out of the spectral coverage at $z>0.3$, leaving only the oxygen and \hbeta lines available, mandating the use of the R23 diagnostic. For hosts at $z<0.3$ we are able to use the \OIII /\NII (O3N2), \NII /\halpha (N2), and \SII /\NII (S2N2) line ratios. 
@@ -274,11 +296,6 @@ Fig.~\ref{fig:sfms_ssfr} is similar to Fig.~\ref{fig:sfms_sfr}, except that here
 As for SFR, we show the cumulative distribution of sSFR in Fig.~\ref{fig:ssfr_cum}. The RET hosts are clearly shifted to higher sSFRs than CCSNe. To compare statistically the host sSFR distribution of RETs with the other samples, we employ the method of \citet{Wiseman2020}. For each pair of samples, we model the PDFs as skewed normal distributions. For both samples, we use identical normal priors for the `mean' and `scale'\footnote{See \citet{Wiseman2020} for a detailed description of the parameters describing the skewed normal distributions}, centred on the mean and twice the standard deviation of the two samples combined. 
 
 \subsection{Metallicity \label{subsec:res_metallicity}}
-\begin{figure}
-\includegraphics[width=0.5\textwidth]{figs/RET_MZR.png}
-\caption{The mass-metallicity relation (MZR) for RET host galaxies.
-\label{fig:mzr}}
-\end{figure}
 
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{figs/RET_OH_cum.png}
@@ -287,22 +304,25 @@ As for SFR, we show the cumulative distribution of sSFR in Fig.~\ref{fig:ssfr_cu
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=0.5\textwidth]{figs/mag_v_colour.png}
-\caption{The colour-magnitude distribution of RET hosts with (cyan) and without (orange) redshifts. There is an excess of objects with blue colours that do not have redshift measurements.
-\label{fig:g-i}}
+\includegraphics[width=0.5\textwidth]{figs/RET_MZR.png}
+\caption{The mass-metallicity relation (MZR) for RET host galaxies.
+\label{fig:mzr}}
 \end{figure}
+
 
 In the Section \ref{subsec:res_sfr} we demonstrate that RETs occur in galaxies with systematically higher sSFR than CCSNe, to which one explanation is that they are related to more massive stars. A further property that could directly impact the composition of stellar populations harbouring potential RET progenitors is the metallicity. Using the gas-phase oxygen abundances calculated in Section \ref{subsec:calc_Z} as a proxy for metallicity, we can compare the chemical state of RET host galaxies with CCSNe and star-forming field galaxies. The cumulative distributions of metallicity are displayed in \ref{fig:oh_cum}, and show RET hosts to be inconsistent with SNe II and field galaxies. The RET curve lies at lower metallicity than those galaxies, and appears visually similar to the curves for SESNe. RETs occur, on average, in slightly more metal-rich environments than LGRBs and SLSNe.
 
 We compare the metallicity distributions in the same way as the sSFRs. The RET host metallicity distribution is significantly different to the SNe II and SDSS distributions, with no overlap in the posterior distributions for the skewed-normal distribution peak and skewness. On the other hand, simultaneous fits with SESNe show very similar distributions.
 
-In Fig.~\ref{fig:mzr} we show the mass-metallicity relation (MZR) for the RET and comparison samples.
+In Fig.~\ref{fig:mzr} we show the mass-metallicity relation (MZR) for the RET and comparison samples. The contours show the MZR for low-redshift ($\hat{z}=0.08$) star-forming galaixes from SDSS, adjusted to the PP04 O3N2 diagnostic. We use the MZR parameterisation \citet{Zahid2014} to show the best fit to the MZR for star-forming galaxies. The blue dashed line shows the fit to the low-z data, while the orange dashed line corresponds to the MZR at $z=0.45$, the mean redshift of the RET host sample. The RET hosts lie systematically below the galaxy MZR fits as well as the bulk of the SDSS galaxies, meaning that for a given stellar mass they have a lower metallicity.
 
-
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figs/mag_v_colour.png}
+\caption{The colour-magnitude distribution of RET hosts with (cyan) and without (orange) redshifts. There is an excess of objects with blue colours that do not have redshift measurements.
+\label{fig:g-i}}
+\end{figure}
 
 \section{Discussion \label{sec:disc}}
-
-\subsection{Transient - host galaxy correlations}
 
 \subsection{Selection Biases \label{subsec:disc_bias}}
 The properties presented in Section \ref{sec:analysis} are derived from a subset of the total sample of RETs. Of 106 objects, under half (49/106) have secure host galaxy redshifts. Three of these were obtained from transient spectra, for which we are unable to disentangle the host and transient contributions, and six were obtained by programmes for which we do not have access to the spectra. Of the remaining 42, it was possible to derive a metallicity for 37 host galaxies. The observed metallicity distribution could have arisen if the galaxies without redshifts (and metallicities) are systematically higher in metallicity than those for which measurements were possible. This scenario is unlikely. For low SNR objects, redshifts are typically obtained from only two of the strongest lines (e.g. \halpha, \hbeta, \OIII, and \OII), whose absolute luminosity is not strongly dependent on metallicity. It is likely that the redshifts were not obtained because of low SNR, caused by the galaxies being smaller and at higher redshift. We do not envisage a plausible scenario where those galaxies are systematically higher in metallicity.
@@ -327,12 +347,12 @@ In Fig. \ref{fig:g-i} we show the observer-frame $r$-band magnitudes and $g-i$ c
     \label{tab:z_cuts}
 \end{table}
 
-\subsection{Metallicity}
+\subsection{Origin of RETs}
 
-The sample of DES RETs shows a preference for low metallicity host environments. The PDF displays a strong similarity to the hosts of SNe Ibc, as well as LGRBs. There is a clear difference to the PDFs of SNe II, which follow SDSS field galaxies, while the aversion of high-metallicity systems is not as strong as for SLSNe. This result is suggestive of a stripped-envelope, massive-star origin for RETs. 
+The sample of DES RETs shows a preference for low-metallicity, strongly star-forming host environments. The PDF of their metallcities displays a strong similarity to the hosts of SNe Ibc, as well as LGRBs. There is a clear difference to the PDFs of SNe II, which follow SDSS field galaxies. The preference for low-metallicity systems is not as strong as for LGRBs or SLSNe, but the highest metallicities found in all three samples are very similar at around solar metallicity. This result is further suggestive of a stripped-envelope, massive-star origin for RETs. 
+The population of RET hosts lies, on average, between CCSNe and LGRBs/SLSNe in terms of both star formation and metallicity. A loose correlation exists between the luminosity and rarity of events, and the host galaxy conditions required for their formation. The rough rate of RETs ($\geq 10^{-6} \mathrm{Mpc}^{-3} \mathrm{yr}^{-1}$), (\citetalias{Pursiainen2018}) is $\sim1\%$ of the CCSN rate \citep{Li2011,Horiuchi2011}, which itself is divided into the more common SNe II and sub-dominant SESNe \citep{Kelly2012,Frohmaier2020}. At $\sim1\%$ of the CCSN rate, RETs are more common than SLSNe ($\sim0.01 - 0.05\%$ of CCSNe; \citealt{McCrum2015,Prajz2016,Frohamier2020}) and LGRBs (intrinsically $\sim0.08\%$ when accounting for beaming; \citealt{Graham2016}). These figures place the DES RETs between extreme objects (SLSNe, LGRBs) and more common SNe (SNe II, SESNe) in terms of rate, matching their location in host galaxy parameter space. While stressing that these associations are lose - rates are uncertain and host galaxy parameters span wide ranges for all transients - they are both linked to the respective transients' progenitor channels. Based upon both indicators, it is reasonable to infer that RETs are linked to very massive stars that also require some extreme properties such as rapid rotation, albeit not as much as progenitors as SLSNe or LGRBs. It could therefore be possible that RETs are an intermediate and/or precursory step, whereby the initial collapse of the star occurs leading to a shocked photosphere, but conditions are not highly tuned enough for a LGRB or SLSN and the respective central engine does not form. 
 
-
-
+\subsection{Correlations with lightcurve properties}
 
 
 \section{Conclusions}
