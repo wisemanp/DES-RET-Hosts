@@ -104,7 +104,7 @@
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
-\title[Supernova hosts in DES]{Supernova Host Galaxies in the Dark Energy Survey: \\ II. Rapidly Evolving Transients}
+\title[RET host galaxies in DES]{The Host Galaxies of Rapidly Evolving Transients in the Dark Energy Survey}
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
 \author[P. Wiseman et al.]{
@@ -137,7 +137,7 @@ $^{2}$Other Institutions\\
 
 % Abstract of the paper
 \begin{abstract}
-Rapidly evolving transients (RETs) are a mysterious class of astrophysical event. They are characterised by lightcurves that decline much faster than standard supernovae (SNe), span vast ranges in peak luminosity and can be seen to redshifts greater than 1. Their evolution on fast timescales has hindered high quality follow-up observations, such that their origin and explosion/emission mechanism remains unexplained. In this paper, we investigate the host galaxies of the largest RET sample to date from the Dark Energy Survey (DES). Using deep-stacked photometry and emission-lines from OzDES spectroscopy, we derive host galaxy stellar mass, star-formation rate (SFR), and metallicity for 42 hosts. We find that RETs explode almost exclusively in star-forming galaxies and are thus likely associated with massive stars. Comparing RET hosts to samples of host galaxies of other explosive transient as well as field galaxies, we find that RETs prefer galaxies with high specific SFR, indicating a link to young stellar populations stripped-envelope SNe. RET hosts appear to show a lack of chemical enrichment, their metallicities akin to long duration gamma-ray bursts and superluminous SNe host galaxies. 
+Rapidly evolving transients (RETs) are a mysterious class of astrophysical event. They are characterised by lightcurves that decline much faster than standard supernovae (SNe), span vast ranges in peak luminosity and can be seen to redshifts greater than 1. Their evolution on fast timescales has hindered high quality follow-up observations, such that their origin and explosion/emission mechanism remains unexplained. In this paper, we investigate the host galaxies of the largest RET sample to date from the Dark Energy Survey (DES). Using deep-stacked photometry and emission-lines from OzDES spectroscopy, we derive host galaxy stellar mass, star-formation rate (SFR), and metallicity for 42 hosts. We find that RETs explode almost exclusively in star-forming galaxies and are thus likely associated with massive stars. Comparing RET hosts to samples of host galaxies of other explosive transient as well as field galaxies, we find that RETs prefer galaxies with high specific SFR, indicating a link to young stellar populations stripped-envelope SNe. RET hosts appear to show a lack of chemical enrichment, their metallicities akin to long duration gamma-ray bursts and superluminous SNe host galaxies. There are no clear relationships between properties of the host galaxies and the peak magnitudes or decline rates of the transients themselves.
 
 \end{abstract}
 
@@ -174,6 +174,11 @@ In this paper, we present the first comprehensive study of the host galaxies of 
 The order of the paper is as follows:
 Where applicable, we adopt a spatially flat $\Lambda$CDM cosmology with the parameters H$0=70$ km~s$^{-1}$ and $\Omega_{\textrm{M}}=0.3$.
 
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figs/gr_trise_r.pdf}
+\caption{Observer-frame $g-r$ colour and $r$-band rise-time, derived from Gaussian Processed fits to DES-SN photometry for spectroscopically confirmed SNe and \citetalias{Pursiainen2018} RETs. The location of the red box is designed to maximise the completeness and purity of RETs, 
+\label{fig:selection}}
+\end{figure}
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{figs/RET_Mosaic.png}
@@ -208,7 +213,7 @@ To assess the distinguishing photometric properties of RETs, we take the sample 
 \item $g$- and $r$-band observations used for the colour had to be taken within 2 days in observer frame.
 \end{enumerate}
 
-Of objects passing these cuts, the RETs cluster at shorter timescales and bluer colours than other SNe, even in the observer frame. However, using photometric data points directly has several problems that can be improved. For one, measuring peak colour is problematic: DES-SN did not always observe $g$- and $r$-bands on the same or even consecutive nights, thus making it impossible to measure the peak colour in a number of cases. Measuring rise times of 10-15 days is difficult to perform with a one week cadence when it has to be done without fitting a light curve model, hence the rise time values are spread over a wide range. To negate this issue, we interpolate the light curves using the method of Gaussian processes (GP). The interpolated light curves have a 0.5 day cadence and every epoch has a flux value, and an associated uncertainty, for each band. Using this technique, SNe Ia and RETs populate two distinct regions of $g-r$-$t_{\mathrm{rise; r}}$ parameter space and are thus easier to separate. We define a region in this parameter space which minimises the contamination of non-RETs (purity) while maximising the total fraction of RETs (completeness). The resulting limits are $-1.5 < g-r < 0.6 $ and $t_{\mathrm{rise; r}} <16.5$.
+Of objects passing these cuts, the RETs cluster at shorter timescales and bluer colours than other SNe, even in the observer frame. However, using photometric data points directly has several problems that can be improved. For one, measuring peak colour is problematic: DES-SN did not always observe $g$- and $r$-bands on the same or even consecutive nights, thus making it impossible to measure the peak colour in a number of cases. Measuring rise times of 10-15 days is difficult to perform with a one week cadence when it has to be done without fitting a light curve model, hence the rise time values are spread over a wide range. To negate this issue, we interpolate the light curves using the method of Gaussian processes (GP). The interpolated light curves have a 0.5 day cadence and every epoch has a flux value, and an associated uncertainty, for each band. Using this technique, SNe Ia and RETs populate two distinct regions of $g-r$-$t_{\mathrm{rise; r}}$ parameter space (Fig. \ref{fig:selection}) and are thus easier to separate. We define a region in this parameter space which minimises the contamination of non-RETs (purity) while maximising the total fraction of RETs (completeness). The resulting limits are $-1.5 < g-r < 0.6 $ and $t_{\mathrm{rise; r}} <16.5$, and the parameter space can be seen in Fig. \ref{fig:selection}.
 
 We process all $\sim 30,000$ DES-SN transient candidates with GP. In order to reduce the contamination from active galactic nuclei (AGN), we use a basic convolutional neural network (CNN) classifier which we train on spectrosopically confirmed objects, and use to separate the sample into two subtypes: AGN-like and SNe-like. The classifier returns SNe-like objects with an accuracy of 0.992 on the test set; the remaining AGN are likely removed by the final manual vetting.
 The SNe passing the CNN classifier are subjected to the LC quality cuts, resulting in 2259 objects, of which 939 lie inside the colour and rise-time region which we defined as RETs. These objects are subject to a further set of cuts. We impose a cut based on a fit of the LC with the \texttt{PSNID} software (\citet{Sako2008}). We use thresholds of \texttt{FITPROB}$<0.91$ and \texttt{PBAYES}$<0.82$ to remove highly-probably SNe Ia, which removes 46 objects from the RET parameter space. In order to further remove longer-lived SNe, the decline time to half of the peak brightness must be $<24$ days. This removes 347 SNe, resulting in 546 objects remaining inside the parameter space. The final 564 transients have been visually inspected, with the majority rejected for being spurious detections, obvious multi-season variability that was not picked up by the CNN, or showing evidence for a longer timescale decline. 
@@ -234,6 +239,12 @@ The host galaxy photometry for the sample of RETs is taken from the catalogue of
 
 \subsection{Spectroscopy \label{subsec:spec}}
 Accurate redshifts for DES-SN were obtained by OzDES\footnote{Australian (Oz) Dark Energy Survey}, a dedicated DES spectroscopic follow-up campaign based at the $3.9~\textrm{m}$ Anglo-Australian Telescope (AAT) using the AAOmega fibre-fed spectrograph and 2dF fibre positioner. The observation strategy of OzDES was to point at one of the ten DES-SN fields, and place fibres at the positions of transient hosts, continually coadding the spectra of a particular host until a redshift was obtained at which point the fibre could be allocated to a different transient. The spectra have a resolution of 1400-1700 and a wavelength range of 3700$\AA - 8800\AA$, and are reduced using a modified version of 2dfdr \citep{Croom2004} along with internal scripts. Extensive description and discussion of OzDES can be found in \citet{Yuan2015,Childress2017,Lidman2020}.
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{figs/SFR_Mike.png}
+\caption{The SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
+\label{fig:sfms_sfr}}
+\end{figure*}
 
 \section{Estimating host galaxy properties \label{sec:measure}}
 
