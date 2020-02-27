@@ -53,6 +53,7 @@
 \usepackage{subcaption}
 \usepackage{multicol}
 \usepackage{wrapfig}
+\usepackage{ctable}
 \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 \captionsetup{compatibility=false}
 
@@ -73,6 +74,8 @@
 %\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
 %Co-authors:
 \newcommand{\phil}[1]{\color{red}#1 \color{black}}
+\newcommand{\mike}[1]{\color{cyan}#1 \color{black}}
+\newcommand{\miika}[1]{\color{green}#1 \color{black}}
 
 \newcommand{\comment}[1]{\textbf{[#1]}} %comments
 
@@ -153,8 +156,6 @@ keyword1 -- keyword2 -- keyword3
 
 \section{Introduction}
 
-
-
 In the standard paradigm of stellar evolution, stars with a zero-age main sequence (ZAMS) mass above $8M_{\sun}$ are believed to explode as a result of a catastrophic collapse of their iron cores and are known as core-collapse supernovae (CCSNe). CCSNe can be split into observationally-determinded subclasses based on their lightcurve and spectral evolution: SNe II display hydrogen features in their spectra, and are thought to occur in stars that retain a large fraction of their hydrogen envelope. Conversely, SNe Ib and Ic do not show signatures of hydrogen and are thus referred to collectively as stripped-envelope SNe (SESNe). The SN IIb subclass, which shows hydrogen only at early epochs, is also commonly grouped along with SESNe. Since the turn of the century, observations of CCSNe, whose lightcurves are primarily powered by the radioactive decay of freshly synthesised Ni-56, have been supplemented by rarer, more exotic transient classes.
 
  Long duration gamma-ray bursts (LGRBs), although first discovered in the 1960s \citep{Klebesadel1973} were only unequivocally linked to collapsing massive stars through their associations with broad-lined type Ic SNe \citep{Galama1998,Hjorth2003}. Thought to be caused by accretion onto a newly-formed black hole at the centre of a collapsing, rapidly-rotating massive star \citep[e.g.][]{Woosley1993,Woosley2006a,Woosley2006b}, LGRBs comprise roughly $1\%$ of all SNe Ic, themselves making up only 15\% of all CCSNe \citep{Kelly2012,Graham2016}. The second exotic class of SNe is the particularly bright superluminous supernovae (SLSNe; e.g. \citealt{Quimby2011, Gal-Yam2012}). Originally grouped due to their slowly-evolving lightcurves and extreme luminosity (peaking at $M_B < -21$~mag; 10-100 times brighter than regular CCSNe), recent observations have revealed a continuum of spectroscopically similar objects with peaks as faint as $M_B \sim -19$~mag \citep{DeCia2018,Lunnan2018,Angus2019}, similar to the bright end of the CCSN luminosity function \citet{Li2011,Grayling2020}. The lightcurve evolution of SLSNe is not well described by models of Ni-56 decay, with the most popular alternative hypothesis being the magnetic coupling of the ejecta with the spin down of a newly formed, rapidly rotating magnetar.
@@ -182,7 +183,7 @@ Where applicable, we adopt a spatially flat $\Lambda$CDM cosmology with the para
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{figs/RET_Mosaic.png}
-\caption{Selection of DES RET host galaxies in an RGB composite of the DES $gri$ bands. The locations of the transients are indicated with cyan crosses.
+\caption{Selection of DES RET host galaxies in an RGB composite of the DES $gri$ band deep coadds from \citet{Wiseman2020}. The locations of the transients are indicated with cyan crosses. \phil{Need to redo with more obvious scalebar and crosses}.
 \label{fig:mag_dist}}
 \end{figure*}
 
@@ -204,6 +205,7 @@ We derive our sample from the 106 RETs discovered in the 5-year DES-SN transient
 
 \subsection{Improvements to the search method}
 
+\miika{Miika to verify!}
 The original method of finding RETs in the DES-SN data (and presented in \citetalias{Pursiainen2018}) was designed to be simple and used light curve modelling with Gaussian and linear fits. The simplistic method made it possible to look for exotic transients without knowing their observed characteristics beforehand and resulted in a large sample of photometrically selected fast transients. However, as the search was simplistic and relied heavily on visual inspection of the available data (etc. images, light curves, host galaxy information), it is impossible to be sure how complete the sample is. For instance, due to the large redshift range within the sample it is entirely possible that distant events could have been missed due to time dilation. Here, a more sophisticated search method is presented. As only a fraction of transients in DES-SN have redshift information from host galaxy, the search must be done in the observer frame.  The key features of RETs that distinguishes them from most traditional SNe types are the fast light curve evolution and blue colour at peak. Even though both of these quantities depend on the redshift of the transient, they still seem to distinguish the the fast events from traditional SN types. 
 
 To assess the distinguishing photometric properties of RETs, we take the sample of 72 from the \citetalias{Pursiainen2018} method along with spectroscopically confirmed SNe of types Ia, Ibc, II, and SLSNe from DES that pass the following criteria:
@@ -219,7 +221,7 @@ We process all $\sim 30,000$ DES-SN transient candidates with GP. In order to re
 The SNe passing the CNN classifier are subjected to the LC quality cuts, resulting in 2259 objects, of which 939 lie inside the colour and rise-time region which we defined as RETs. These objects are subject to a further set of cuts. We impose a cut based on a fit of the LC with the \texttt{PSNID} software (\citet{Sako2008}). We use thresholds of \texttt{FITPROB}$<0.91$ and \texttt{PBAYES}$<0.82$ to remove highly-probably SNe Ia, which removes 46 objects from the RET parameter space. In order to further remove longer-lived SNe, the decline time to half of the peak brightness must be $<24$ days. This removes 347 SNe, resulting in 546 objects remaining inside the parameter space. The final 564 transients have been visually inspected, with the majority rejected for being spurious detections, obvious multi-season variability that was not picked up by the CNN, or showing evidence for a longer timescale decline. 
 
 Using the above method recovers N of the 96 rets found using the \citetalias{Pursiainen2018} technique, and adds a further M.
-We refer to the resulting sample as DES RETs. Of the 106 objects in the sample, 97 have a host galaxy detected in deep host galaxy photometry of \citet{Wiseman2020}, of which 49 have a host galaxy spectroscopic redshift. A further three have redshifts obtained from narrow lines observed in spectra of the transients themselves. We do not consider these three objects for the analysis, since we are unable to separate transient and host contributions to the spectra.
+We refer to the resulting sample as DES RETs. Of the 106 objects in the sample, 97 have a host galaxy detected in deep host galaxy photometry of \citet{Wiseman2020}, of which 49 have a host galaxy spectroscopic redshift. A further three have redshifts obtained from narrow lines observed in spectra of the transients themselves. We do not consider these three objects for the analysis, since we are unable to separate transient and host contributions to the spectra. The observational properties of the 49 hosts with redshift are displayed in Table \ref{tab:obs}.
 
 \subsection{Comparison samples \label{subsec:comparison}}
 
@@ -239,7 +241,41 @@ The host galaxy photometry for the sample of RETs is taken from the catalogue of
 
 \subsection{Spectroscopy \label{subsec:spec}}
 Accurate redshifts for DES-SN were obtained by OzDES\footnote{Australian (Oz) Dark Energy Survey}, a dedicated DES spectroscopic follow-up campaign based at the $3.9~\textrm{m}$ Anglo-Australian Telescope (AAT) using the AAOmega fibre-fed spectrograph and 2dF fibre positioner. The observation strategy of OzDES was to point at one of the ten DES-SN fields, and place fibres at the positions of transient hosts, continually coadding the spectra of a particular host until a redshift was obtained at which point the fibre could be allocated to a different transient. The spectra have a resolution of 1400-1700 and a wavelength range of 3700$\AA - 8800\AA$, and are reduced using a modified version of 2dfdr \citep{Croom2004} along with internal scripts. Extensive description and discussion of OzDES can be found in \citet{Yuan2015,Childress2017,Lidman2020}.
+Objects for which the host already had a publicly available redshift were not observed with OzDES, but merged into the General Redshift Catalogue nontheless. Where the spectra from which those redshifts were derived are also public they are included in this analysis. These comprise the Galaxy and Mass Assembly survey (GAMA \citealt{Driver2009,Baldry2018}), the Sloan Digital Sky Survey Data Release 16 (SDSS DR16; \citealt{Ahumada2019}). In total we analyse 42 spectra, with a mean continuum signal-to-noise ratio (SNR) of 2.56. We stress that the emission lines are detected with a higher SNR than this.
 
+\begin{table*}
+\begin{center}
+\caption{Host galaxy information for the 49 RETs with a host galaxy redshift. A full-length, machine-readable version of this table is available in the online version of the manuscript.}
+
+\begin{threeparttable}
+\begin{tabular}{llllllll}
+
+\toprule
+{} &       RA &       Dec &    $m_r$\tnote{a}  &     $z$ &     Survey & Exposure time (hours) \tnote{b} \\
+Transient name &          &           &          &         &         &            &               \\
+\midrule
+DES13X3gms     & 35.80095 &  -4.49384 & $23.02 \pm 0.06$ & 0.6479 &      OzDES &       6.58 \\
+DES13C1tgd     & 54.06436 & -27.63867 & $20.30 \pm 0.05$ & 0.1964 &      OzDES &      10.16 \\
+DES13S2wxf     & 41.61268 &  -0.02634 & $21.31 \pm 0.03$ & 0.5698 &      OzDES &       5.41 \\
+DES13X1hav     & 35.03245 &  -5.11022 & $23.63 \pm 0.07$ & 0.5823 &      OzDES &       4.00 \\
+DES13X3nyg     & 36.99228 &  -3.91327 & $23.38 \pm 0.06$ & 0.7120 &      OzDES &      45.50 \\
+DES13X3gmd     & 36.50409 &  -4.21949 & $22.90 \pm 0.05$ & 0.7808 &      OzDES &      13.91 \\
+DES13C3bcok    & 53.02711 & -28.62476 & $18.61 \pm 0.02$ & 0.3457 &  NOAO\_0522 &               \\
+DES13C3uig     & 52.94416 & -27.58544 & $22.17 \pm 0.03$ & 0.6734 &       ACES &               \\
+DES13X2wvv     & 34.86526 &  -6.71603 & $21.89 \pm 0.02$ & 0.4750 &      OzDES &       4.50 \\
+DES14S2anq     & 41.27776 &  -0.74529 & $17.57 \pm 0.03$ & 0.0521 &      OzDES &       0.75 \\
+DES14X1bnh     & 33.74902 &  -4.79254 & $21.95 \pm 0.03$ & 0.8298 &      OzDES &       3.50 \\
+DES15S1fli     & 43.18790 &  -0.88620 & $20.98 \pm 0.02$ & 0.4473 &      OzDES &       2.33 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item[a] Apparent $r$-band Kron magnitude according to DES-SN deep coadds of \citet{Wiseman2020}.
+\item[b] Exposure time only given for spectra which we have used for line measurements rather than just redshift.
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\label{tab:obs}
+\end{table*}
 \begin{figure*}
 \includegraphics[width=\textwidth]{figs/gal_spec.png}
 \caption{The spectrum of DES16C2ggt, decomposed into its constituent components according to the \texttt{pPXF} fit. 
@@ -256,7 +292,7 @@ Accurate redshifts for DES-SN were obtained by OzDES\footnote{Australian (Oz) Da
 \section{Estimating host galaxy properties \label{sec:measure}}
 
 \subsection{SED fitting \label{subsec:sedfit}}
-
+\mike{Mike to read and add!}
 To estimate the physical properties of the host galaxies, we generate synthetic photometry in the DES $griz$ bands by combining the individual SEDs of simple stellar population models. We use \citet{Bruzual2003} models and a \citet{Chabrier2003} initial mass function (IMF). From the synthetic spectra we derive model magnitudes in the DES $griz$ bands and compare them to the observed magnitudes. For each set of model and observed magnitudes we calculate a $\chi^2$ value and adopt the $M/L$ and SFR from model with the lowest $\chi^2$ as our best estimates. To estimate uncertainties, we ?? and take the values at the 16th and 84th percentiles to be our $1\sigma$ lower and upper bounds.
 
 \subsection{Spectral line fitting \label{subsec:linefit}}
@@ -370,24 +406,57 @@ In Fig. \ref{fig:g-i} we show the observer-frame $r$-band magnitudes and $g-i$ c
     \label{tab:z_cuts}
 \end{table}
 
-\subsection{Origin of RETs}
+\subsection{Origin of RETs \label{subsec:disc_origin}}
 
 The sample of DES RETs shows a preference for low-metallicity, strongly star-forming host environments. The PDF of their metallcities displays a strong similarity to the hosts of SNe Ibc, as well as LGRBs. There is a clear difference to the PDFs of SNe II, which follow SDSS field galaxies. The preference for low-metallicity systems is not as strong as for LGRBs or SLSNe, but the highest metallicities found in all three samples are very similar at around solar metallicity. This result is further suggestive of a stripped-envelope, massive-star origin for RETs. 
 The population of RET hosts lies, on average, between CCSNe and LGRBs/SLSNe in terms of both star formation and metallicity. A loose correlation exists between the luminosity and rarity of events, and the host galaxy conditions required for their formation. The rough rate of RETs ($\geq 10^{-6} \mathrm{Mpc}^{-3} \mathrm{yr}^{-1}$), (\citetalias{Pursiainen2018}) is $\sim1\%$ of the CCSN rate \citep{Li2011,Horiuchi2011}, which itself is divided into the more common SNe II and sub-dominant SESNe \citep{Kelly2012,Frohmaier2020}. At $\sim1\%$ of the CCSN rate, RETs are more common than SLSNe ($\sim0.01 - 0.05\%$ of CCSNe; \citealt{McCrum2015,Prajz2016,Frohamier2020}) and LGRBs (intrinsically $\sim0.08\%$ when accounting for beaming; \citealt{Graham2016}). These figures place the DES RETs between extreme objects (SLSNe, LGRBs) and more common SNe (SNe II, SESNe) in terms of rate, matching their location in host galaxy parameter space. While stressing that these associations are lose - rates are uncertain and host galaxy parameters span wide ranges for all transients - they are both linked to the respective transients' progenitor channels. Based upon both indicators, it is reasonable to infer that RETs are linked to very massive stars that also require some extreme properties such as rapid rotation, albeit not as much as progenitors as SLSNe or LGRBs. It could therefore be possible that RETs are an intermediate and/or precursory step, whereby the initial collapse of the star occurs leading to a shocked photosphere, but conditions are not highly tuned enough for a LGRB or SLSN and the respective central engine does not form. 
 
-\subsection{Correlations between lightcurve and host galaxy properties}
+\subsection{Correlations between lightcurve and host galaxy properties \label{subsec:disc_correlations}}
 Many classes of transients show trends between properties intrinsic to the objects themselves and their host galaxies. For example, SNe Ia lightcurves appear to be broader in less massive galaxies with higher sSFR \citep{Sullivan2006,Neill2009,Howell2009,Sullivan2010,Roman2018,Kelsey2020}, while SLSNe that have been fit with a magnetar model show a tentative relationship between the magnetar spin period and host galaxy metallicity \citep{Chen2016a}. In Fig. \ref{fig:ret_v_host} we show the RET peak magnitude (upper pannels) and decline rate parameterised as $t_{\mathrm{half}}$, the time taken for the LC to decline to half the peak brightness (lower panels) and how they correspond to host galaxy stellar mass (left-hand panels) and sSFR (right-hand panels). The decline rates have been converted to the rest-frame of the transients, while the peak magnitudes have been k-corrected assuming a simple blackbody SED. There is no correlation between decline rate and either stellar mass or sSFR, while there are hints of a trend between peak magnitude and both mass and sSFR. These apparent trends are driven by the more extreme hosts (the three with $\log\left(M_*/M_{\odot}\right) < 9$ and one with very high mass/low sSFR). Assuming that these points are not outliers, the trends are still likely driven by selection effects. At higher redshifts, only the brighter transients are recovered by the survey and our selection method, while at those redshifts only the more massive galaxies are detected. This effect can be seen in the Fig. \ref{fig:ret_v_host} panel a, with redshift increasing from the lower left to the upper right, while the same is true from the upper left to lower right in panel b. It is hoped that a complete, volume-limited sample of RETs will be obtained by The Rubin Observatory Legacy Survey of Space and Time (LSST) allowing the removal of these biases in order to reveal any underlying relationships.
 
+\subsection{The passive host of DES16C1cbd \label{subsec:disc_cbd}}
+In Figs. \ref{fig:sfms_sfr} and \ref{fig:sfms_ssfr} there is one clear outlier with very low SFR. The host of DES16C1cbd appears to be a passive galaxy
 \section{Conclusions}
 
-The last numbered section should briefly summarise what has been done, and describe
-the final conclusions which the authors draw from their work.
+By analysing the host galaxies of 49 rapidly evolving transients (RETs) discovered in the Dark Energy Survey, we have been able to place constraints on the nature of this as-yet unexplained phenomenon. 
 
 \section*{Acknowledgements}
 
-The Acknowledgements section is not numbered. Here you can thank helpful
-colleagues, acknowledge funding agencies, telescopes and facilities used etc.
-Try to keep it short.
+We acknowledge support from STFC grant ST/R000506/1. L.K. was supported by the Science and Technology Facilities Council (grant number ST/P006760/1) through the DISCnet Centre for Doctoral Training. M.S. and M.S. acknowledge support from EU/FP7-ERC grant 615929. L.G. was funded by the European Union's Horizon 2020 research and innovation programme under the Marie Sk\l{}odowska-Curie grant agreement No. 839090.
+
+This paper makes use of observations taken using the Anglo-Australian Telescope under programs ATAC A/2013B/12 and NOAO 2013B-0317.
+
+This research used resources of the National Energy Research Scientific Computing Center (NERSC), a U.S. Department of Energy Office of Science User Facility operated under Contract No. DE-AC02-05CH11231.
+
+Funding for the DES Projects has been provided by the U.S. Department of Energy, the U.S. National Science Foundation, the Ministry of Science and Education of Spain, 
+the Science and Technology Facilities Council of the United Kingdom, the Higher Education Funding Council for England, the National Center for Supercomputing 
+Applications at the University of Illinois at Urbana-Champaign, the Kavli Institute of Cosmological Physics at the University of Chicago, 
+the Center for Cosmology and Astro-Particle Physics at the Ohio State University,
+the Mitchell Institute for Fundamental Physics and Astronomy at Texas A\&M University, Financiadora de Estudos e Projetos, 
+Funda{\c c}{\~a}o Carlos Chagas Filho de Amparo {\`a} Pesquisa do Estado do Rio de Janeiro, Conselho Nacional de Desenvolvimento Cient{\'i}fico e Tecnol{\'o}gico and 
+the Minist{\'e}rio da Ci{\^e}ncia, Tecnologia e Inova{\c c}{\~a}o, the Deutsche Forschungsgemeinschaft and the Collaborating Institutions in the Dark Energy Survey. 
+
+The Collaborating Institutions are Argonne National Laboratory, the University of California at Santa Cruz, the University of Cambridge, Centro de Investigaciones Energ{\'e}ticas, 
+Medioambientales y Tecnol{\'o}gicas-Madrid, the University of Chicago, University College London, the DES-Brazil Consortium, the University of Edinburgh, 
+the Eidgen{\"o}ssische Technische Hochschule (ETH) Z{\"u}rich, 
+Fermi National Accelerator Laboratory, the University of Illinois at Urbana-Champaign, the Institut de Ci{\`e}ncies de l'Espai (IEEC/CSIC), 
+the Institut de F{\'i}sica d'Altes Energies, Lawrence Berkeley National Laboratory, the Ludwig-Maximilians Universit{\"a}t M{\"u}nchen and the associated Excellence Cluster Universe, 
+the University of Michigan, the National Optical Astronomy Observatory, the University of Nottingham, The Ohio State University, the University of Pennsylvania, the University of Portsmouth, 
+SLAC National Accelerator Laboratory, Stanford University, the University of Sussex, Texas A\&M University, and the OzDES Membership Consortium.
+
+Based in part on observations at Cerro Tololo Inter-American Observatory, National Optical Astronomy Observatory, which is operated by the Association of 
+Universities for Research in Astronomy (AURA) under a cooperative agreement with the National Science Foundation.
+
+The DES data management system is supported by the National Science Foundation under Grant Numbers AST-1138766 and AST-1536171.
+The DES participants from Spanish institutions are partially supported by MINECO under grants AYA2015-71825, ESP2015-66861, FPA2015-68048, SEV-2016-0588, SEV-2016-0597, and MDM-2015-0509, 
+some of which include ERDF funds from the European Union. IFAE is partially funded by the CERCA program of the Generalitat de Catalunya.
+Research leading to these results has received funding from the European Research
+Council under the European Union's Seventh Framework Program (FP7/2007-2013) including ERC grant agreements 240672, 291329, and 306478.
+We  acknowledge support from the Brazilian Instituto Nacional de Ci\^encia
+e Tecnologia (INCT) e-Universe (CNPq grant 465376/2014-2).
+
+This manuscript has been authored by Fermi Research Alliance, LLC under Contract No. DE-AC02-07CH11359 with the U.S. Department of Energy, Office of Science, Office of High Energy Physics.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
