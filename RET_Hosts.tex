@@ -269,7 +269,7 @@ DES15S1fli     & 43.18790 &  -0.88620 & $20.98 \pm 0.02$ & 0.4473 &      OzDES &
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
-\item[a] Apparent $r$-band Kron magnitude according to DES-SN deep coadds of \citet{Wiseman2020}.
+\item[a] Apparent $r$-band Kron magnitude according to DES-SN deep coadds of \citet{Wiseman2020}, not corrected for Galactic foreground reddening.
 \item[b] Exposure time only given for spectra which we have used for line measurements rather than just redshift.
 \end{tablenotes}
 \end{threeparttable}
@@ -299,7 +299,7 @@ To estimate the physical properties of the host galaxies, we generate synthetic 
 
 To estimate parameters from the OzDES host galaxy spectra requires several processing steps. We first apply a flux calibration using the method of \citet{Swann2020}, by `mangling' the spectrum such that the integrated flux over the wavelength ranges of the DES photometric bands matches that measured in the photometry. Rather than using global galaxy photometry (i.e. using a Kron aperture), we use a circular aperture of diameter 2\arcsec, matching the size of the spectrograph fibres.  
 
-In order to subtract the stellar component of the host galaxy spectra, we use the Penalized PiXel-Fitting software (\texttt{pPXF}; \citealt{Cappellari2004,Cappellari2012,Cappellari2017}), using the MILES library of single stellar populations \citep{Vazdekis2010}. By subtracting the best-fitting composite stellar spectrum from the \texttt{pPXF} fit, we are left with a `gas' spectrum, comprising the emission lines. An example of this procedure is shown in Fig. \ref{fig:host_spec}. We fit the emission lines using \texttt{PySpecKit} \citep{Ginsburg2011}. In order to estimate the uncertainty on the emission line fluxes, we fit $10^4$ realisations of the line, each time adding a perturbation to the amplitude of the line by drawing from a Gaussian distribution centered on 0, and with a standard deviation equal to the root-mean-square (RMS) of the measured flux noise in a $100 \AA$ window around the central wavelength of the line. We take the mean and standard deviation of the resulting fits as our flux and its uncertainty, respectively.
+In order to subtract the stellar component of the host galaxy spectra, we use the Penalized PiXel-Fitting software (\texttt{pPXF}; \citealt{Cappellari2004,Cappellari2012,Cappellari2017}), using the MILES library of single stellar populations \citep{Vazdekis2010}. By subtracting the best-fitting composite stellar spectrum from the \texttt{pPXF} fit, we are left with a `gas' spectrum, comprising the emission lines. An example of this procedure is shown in Fig. \ref{fig:host_spec}. We fit the emission lines using \texttt{PySpecKit} \citep{Ginsburg2011}. In order to estimate the uncertainty on the emission line fluxes, we fit $10^4$ realisations of the line, each time adding perturbations to the line by drawing from a Gaussian distribution centered on 0, and with a standard deviation equal to the root-mean-square (RMS) of the measured flux noise in a 100~\AA~window around the central wavelength of the line. We take the mean and standard deviation of the resulting fits as our flux and its uncertainty, respectively.
 
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{figs/SFR_Mike.png}
@@ -334,13 +334,8 @@ The samples to which we compare metallicities span different redshift ranges, we
 \label{fig:ssfr_cum}}
 \end{figure}
 
-
-\section{Analysis and Discussion}
+\section{Analysis}
 \label{sec:analysis} % used for referring to this section from elsewhere
-
-
-
-\subsection{Stellar Mass \label{subsec:res_mass}}
 
 \subsection{Star formation rate \label{subsec:res_sfr}}
 Fig.~\ref{fig:sfms_sfr} shows the `star formation main sequence' (SFMS) of RET host galaxies along with that for CCSNe and for the field galaxies of SDSS. RETs and CCSNe both systematically avoid passive galaxies, suggesting that RETs may require the presence of star-formation and thus be linked to massive stars.
@@ -349,7 +344,7 @@ In Fig.~\ref{fig:sfr_cum} we show the cumulative distributions of the star-forma
 
 Fig.~\ref{fig:sfms_ssfr} is similar to Fig.~\ref{fig:sfms_sfr}, except that here SFR has been normalised by stellar mass, and thus shows the specific star-formation rate (sSFR), which is more representative measure of the star-forming intensity compared to galaxies of the same mass. It is once again clear that RET hosts lie systematically above the majority of SDSS star-forming galaxies. Normalised by mass, it is here perhaps clearer to see that RET hosts lie at higher sSFR than CCSNe hosts.
 
-As for SFR, we show the cumulative distribution of sSFR in Fig.~\ref{fig:ssfr_cum}. The RET hosts are clearly shifted to higher sSFRs than CCSNe. To compare statistically the host sSFR distribution of RETs with the other samples, we employ the method of \citet{Wiseman2020}. For each pair of samples, we model the PDFs as skewed normal distributions. For both samples, we use identical normal priors for the `mean' and `scale'\footnote{See \citet{Wiseman2020} for a detailed description of the parameters describing the skewed normal distributions}, centred on the mean and twice the standard deviation of the two samples combined. 
+As for SFR, we show the cumulative distribution of sSFR in Fig.~\ref{fig:ssfr_cum}. The RET hosts are clearly shifted to higher sSFRs than CCSNe. To statistically compare the host sSFR distribution of RETs with the other samples, we employ the method of \citet{Wiseman2020}. For each pair of samples, we model the PDFs as skewed normal distributions. For both samples, we use identical normal priors for the `mean' and `scale'\footnote{See \citet{Wiseman2020} for a detailed description of the parameters describing the skewed normal distributions}, centred on the mean and twice the standard deviation of the two samples combined. 
 
 \subsection{Metallicity \label{subsec:res_metallicity}}
 
@@ -415,7 +410,8 @@ The population of RET hosts lies, on average, between CCSNe and LGRBs/SLSNe in t
 Many classes of transients show trends between properties intrinsic to the objects themselves and their host galaxies. For example, SNe Ia lightcurves appear to be broader in less massive galaxies with higher sSFR \citep{Sullivan2006,Neill2009,Howell2009,Sullivan2010,Roman2018,Kelsey2020}, while SLSNe that have been fit with a magnetar model show a tentative relationship between the magnetar spin period and host galaxy metallicity \citep{Chen2016a}. In Fig. \ref{fig:ret_v_host} we show the RET peak magnitude (upper pannels) and decline rate parameterised as $t_{\mathrm{half}}$, the time taken for the LC to decline to half the peak brightness (lower panels) and how they correspond to host galaxy stellar mass (left-hand panels) and sSFR (right-hand panels). The decline rates have been converted to the rest-frame of the transients, while the peak magnitudes have been k-corrected assuming a simple blackbody SED. There is no correlation between decline rate and either stellar mass or sSFR, while there are hints of a trend between peak magnitude and both mass and sSFR. These apparent trends are driven by the more extreme hosts (the three with $\log\left(M_*/M_{\odot}\right) < 9$ and one with very high mass/low sSFR). Assuming that these points are not outliers, the trends are still likely driven by selection effects. At higher redshifts, only the brighter transients are recovered by the survey and our selection method, while at those redshifts only the more massive galaxies are detected. This effect can be seen in the Fig. \ref{fig:ret_v_host} panel a, with redshift increasing from the lower left to the upper right, while the same is true from the upper left to lower right in panel b. It is hoped that a complete, volume-limited sample of RETs will be obtained by The Rubin Observatory Legacy Survey of Space and Time (LSST) allowing the removal of these biases in order to reveal any underlying relationships.
 
 \subsection{Comparison with AT2018cow \label{subsec:disc_cow}}
-\phil{To add!}
+
+The nearby transient AT2018cow has drawn many comparisons to the cosmological RETs from DES and PS1 \citep[e.g.][]{Perley2019,Margutti2019,Mohan2020,Fox2020} due to its rapid evolution and blue colour. 
 
 \subsection{The passive host of DES16C1cbd \label{subsec:disc_cbd}}
 In Figs. \ref{fig:sfms_sfr} and \ref{fig:sfms_ssfr} there is one clear outlier with very low SFR. The host of DES16C1cbd appears to be a passive galaxy
