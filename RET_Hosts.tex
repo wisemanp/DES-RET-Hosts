@@ -82,6 +82,8 @@
 %define some nice astro shortcuts
 \newcommand{\halpha}[0]{H$\alpha$}
 \newcommand{\hbeta}[0]{H$\beta$}
+\newcommand{\hgamma}[0]{H$\gamma$}
+\newcommand{\hdelta}[0]{H$\delta$}
 \newcommand{\OII}[0]{$[\textnormal{\textsc{Oii}}]$}
 \newcommand{\OIII}[0]{$[\textnormal{\textsc{Oiii}}]$}
 \newcommand{\SII}[0]{$[\textnormal{\textsc{Sii}}]$}
@@ -115,7 +117,8 @@ P. Wiseman$^1$\thanks{E-mail: p.s.wiseman@soton.ac.uk (PW)},
  %M. Pursiainen$^1$,
  %M. J. Childress$^1$,
  %M. Smith$^1$,
- and Other Authors$^{1,2}$,
+ %E. Swann$^2$,
+ and Other Authors$^{1,2,3}$,
 \newauthor
 (The DES Collaboration)
 \\
@@ -181,6 +184,43 @@ Where applicable, we adopt a spatially flat $\Lambda$CDM cosmology with the para
 \label{fig:selection}}
 \end{figure}
 
+\begin{table*}
+\begin{center}
+\caption{Host galaxy information for the 49 RETs with a host galaxy redshift. A full-length, machine-readable version of this table is available in the online version of the manuscript.}
+
+\begin{threeparttable}
+\begin{tabular}{llllllll}
+
+\toprule
+{} &       RA &       Dec &    $m_r$\tnote{a}  &     $z$ &     Survey & Exposure time (hours) \tnote{b} \\
+Transient name &          &           &          &         &         &            &               \\
+\midrule
+DES13C3avkj    & 51.97076 & -27.52792 & $24.07 \pm 0.04$ &    \tnote{c} &      OzDES &             - \\
+DES13X3gms     & 35.80095 &  -4.49384 & $23.02 \pm 0.06$ & 0.6479 &      OzDES &       6.58 \\
+DES13C1tgd     & 54.06436 & -27.63867 & $20.30 \pm 0.05$ & 0.1964 &      OzDES &      10.16 \\
+DES13C3abtt    & 52.62108 & -28.16151 & $21.50 \pm 0.03$ &    \tnote{d} &          - &             - \\
+DES13S2wxf\tnote{e}     & 41.61268 &  -0.02634 & $21.31 \pm 0.03$ & 0.5698 &      OzDES &       5.41 \\
+DES13X1hav     & 35.03245 &  -5.11022 & $23.63 \pm 0.07$ & 0.5823 &      OzDES &       4.00 \\
+DES13C3smn     & 51.97112 & -28.08362 & $25.30 \pm 0.06$ &    \tnote{c} &      OzDES &             - \\
+DES13X3nyg     & 36.99228 &  -3.91327 & $23.38 \pm 0.06$ & 0.7120 &      OzDES &      45.50 \\
+DES13X3gmd\tnote{e}     & 36.50409 &  -4.21949 & $22.90 \pm 0.05$ & 0.7808 &      OzDES &      13.91 \\
+DES13C3bcok    & 53.02711 & -28.62476 & $18.61 \pm 0.02$ & 0.3457 &  NOAO\_0522 &               \\
+DES13X3afjd    & 37.00386 &  -4.58049 & $20.75 \pm 0.05$ &    \tnote{d} &          - &             - \\
+DES13C1acmt    & 54.32925 & -26.83371 & $23.18 \pm 0.04$ &    \tnote{c} &      OzDES &             - \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item[a] Apparent $r$-band Kron magnitude according to DES-SN deep coadds of \citet{Wiseman2020}, not corrected for Galactic foreground reddening.
+\item[b] Exposure time only given for spectra which we have used for line measurements rather than just redshift.
+\item[c] Host targetted by OzDES but no redshift measurement possible.
+\item[d] Host not targetted by OzDES
+\item[e] Found by updated search method (Section \ref{subsec:new_method})
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+\label{tab:obs}
+\end{table*}
+
 \begin{figure*}
 \includegraphics[width=\textwidth]{figs/RET_Mosaic.png}
 \caption{Selection of DES RET host galaxies in an RGB composite of the DES $gri$ band deep coadds from \citet{Wiseman2020}. The locations of the transients are indicated with cyan crosses. \phil{Need to redo with more obvious scalebar and crosses}.
@@ -203,24 +243,24 @@ Where applicable, we adopt a spatially flat $\Lambda$CDM cosmology with the para
 
 We derive our sample from the 106 RETs discovered in the 5-year DES-SN transient survey. This number expands upon the 72 of \citetalias{Pursiainen2018}. The first reason for the increased sample size is the use of the 5th year of DES-SN, where \citetalias{Pursiainen2018} were only able to make use of the first four years. The second reason is an update to the sample selection technique. By imposing the \citetalias{Pursiainen2018} selection criteria on season 5, the sample is increased to 92 objects.
 
-\subsection{Improvements to the search method}
+\subsection{Improvements to the search method \label{subsec:new_method}}
 
 \miika{Miika to verify!}
-The original method of finding RETs in the DES-SN data (and presented in \citetalias{Pursiainen2018}) was designed to be simple and used light curve modelling with Gaussian and linear fits. The simplistic method made it possible to look for exotic transients without knowing their observed characteristics beforehand and resulted in a large sample of photometrically selected fast transients. However, as the search was simplistic and relied heavily on visual inspection of the available data (etc. images, light curves, host galaxy information), it is impossible to be sure how complete the sample is. For instance, due to the large redshift range within the sample it is entirely possible that distant events could have been missed due to time dilation. Here, a more sophisticated search method is presented. As only a fraction of transients in DES-SN have redshift information from host galaxy, the search must be done in the observer frame.  The key features of RETs that distinguishes them from most traditional SNe types are the fast light curve evolution and blue colour at peak. Even though both of these quantities depend on the redshift of the transient, they still seem to distinguish the the fast events from traditional SN types. 
+The original method of finding RETs in the DES-SN data (and presented in \citetalias{Pursiainen2018}) was designed to be simple and used light curve modelling with Gaussian and linear fits. The simplistic method made it possible to look for exotic transients without knowing their observed characteristics beforehand and resulted in a large sample of photometrically selected fast transients. However, as the search was simplistic and relied heavily on visual inspection of the available data (etc. images, light curves, host galaxy information), it is impossible to be sure how complete the sample is. For instance, due to the large redshift range within the sample it is entirely possible that distant events could have been missed due to time dilation. Here, a more sophisticated search method is presented. As only a fraction of transients in DES-SN have redshift information from host galaxy, the search must be done in the observer frame.  The key features of RETs that separate them from most traditional SNe types are the fast light curve evolution and blue colour at peak. Even though both of these quantities depend on the redshift of the transient, they still seem to distinguish the the fast events from traditional SN types. 
 
-To assess the distinguishing photometric properties of RETs, we take the sample of 72 \textcolor{green}{(92)} from the \citetalias{Pursiainen2018} method along with spectroscopically confirmed SNe of types Ia, Ibc, II, and SLSNe from DES that pass the following criteria:
+To assess the unique photometric properties of RETs, we take the sample of 72 from the \citetalias{Pursiainen2018} method, updated with 20 extra objects found using that method in the fifth season of DES, along with spectroscopically confirmed SNe of types Ia, Ibc, II, and SLSNe from DES that pass the following criteria:
 \begin{enumerate}
 \item The transient was only detected in one DES-SN observing season.
 \item Maximum observed brightness in both $g$- and $r$-bands was brighter than 24 mag (in the eight `shallow' DES-SN fields) or 25 mag (in the two `deep' fields).
 \item $g$- and $r$-band observations used for the colour had to be taken within 2 days in observer frame.
 \end{enumerate}
 
-Of objects passing these cuts, the RETs cluster at shorter timescales and bluer colours than other SNe, even in the observer frame. However, using photometric data points directly has several problems that can be improved. For one, measuring peak colour is problematic: DES-SN did not always observe $g$- and $r$-bands on the same or even consecutive nights, thus making it impossible to measure the peak colour in a number of cases. Measuring rise times of 10-15 days is difficult to perform with a one week cadence when it has to be done without fitting a light curve model, hence the rise time values are spread over a wide range. To negate this issue, we interpolate the light curves using the method of Gaussian processes (GP). \textcolor{green}{(To negate this issue, we use the interpolated GP LCs presented in Pursiainen et al. 2019)} The interpolated light curves have a 0.5 day cadence and every epoch has a flux value, and an associated uncertainty, for each band. Using this technique, SNe Ia and RETs populate two distinct regions of $g-r$-$t_{\mathrm{rise; r}}$ parameter space (Fig. \ref{fig:selection}) and are thus easier to separate. We define a region in this parameter space which minimises the contamination of non-RETs (purity) while maximising the total fraction of RETs (completeness). The resulting limits are $-1.5 < g-r < 0.6 $ and $t_{\mathrm{rise; r}} <16.5$, and the parameter space can be seen in Fig. \ref{fig:selection}.
+Of objects passing these cuts, the RETs cluster at shorter timescales and bluer colours than other SNe, even in the observer frame. However, using photometric data points directly has several problems that can be improved. For one, measuring peak colour is problematic: DES-SN did not always observe $g$- and $r$-bands on the same or even consecutive nights, thus making it impossible to measure the peak colour in a number of cases. Measuring rise times of 10-15 days is difficult to perform with a one week cadence when it has to be done without fitting a light curve model, hence the rise time values are spread over a wide range. To negate this issue, we use the interpolated GP LCs presented in \citet{Pursiainen2019}. The interpolated light curves have a 0.5 day cadence and every epoch has a flux value, and an associated uncertainty, for each band. Using this technique, SNe Ia and RETs populate two distinct regions of $g-r$-$t_{\mathrm{rise; r}}$ parameter space (Fig. \ref{fig:selection}) and are thus easier to separate. We define a region in this parameter space which minimises the contamination of non-RETs (purity) while maximising the total fraction of RETs (completeness). The resulting limits are $-1.5 < g-r < 0.6 $ and $t_{\mathrm{rise; r}} <16.5$, and the parameter space can be seen in Fig. \ref{fig:selection}.
 
-We process all $\sim 30,000$ DES-SN transient candidates with GP. In order to reduce the contamination from active galactic nuclei (AGN), we use a basic convolutional neural network (CNN) classifier which we train on spectrosopically confirmed objects, and use to separate the sample into two subtypes: AGN-like and SNe-like. The classifier returns SNe-like objects with an accuracy of 0.992 on the test set; the remaining AGN are likely removed by the final manual vetting. \textcolor{green}{(I'll find the list of AGN and find out where they are from.)}
+We process all $\sim 30,000$ DES-SN transient candidates with GP. In order to reduce the contamination from active galactic nuclei (AGN), we use a basic convolutional neural network (CNN) classifier. We train the CNN on spectrosopically confirmed SNe of all types and on spectroscopically typed AGN, and use it to separate the sample into two photometric subtypes: AGN-like and SNe-like. The classifier returns SNe-like objects with an accuracy of 0.992 on the test set; the remaining AGN are removed by the final manual vetting. \textcolor{green}{(I'll find the list of AGN and find out where they are from.)}
 The SNe passing the CNN classifier are subjected to the LC quality cuts, resulting in 2259 objects, of which 939 lie inside the colour and rise-time region which we defined as RETs. These objects are subject to a further set of cuts. We impose a cut based on a fit of the LC with the \texttt{PSNID} software (\citet{Sako2008}). We use thresholds of \texttt{FITPROB}$<0.91$ and \texttt{PBAYES}$<0.82$ to remove highly-probably SNe Ia, which removes 46 objects from the RET parameter space. In order to further remove longer-lived SNe, the decline time to half of the peak brightness must be $<24$ days. This removes 347 SNe, resulting in 546 objects remaining inside the parameter space. The final 564 transients have been visually inspected, with the majority rejected for being spurious detections, obvious multi-season variability that was not picked up by the CNN, or showing evidence for a longer timescale decline. 
 
-Using the above method recovers 87 of the 92 RETs found using the \citetalias{Pursiainen2018} technique, and adds a further 14. \textcolor{green}{The five were not recovered as their GP lightcurves were fainter than the limits given above in either g or r band.}
+Using the above method recovers 87 of the 92 RETs found using the \citetalias{Pursiainen2018} technique, and adds a further 14. The five were not recovered as their GP lightcurves were fainter than the limits given above in either g or r band.
 We refer to the resulting sample as DES RETs. Of the 106 objects in the sample, 97 have a host galaxy detected in deep host galaxy photometry of \citet{Wiseman2020}, of which 49 have a host galaxy spectroscopic redshift. A further three have redshifts obtained from narrow lines observed in spectra of the transients themselves. We do not consider these three objects for the analysis, since we are unable to separate transient and host contributions to the spectra. The observational properties of the 49 hosts with redshift are displayed in Table \ref{tab:obs}.
 
 \subsection{Comparison samples \label{subsec:comparison}}
@@ -243,39 +283,6 @@ The host galaxy photometry for the sample of RETs is taken from the catalogue of
 Accurate redshifts for DES-SN were obtained by OzDES\footnote{Australian (Oz) Dark Energy Survey}, a dedicated DES spectroscopic follow-up campaign based at the $3.9~\textrm{m}$ Anglo-Australian Telescope (AAT) using the AAOmega fibre-fed spectrograph and 2dF fibre positioner. The observation strategy of OzDES was to point at one of the ten DES-SN fields, and place fibres at the positions of transient hosts, continually coadding the spectra of a particular host until a redshift was obtained at which point the fibre could be allocated to a different transient. The spectra have a resolution of 1400-1700 and a wavelength range of 3700$\AA - 8800\AA$, and are reduced using a modified version of 2dfdr \citep{Croom2004} along with internal scripts. Extensive description and discussion of OzDES can be found in \citet{Yuan2015,Childress2017,Lidman2020}.
 Objects for which the host already had a publicly available redshift were not observed with OzDES, but merged into the General Redshift Catalogue nontheless. Where the spectra from which those redshifts were derived are also public they are included in this analysis. These comprise the Galaxy and Mass Assembly survey (GAMA \citealt{Driver2009,Baldry2018}), the Sloan Digital Sky Survey Data Release 16 (SDSS DR16; \citealt{Ahumada2019}). In total we analyse 42 spectra, with a mean continuum signal-to-noise ratio (SNR) of 2.56. We stress that the emission lines are detected with a higher SNR than this.
 
-\begin{table*}
-\begin{center}
-\caption{Host galaxy information for the 49 RETs with a host galaxy redshift. A full-length, machine-readable version of this table is available in the online version of the manuscript.}
-
-\begin{threeparttable}
-\begin{tabular}{llllllll}
-
-\toprule
-{} &       RA &       Dec &    $m_r$\tnote{a}  &     $z$ &     Survey & Exposure time (hours) \tnote{b} \\
-Transient name &          &           &          &         &         &            &               \\
-\midrule
-DES13X3gms     & 35.80095 &  -4.49384 & $23.02 \pm 0.06$ & 0.6479 &      OzDES &       6.58 \\
-DES13C1tgd     & 54.06436 & -27.63867 & $20.30 \pm 0.05$ & 0.1964 &      OzDES &      10.16 \\
-DES13S2wxf     & 41.61268 &  -0.02634 & $21.31 \pm 0.03$ & 0.5698 &      OzDES &       5.41 \\
-DES13X1hav     & 35.03245 &  -5.11022 & $23.63 \pm 0.07$ & 0.5823 &      OzDES &       4.00 \\
-DES13X3nyg     & 36.99228 &  -3.91327 & $23.38 \pm 0.06$ & 0.7120 &      OzDES &      45.50 \\
-DES13X3gmd     & 36.50409 &  -4.21949 & $22.90 \pm 0.05$ & 0.7808 &      OzDES &      13.91 \\
-DES13C3bcok    & 53.02711 & -28.62476 & $18.61 \pm 0.02$ & 0.3457 &  NOAO\_0522 &               \\
-DES13C3uig     & 52.94416 & -27.58544 & $22.17 \pm 0.03$ & 0.6734 &       ACES &               \\
-DES13X2wvv     & 34.86526 &  -6.71603 & $21.89 \pm 0.02$ & 0.4750 &      OzDES &       4.50 \\
-DES14S2anq     & 41.27776 &  -0.74529 & $17.57 \pm 0.03$ & 0.0521 &      OzDES &       0.75 \\
-DES14X1bnh     & 33.74902 &  -4.79254 & $21.95 \pm 0.03$ & 0.8298 &      OzDES &       3.50 \\
-DES15S1fli     & 43.18790 &  -0.88620 & $20.98 \pm 0.02$ & 0.4473 &      OzDES &       2.33 \\
-\bottomrule
-\end{tabular}
-\begin{tablenotes}
-\item[a] Apparent $r$-band Kron magnitude according to DES-SN deep coadds of \citet{Wiseman2020}, not corrected for Galactic foreground reddening.
-\item[b] Exposure time only given for spectra which we have used for line measurements rather than just redshift.
-\end{tablenotes}
-\end{threeparttable}
-\end{center}
-\label{tab:obs}
-\end{table*}
 \begin{figure*}
 \includegraphics[width=\textwidth]{figs/gal_spec.png}
 \caption{The spectrum of DES16C2ggt, decomposed into its constituent components according to the \texttt{pPXF} fit. 
@@ -301,6 +308,38 @@ To estimate parameters from the OzDES host galaxy spectra requires several proce
 
 In order to subtract the stellar component of the host galaxy spectra, we use the Penalized PiXel-Fitting software (\texttt{pPXF}; \citealt{Cappellari2004,Cappellari2012,Cappellari2017}), using the MILES library of single stellar populations \citep{Vazdekis2010}. By subtracting the best-fitting composite stellar spectrum from the \texttt{pPXF} fit, we are left with a `gas' spectrum, comprising the emission lines. An example of this procedure is shown in Fig. \ref{fig:host_spec}. We fit the emission lines using \texttt{PySpecKit} \citep{Ginsburg2011}. In order to estimate the uncertainty on the emission line fluxes, we fit $10^4$ realisations of the line, each time adding perturbations to the line by drawing from a Gaussian distribution centered on 0, and with a standard deviation equal to the root-mean-square (RMS) of the measured flux noise in a 100~\AA~window around the central wavelength of the line. We take the mean and standard deviation of the resulting fits as our flux and its uncertainty, respectively.
 
+
+\begin{table*}
+
+\caption{Host galaxy properties for the 49 DES RET host galaxies with redshifts and host galaxy spectra. The full table is available online in the online version in a machine readable format.}
+\begin{threeparttable}
+\begin{tabular}{lrrrllllll}
+\toprule
+Transient Name &$\log \left(M_*\right)$ &$\log \left(\mathrm{SFR}\right)$ &  $\log \left(\mathrm{sSFR}\right)$ &                                                           \multicolumn{6}{c}{$12+\log\left(\mathrm{O/H}\right)\tnote{a} $}\\
+%\midrule
+{} & $\left( M_{\odot}\right)$ & $\left(M_{\odot} \mathrm{yr}^{-1}\right)$&$\left(M_{\odot}\ \mathrm{yr}^{-1} M_{\odot}^{-1}\right)$& Best &                                                           D16 &                                                       PP04 N2 &                                                     PP04 O3N2 &                                                      KK04 R23 &                                                   Average O3N2\tnote{b}\\
+\midrule
+DES13X3gms &   $9.41 _{\scriptscriptstyle 0.16} ^{\scriptscriptstyle 0.27}$ &  $-0.06 _{\scriptscriptstyle 0.51} ^{\scriptscriptstyle 0.78}$ &   $-9.47 _{\scriptscriptstyle 0.35} ^{\scriptscriptstyle 0.52}$ &  $8.55 _{\scriptscriptstyle 0.86} ^{\scriptscriptstyle 0.37}$ &                                                             - &                                                             - &                                                             - &  $8.55 _{\scriptscriptstyle 0.86} ^{\scriptscriptstyle 0.37}$ &   $8.22 _{\scriptscriptstyle 0.35} ^{\scriptscriptstyle 0.35}$ \\
+DES13C1tgd &  $10.24 _{\scriptscriptstyle 0.09} ^{\scriptscriptstyle 0.08}$ &   $0.10 _{\scriptscriptstyle 0.47} ^{\scriptscriptstyle 0.38}$ &  $-10.14 _{\scriptscriptstyle 0.39} ^{\scriptscriptstyle 0.30}$ &  $8.64 _{\scriptscriptstyle 0.06} ^{\scriptscriptstyle 0.06}$ &  $8.59 _{\scriptscriptstyle 0.03} ^{\scriptscriptstyle 0.03}$ &  $8.68 _{\scriptscriptstyle 0.03} ^{\scriptscriptstyle 0.03}$ &                                                             - &                                                             - &   $8.75 _{\scriptscriptstyle 0.03} ^{\scriptscriptstyle 0.03}$ \\
+DES13S2wxf &   $9.86 _{\scriptscriptstyle 0.03} ^{\scriptscriptstyle 0.06}$ &   $0.29 _{\scriptscriptstyle 0.07} ^{\scriptscriptstyle 0.10}$ &   $-9.57 _{\scriptscriptstyle 0.04} ^{\scriptscriptstyle 0.04}$ &  $8.58 _{\scriptscriptstyle 0.58} ^{\scriptscriptstyle 0.27}$ &                                                             - &                                                             - &                                                             - &  $8.58 _{\scriptscriptstyle 0.58} ^{\scriptscriptstyle 0.27}$ &   $8.25 _{\scriptscriptstyle 0.25} ^{\scriptscriptstyle 0.25}$ \\
+DES13X1hav &   $9.16 _{\scriptscriptstyle 0.16} ^{\scriptscriptstyle 0.38}$ &  $-0.44 _{\scriptscriptstyle 0.37} ^{\scriptscriptstyle 0.93}$ &   $-9.60 _{\scriptscriptstyle 0.21} ^{\scriptscriptstyle 0.55}$ &  $8.51 _{\scriptscriptstyle 0.75} ^{\scriptscriptstyle 0.39}$ &                                                             - &                                                             - &                                                             - &  $8.51 _{\scriptscriptstyle 0.75} ^{\scriptscriptstyle 0.39}$ &   $8.20 _{\scriptscriptstyle 0.36} ^{\scriptscriptstyle 0.36}$ \\
+DES13E2lpk &  $10.66 _{\scriptscriptstyle 0.09} ^{\scriptscriptstyle 0.10}$ &   $0.46 _{\scriptscriptstyle 0.36} ^{\scriptscriptstyle 0.45}$ &  $-10.20 _{\scriptscriptstyle 0.27} ^{\scriptscriptstyle 0.35}$ &  $8.92 _{\scriptscriptstyle 0.03} ^{\scriptscriptstyle 0.03}$ &                                                             - &                                                             - &                                                             - &  $8.92 _{\scriptscriptstyle 0.03} ^{\scriptscriptstyle 0.03}$ &   $8.58 _{\scriptscriptstyle 0.03} ^{\scriptscriptstyle 0.03}$ \\
+DES15C2eal &   $8.42 _{\scriptscriptstyle 0.09} ^{\scriptscriptstyle 0.18}$ &  $-1.29 _{\scriptscriptstyle 0.30} ^{\scriptscriptstyle 0.33}$ &   $-9.72 _{\scriptscriptstyle 0.21} ^{\scriptscriptstyle 0.15}$ &  $8.29 _{\scriptscriptstyle 0.35} ^{\scriptscriptstyle 0.25}$ &  $7.97 _{\scriptscriptstyle 0.51} ^{\scriptscriptstyle 0.29}$ &  $8.29 _{\scriptscriptstyle 0.18} ^{\scriptscriptstyle 0.15}$ &  $8.34 _{\scriptscriptstyle 0.20} ^{\scriptscriptstyle 0.15}$ &  $8.52 _{\scriptscriptstyle 0.49} ^{\scriptscriptstyle 0.57}$ &   $8.28 _{\scriptscriptstyle 0.17} ^{\scriptscriptstyle 0.30}$ \\
+DES16C2ggt &   $9.86 _{\scriptscriptstyle 0.29} ^{\scriptscriptstyle 0.36}$ &   $0.13 _{\scriptscriptstyle 0.46} ^{\scriptscriptstyle 0.94}$ &   $-9.73 _{\scriptscriptstyle 0.18} ^{\scriptscriptstyle 0.59}$ &  $8.53 _{\scriptscriptstyle 0.15} ^{\scriptscriptstyle 0.39}$ &  $8.37 _{\scriptscriptstyle 0.04} ^{\scriptscriptstyle 0.04}$ &  $8.51 _{\scriptscriptstyle 0.02} ^{\scriptscriptstyle 0.02}$ &  $8.54 _{\scriptscriptstyle 0.01} ^{\scriptscriptstyle 0.01}$ &  $8.93 _{\scriptscriptstyle 0.02} ^{\scriptscriptstyle 0.02}$ &   $8.56 _{\scriptscriptstyle 0.02} ^{\scriptscriptstyle 0.02}$ \\
+DES17C2hno &   $9.56 _{\scriptscriptstyle 0.21} ^{\scriptscriptstyle 0.16}$ &  $-0.02 _{\scriptscriptstyle 0.44} ^{\scriptscriptstyle 0.33}$ &   $-9.58 _{\scriptscriptstyle 0.24} ^{\scriptscriptstyle 0.17}$ &  $8.94 _{\scriptscriptstyle 0.17} ^{\scriptscriptstyle 0.09}$ &                                                             - &                                                             - &                                                             - &  $8.94 _{\scriptscriptstyle 0.17} ^{\scriptscriptstyle 0.09}$ &   $8.60 _{\scriptscriptstyle 0.19} ^{\scriptscriptstyle 0.11}$ \\
+
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item[a] Linear combination of the likelihoods for D16, PP04 N2, PP04 O3N2, KK04 R23.
+\item[b] Weighted average of PP04 N2, PP04 O3N2, and KK04 R23, where N2 and R23 were converted to PP04 O3N2 via \citet{Kewley2008}.
+
+\end{tablenotes}
+\end{threeparttable}
+\label{tab:derived}
+\end{table*}
+
+
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{figs/SFR_Mike.png}
 \caption{The SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
@@ -319,6 +358,8 @@ The most common method used to estimate the metallicity of galaxies is to use em
 Due to the low S/N of the spectra in this sample, we are constrained to a subset of these diagnostics by the availability of only a handful of the strongest emission lines, namely \halpha, \hbeta, \OII 3727, \OIII 4959 and 5007, \NII 6548 and 6583, and \SII 6717 and 6731. Furthermore, for each host galaxy only a subset of these lines are detected - for example, \halpha, \NII and \SII are redshifted out of the spectral coverage at $z>0.3$, leaving only the oxygen and \hbeta lines available, mandating the use of the R23 diagnostic. For hosts at $z<0.3$ we are able to use the \OIII /\NII (O3N2), \NII /\halpha (N2), and \SII /\NII (S2N2) line ratios. 
 
 Due to the redshift range of our sample, and the limited wavelength coverage of the spectra ($3000-8000~\AA$), we are unable to use a single line ratio to estimate the oxygen abundances. We thus determine a set of indicators for which to calculate abundances. For the O3N2 and N2 indicators we use the calibration of \citet{Pettini2004} (PP04), and if \SII is detected we derive an abundance using the S2N2 diagnostic of \citet{Dopita2016}. For the R23 indicator, we use the calibration of \citet{Kobulnicky2004} (KK04). At abundances around $12 + \log \mathrm{(O/H)} \sim 8.4$, the R23 indicator becomes two-tailed, with a low and a high value of metallicity corresponding to a single R23 ratio. In cases where the lines are available, we break this degeneracy by cross-calibrating with the \NII / \OII ratio \citep{Kewley2008}. In the cases where \NII is not available, and there are no other diagnostics that can be used to inform the choice of branch, we use the host galaxy mass to derive a crude metallicity estimate from the MZR of \citet{Kewley2008} based upon the PP04 O3N2 diagnostic. For $12 + \log \mathrm{(O/H)}_{\mathrm{MZR}} < 8.4$ we chose the lower branch, while for higher MZR metallicities we choose the upper branch.
+
+Following the prescription of \citet{Kruehler2015} we simultaneously minimise the oxygen abundance against the results from the probability density functions (PDFs) of the various different diagnostics, resulting in a final `best' PDF. We take $1\sigma$ uncertainties from the 16th and 84th percentiles of these PDFs, and display the results in Table \ref{tab:derived}.
 
 The samples to which we compare metallicities span different redshift ranges, were observed with different equipment, and in many cases were compiled before certain (particularly the D16) diagnostics were devised. Therefore, in order to compare oxygen abundances between different samples we transform all abundances onto the scale of PP04 (O3N2) using the conversion from \citet{Kewley2008}. This is not possible for the D16 diagnostic, so we discard it from the rest of our analysis, although for completeness we provide for DES RET hosts where available. For samples that quoted multiple diagnostics, or for which sufficient line flux measurements were provided from which to calculate multiple diagnostics, we calculate a weighted mean of the values after transforming them to the PP04 O3N2 scale.
 
@@ -413,10 +454,12 @@ Many classes of transients show trends between properties intrinsic to the objec
 
 The nearby transient AT2018cow has drawn many comparisons to the cosmological RETs from DES and PS1 \citep[e.g.][]{Perley2019,Margutti2019,Mohan2020,Fox2020} due to its rapid evolution and blue colour. AT2018cow displayed a contracting photosphere as well as evidence for central-engine power alongside an unusual spectrum that showed similarities to broad-lined SNe Ic (SN Ic-bl) at early stages \citep[e.g.][]{Xu2018,Izzo2018} , developing to something entirely different later on \citep{Perley2019} with hints of similarities to interacting SNe Ibn \citep{Fox2020}. There have been several suggestions that AT2018cow is indeed an analogue of the high-z RETs. The host galaxy of AT2018cow appears to be moderately star forming and lies very close to the centre of the SFMS (Figs. \ref{fig:sfms_sfr},\ref{fig:sfms_ssfr}), along with many of the DES RET hosts. However, the host lies significantly above the fiducial MZR in Fig. \ref{fig:mzr}, suggesting that it has an abnormally high metallicity for its stellar mass. This is in contrast to the DES RET hosts, which are systematically less enriched for a given stellar mass. 
 
-Other local rapid transients include SN2018gep \citep{Ho2019}, a spectroscopically classified SN Ic-bl with a rapid rise. The host of SN2018gep appears more similar to the DES RET sample, lying in the same $M_*$-SFR and $M*$-sSFR plane, as well as lying below the MZR. The authors' conclusion that SN2018gep is related to a shock-breakout of a massive, stripped-envelope star is similar to that posited in Section \ref{subsec:disc_origin}. SN2018kzr \citep{McBrien2019} is one of the most rapidly declining transients ever discovered, with spectral signatures similar to SNe Ic. While host galaxy properties are not derived, the authors of that paper refer to narrow emission from the host galaxy, along with an apparently small, blue, star-forming host. 
+Other local rapid transients include SN2018gep \citep{Ho2019}, a spectroscopically classified SN Ic-bl with a rapid rise. The host of SN2018gep appears more similar to the DES RET sample, lying in the same $M_*$-SFR and $M*$-sSFR plane, as well as lying below the MZR. While the SN2018gep host is lower in stellar mass than any DES RET ($\log \left(M/M_{\odot}\right) =8.11$, galaxies of that mass are unlikely to have been detected at the redshifts of the DES RETs \citep{Wiseman2020}. The authors' conclusion that SN2018gep is related to a shock-breakout of a massive, stripped-envelope star is similar to that posited in Section \ref{subsec:disc_origin}. SN2018kzr \citep{McBrien2019} is one of the most rapidly declining transients ever discovered, with spectral signatures similar to SNe Ic. While host galaxy properties are not derived, the authors of that paper refer to narrow emission from the host galaxy, along with an apparently small, blue, star-forming host. 
 
 \subsection{The passive host of DES16C1cbd \label{subsec:disc_cbd}}
-In Figs. \ref{fig:sfms_sfr} and \ref{fig:sfms_ssfr} there is one clear outlier with very low SFR. The host of DES16C1cbd appears to be a passive galaxy
+In Figs. \ref{fig:sfms_sfr} and \ref{fig:sfms_ssfr} there is one clear outlier with very low SFR. The host of DES16C1cbd appears to be a passive galaxy 
+
+\phil{Adding more once I know about the SFR from [OII]}
 \section{Conclusions}
 
 By analysing the host galaxies of 49 rapidly evolving transients (RETs) discovered in the Dark Energy Survey, we have been able to place constraints on the nature of this as-yet unexplained phenomenon. 
@@ -484,10 +527,60 @@ This manuscript has been authored by Fermi Research Alliance, LLC under Contract
 
 \appendix
 
-\section{Some extra material}
+\section{Spectral line fluxes}
+\begin{table*}
+\caption{Emission line fluxes for DES RET host galaxies. Values are given in units of erg/cm/s/\AA, and have been corrected for Milky Way reddening using \citet{Schlegel1998}, assuming a \citet{Cardelli1989} with $R_V = 3.1$, but not for intrinsic host galaxy reddening.}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llllllllllll}
+\toprule
+{} &              \OII 3727 &             \OIII 4960 &              \OIII 5007 &             \NII 6549 &             \NII 6585 &             \SII 6717 &             \SII 6731 &           \hdelta &            \hgamma &             \hbeta &            \halpha \\
+\midrule
+DES13X3gms &  $43.3 \pm 27.7$ &   $10.9 \pm 7.9$ &    $32.9 \pm 7.9$ &               - &               - &               - &               - &   $2.0 \pm 7.6$ &   $17.0 \pm 7.1$ &    $6.3 \pm 9.5$ &                - \\
+DES13C1tgd &    $1.9 \pm 0.7$ &    $0.0 \pm 0.1$ &     $0.0 \pm 0.1$ &   $0.5 \pm 0.1$ &   $1.6 \pm 0.1$ &   $1.1 \pm 0.0$ &   $0.8 \pm 0.0$ &   $0.9 \pm 0.2$ &    $1.3 \pm 0.1$ &    $0.2 \pm 0.1$ &    $4.5 \pm 0.2$ \\
+DES13S2wxf &   $22.1 \pm 5.3$ &    $3.2 \pm 2.0$ &     $9.8 \pm 2.0$ &               - &               - &               - &               - &   $2.4 \pm 1.0$ &    $4.3 \pm 0.8$ &    $4.5 \pm 2.1$ &                - \\
+DES13X1hav &  $31.4 \pm 49.1$ &  $10.5 \pm 12.0$ &   $31.9 \pm 12.0$ &               - &               - &               - &               - &   $0.0 \pm 6.2$ &   $5.2 \pm 11.5$ &   $10.6 \pm 4.8$ &                - \\
+DES13X3nyg &   $15.1 \pm 1.6$ &    $3.2 \pm 0.4$ &     $9.8 \pm 0.4$ &               - &               - &               - &               - &   $0.5 \pm 0.4$ &    $0.0 \pm 0.6$ &    $3.3 \pm 0.4$ &                - \\
+DES13X3gmd &   $18.8 \pm 5.3$ &                - &                 - &               - &               - &               - &               - &   $1.9 \pm 3.8$ &    $2.3 \pm 2.7$ &    $7.0 \pm 8.3$ &                - \\
+DES13X2wvv &  $61.5 \pm 14.4$ &    $7.4 \pm 3.6$ &    $22.6 \pm 3.6$ &               - &               - &               - &               - &   $2.7 \pm 4.9$ &    $1.1 \pm 3.3$ &   $10.3 \pm 2.8$ &                - \\
+DES14S2anq &  $486.0 \pm 0.4$ &   $74.9 \pm 1.1$ &   $227.1 \pm 1.1$ &  $10.3 \pm 5.1$ &  $31.1 \pm 5.1$ &  $43.1 \pm 4.0$ &  $31.1 \pm 4.5$ &  $31.5 \pm 1.4$ &   $58.9 \pm 1.4$ &  $114.0 \pm 1.4$ &  $240.0 \pm 0.9$ \\
+DES14X1bnh &   $23.1 \pm 1.2$ &                - &                 - &               - &               - &               - &               - &   $0.4 \pm 0.4$ &    $3.1 \pm 0.5$ &                - &                - \\
+DES15S1fli &   $33.3 \pm 3.3$ &    $3.4 \pm 1.5$ &    $10.5 \pm 1.5$ &               - &               - &               - &               - &   $3.0 \pm 1.5$ &    $4.2 \pm 0.8$ &    $8.7 \pm 0.4$ &                - \\
+DES15S1fll &  $75.2 \pm 78.8$ &  $13.6 \pm 10.8$ &   $41.3 \pm 10.8$ &   $1.4 \pm 3.9$ &   $4.4 \pm 3.9$ &   $2.7 \pm 2.6$ &   $4.9 \pm 2.8$ &  $0.6 \pm 19.2$ &  $14.3 \pm 16.6$ &  $13.4 \pm 10.2$ &   $40.9 \pm 5.2$ \\
+DES14X3pkl &   $13.5 \pm 9.5$ &    $2.6 \pm 0.8$ &     $7.9 \pm 0.8$ &   $0.7 \pm 0.4$ &   $2.2 \pm 0.4$ &   $3.5 \pm 0.5$ &   $1.9 \pm 0.3$ &   $1.7 \pm 2.7$ &    $2.6 \pm 2.8$ &    $0.0 \pm 2.1$ &   $10.4 \pm 0.7$ \\
+DES13X3npb &   $14.6 \pm 4.1$ &    $1.4 \pm 0.2$ &     $4.2 \pm 0.2$ &               - &               - &               - &               - &   $2.3 \pm 0.2$ &    $4.0 \pm 0.2$ &    $5.7 \pm 0.2$ &                - \\
+DES15X2ead &   $9.7 \pm 10.0$ &    $0.8 \pm 0.8$ &     $2.3 \pm 0.8$ &   $0.8 \pm 0.4$ &   $2.5 \pm 0.4$ &   $3.5 \pm 0.3$ &   $2.2 \pm 0.6$ &   $2.9 \pm 2.5$ &    $1.3 \pm 1.7$ &    $2.3 \pm 0.8$ &   $11.5 \pm 0.3$ \\
+DES14S2plb &   $14.1 \pm 0.7$ &    $1.0 \pm 0.1$ &     $3.0 \pm 0.1$ &   $1.2 \pm 0.0$ &   $3.6 \pm 0.0$ &   $2.3 \pm 0.0$ &   $1.8 \pm 0.0$ &   $2.0 \pm 0.1$ &    $2.3 \pm 0.1$ &    $4.8 \pm 0.1$ &   $12.2 \pm 0.0$ \\
+DES14S2pli &   $13.7 \pm 0.9$ &    $0.6 \pm 0.1$ &     $1.7 \pm 0.1$ &               - &               - &               - &               - &   $0.0 \pm 0.4$ &    $1.6 \pm 0.3$ &    $3.5 \pm 0.1$ &                - \\
+DES14C3tnz &   $23.1 \pm 4.5$ &    $3.0 \pm 1.0$ &     $9.2 \pm 1.0$ &               - &               - &               - &               - &   $1.1 \pm 0.9$ &    $4.5 \pm 1.5$ &    $4.4 \pm 3.8$ &                - \\
+DES15X3mxf &   $29.5 \pm 3.4$ &    $1.7 \pm 0.5$ &     $5.2 \pm 0.5$ &               - &               - &               - &               - &   $1.1 \pm 2.8$ &    $4.0 \pm 1.2$ &    $5.0 \pm 0.5$ &                - \\
+DES15C3lpq &   $37.0 \pm 9.8$ &    $8.6 \pm 3.3$ &    $26.2 \pm 3.3$ &               - &               - &               - &               - &   $4.2 \pm 2.6$ &    $2.3 \pm 2.6$ &    $9.1 \pm 4.5$ &                - \\
+DES15C3nat &   $21.6 \pm 1.5$ &                - &                 - &               - &               - &               - &               - &   $1.5 \pm 0.6$ &    $4.2 \pm 1.4$ &                - &                - \\
+DES15C3mgq &  $17.0 \pm 20.8$ &    $6.3 \pm 2.4$ &    $19.1 \pm 2.4$ &   $0.4 \pm 1.3$ &   $1.3 \pm 1.3$ &   $1.2 \pm 0.7$ &   $0.0 \pm 3.6$ &   $1.8 \pm 5.1$ &    $1.7 \pm 4.0$ &    $6.2 \pm 2.9$ &   $10.6 \pm 0.8$ \\
+DES15E2nqh &  $34.7 \pm 22.4$ &    $9.3 \pm 3.6$ &    $28.2 \pm 3.6$ &               - &               - &               - &               - &   $2.4 \pm 4.3$ &    $4.8 \pm 5.2$ &    $7.7 \pm 5.1$ &                - \\
+DES15C3opk &   $10.5 \pm 6.5$ &    $5.0 \pm 3.1$ &    $15.1 \pm 3.1$ &               - &               - &               - &               - &   $0.7 \pm 1.2$ &    $1.8 \pm 0.9$ &    $2.9 \pm 3.7$ &                - \\
+DES15C3opp &   $15.5 \pm 3.3$ &    $1.7 \pm 0.6$ &     $5.2 \pm 0.6$ &               - &               - &               - &               - &   $0.7 \pm 2.1$ &    $2.9 \pm 1.5$ &    $3.1 \pm 0.7$ &                - \\
+DES16E2pv  &  $39.7 \pm 12.2$ &    $6.0 \pm 9.5$ &    $18.0 \pm 9.5$ &               - &               - &               - &               - &   $0.3 \pm 4.9$ &    $5.9 \pm 5.1$ &    $6.9 \pm 4.9$ &                - \\
+DES16S1bbp &  $37.2 \pm 13.0$ &    $7.5 \pm 1.7$ &    $22.9 \pm 1.7$ &   $0.7 \pm 0.4$ &   $2.1 \pm 0.4$ &   $2.8 \pm 1.3$ &   $2.0 \pm 0.4$ &   $2.9 \pm 2.7$ &    $6.0 \pm 1.9$ &   $12.2 \pm 2.3$ &   $24.2 \pm 0.8$ \\
+DES16X3cxn &   $23.5 \pm 5.6$ &    $1.6 \pm 2.6$ &     $4.9 \pm 2.6$ &               - &               - &               - &               - &   $0.0 \pm 2.2$ &    $0.7 \pm 1.4$ &    $4.0 \pm 1.0$ &                - \\
+DES16C1cbd &    $9.3 \pm 1.8$ &    $0.6 \pm 0.3$ &     $1.8 \pm 0.3$ &               - &               - &               - &               - &   $0.8 \pm 0.1$ &    $1.0 \pm 0.1$ &    $1.9 \pm 0.1$ &                - \\
+DES16X3ega &   $28.2 \pm 2.1$ &    $0.9 \pm 1.0$ &     $2.8 \pm 1.0$ &   $1.0 \pm 0.8$ &   $3.0 \pm 0.8$ &   $2.8 \pm 0.4$ &   $1.5 \pm 0.9$ &   $2.0 \pm 0.8$ &    $4.4 \pm 0.7$ &    $5.8 \pm 0.5$ &   $14.5 \pm 0.4$ \\
+DES16X3erw &   $31.6 \pm 4.0$ &    $2.9 \pm 1.6$ &     $8.8 \pm 1.6$ &               - &               - &               - &               - &   $3.4 \pm 1.7$ &    $2.1 \pm 1.5$ &    $7.2 \pm 0.7$ &                - \\
+DES16C3gin &   $17.1 \pm 2.8$ &    $1.5 \pm 0.4$ &     $4.4 \pm 0.4$ &               - &               - &               - &               - &   $1.6 \pm 1.1$ &    $0.0 \pm 1.2$ &    $4.3 \pm 0.6$ &   $10.1 \pm 0.5$ \\
+DES16S1dxu &  $96.3 \pm 33.0$ &   $16.4 \pm 8.4$ &    $49.5 \pm 8.4$ &   $0.8 \pm 2.5$ &   $2.4 \pm 2.5$ &   $1.2 \pm 3.6$ &   $3.7 \pm 1.8$ &   $5.5 \pm 6.9$ &    $9.1 \pm 4.8$ &   $22.8 \pm 3.9$ &   $39.2 \pm 1.2$ \\
+DES16X1eho &    $6.6 \pm 0.9$ &                - &                 - &               - &               - &               - &               - &   $0.0 \pm 0.3$ &    $1.2 \pm 0.6$ &    $1.4 \pm 0.8$ &                - \\
+DES17C3gop &  $21.1 \pm 17.3$ &    $2.5 \pm 2.4$ &     $7.6 \pm 2.4$ &               - &               - &               - &               - &   $2.7 \pm 2.4$ &    $5.3 \pm 3.2$ &    $4.8 \pm 1.4$ &                - \\
+DES17S2fee &    $0.1 \pm 0.2$ &    $0.0 \pm 0.0$ &     $0.0 \pm 0.0$ &   $0.1 \pm 0.0$ &   $0.2 \pm 0.0$ &   $0.0 \pm 0.0$ &   $0.3 \pm 0.0$ &   $0.0 \pm 0.0$ &    $0.1 \pm 0.0$ &    $0.0 \pm 0.0$ &    $0.4 \pm 0.0$ \\
+DES17X3dxu &   $22.1 \pm 2.8$ &                - &                 - &               - &               - &               - &               - &   $3.8 \pm 6.1$ &    $4.7 \pm 1.3$ &                - &                - \\
+DES17X3cds &    $9.4 \pm 6.5$ &    $2.0 \pm 1.1$ &     $6.1 \pm 1.1$ &               - &               - &               - &               - &   $0.0 \pm 0.9$ &    $0.6 \pm 0.7$ &    $3.1 \pm 0.7$ &                - \\
+DES17X3hxi &  $56.6 \pm 78.6$ &  $35.7 \pm 26.0$ &  $108.3 \pm 26.0$ &               - &               - &               - &               - &  $8.9 \pm 22.2$ &  $16.1 \pm 22.9$ &  $22.7 \pm 18.0$ &                - \\
+DES13E2lpk &   $11.3 \pm 0.7$ &    $0.5 \pm 0.1$ &     $1.5 \pm 0.1$ &               - &               - &               - &               - &   $0.7 \pm 0.2$ &    $1.3 \pm 0.1$ &    $3.3 \pm 0.1$ &                - \\
+DES15C2eal &  $28.1 \pm 17.9$ &    $2.1 \pm 2.3$ &     $6.5 \pm 2.3$ &   $0.5 \pm 1.6$ &   $1.5 \pm 1.6$ &   $3.0 \pm 0.7$ &   $4.3 \pm 0.8$ &   $0.0 \pm 4.4$ &    $4.0 \pm 3.7$ &    $4.1 \pm 3.2$ &   $17.6 \pm 2.0$ \\
+DES16C2ggt &   $21.0 \pm 1.0$ &    $2.3 \pm 0.3$ &     $6.9 \pm 0.3$ &   $1.1 \pm 0.2$ &   $3.3 \pm 0.2$ &   $3.5 \pm 0.1$ &   $2.2 \pm 0.1$ &   $0.7 \pm 0.3$ &    $2.7 \pm 0.5$ &    $7.4 \pm 0.2$ &   $14.2 \pm 0.1$ \\
+DES17C2hno &   $19.1 \pm 6.2$ &    $2.1 \pm 1.5$ &     $6.2 \pm 1.5$ &               - &               - &               - &               - &   $2.4 \pm 2.5$ &    $2.7 \pm 1.6$ &    $7.0 \pm 1.8$ &                - \\
+\bottomrule
+\end{tabular}
 
-If you want to present additional material which would interrupt the flow of the main paper,
-it can be placed in an Appendix which appears after the list of references.
+\end{table*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
