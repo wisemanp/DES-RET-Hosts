@@ -86,6 +86,7 @@
 \newcommand{\hdelta}[0]{H$\delta$}
 \newcommand{\HII}[0]{$[\textnormal{\textsc{Hii}}]$}
 \newcommand{\OII}[0]{$[\textnormal{\textsc{Oii}}]$}
+\newcommand{\OI}[0]{$[\textnormal{\textsc{Oi}}]$}
 \newcommand{\OIII}[0]{$[\textnormal{\textsc{Oiii}}]$}
 \newcommand{\SII}[0]{$[\textnormal{\textsc{Sii}}]$}
 \newcommand{\SIII}[0]{$[\textnormal{\textsc{Siii}}]$}
@@ -195,18 +196,102 @@ Where applicable, we adopt a spatially flat $\Lambda$CDM cosmology with the para
 {} &       RA &       Dec &    $m_r$\tnote{a}  &     $z$ &     Survey & Exposure time \tnote{b} \\
 Transient name &  (J2000  & (J2000)  &  (AB)    &         &         &   (hours)         &               \\
 \midrule
-DES13C3avkj    & 51.97076 & -27.52792 & $24.07 \pm 0.04$ &    \tnote{c} &      OzDES &             - \\
-DES13X3gms     & 35.80095 &  -4.49384 & $23.02 \pm 0.06$ & 0.6479 &      OzDES &       6.58 \\
-DES13C1tgd     & 54.06436 & -27.63867 & $20.30 \pm 0.05$ & 0.1964 &      OzDES &      10.16 \\
-DES13C3abtt    & 52.62108 & -28.16151 & $21.50 \pm 0.03$ &    \tnote{d} &          - &             - \\
-DES13S2wxf\tnote{e}     & 41.61268 &  -0.02634 & $21.31 \pm 0.03$ & 0.5698 &      OzDES &       5.41 \\
-DES13X1hav     & 35.03245 &  -5.11022 & $23.63 \pm 0.07$ & 0.5823 &      OzDES &       4.00 \\
-DES13C3smn     & 51.97112 & -28.08362 & $25.30 \pm 0.06$ &    \tnote{c} &      OzDES &             - \\
-DES13X3nyg     & 36.99228 &  -3.91327 & $23.38 \pm 0.06$ & 0.7120 &      OzDES &      45.50 \\
-DES13X3gmd\tnote{e}     & 36.50409 &  -4.21949 & $22.90 \pm 0.05$ & 0.7808 &      OzDES &      13.91 \\
-DES13C3bcok    & 53.02711 & -28.62476 & $18.61 \pm 0.02$ & 0.3457 &  NOAO\_0522 &               \\
-DES13X3afjd    & 37.00386 &  -4.58049 & $20.75 \pm 0.05$ &    \tnote{d} &          - &             - \\
-DES13C1acmt    & 54.32925 & -26.83371 & $23.18 \pm 0.04$ &    \tnote{c} &      OzDES &             - \\
+DES13C3avkj    & 51.97076 & -27.52792 & 24.07937 & 0.04534 &    $^c$ &      OzDES &             - \\
+DES13X3gms     & 35.80095 &  -4.49384 & 23.02264 & 0.06436 & 0.64792 &      OzDES &       6.58333 \\
+DES13C1tgd     & 54.06436 & -27.63867 & 20.30968 & 0.05848 & 0.19647 &      OzDES &      10.16667 \\
+DES13C3abtt    & 52.62108 & -28.16151 & 21.50529 & 0.03508 &    $^d$ &          - &             - \\
+DES13S2wxf     & 41.61268 &  -0.02634 & 21.31219 & 0.03266 & 0.56985 &      OzDES &       5.41639 \\
+DES13X1hav     & 35.03245 &  -5.11022 & 23.63452 & 0.07752 & 0.58236 &      OzDES &       4.00000 \\
+DES13C3smn     & 51.97112 & -28.08362 & 25.30041 & 0.06023 &    $^c$ &      OzDES &             - \\
+DES13X3nyg     & 36.99228 &  -3.91327 & 23.38744 & 0.06173 & 0.71205 &      OzDES &      45.50000 \\
+DES13X3gmd     & 36.50409 &  -4.21949 & 22.90614 & 0.05419 & 0.78082 &      OzDES &      13.91667 \\
+DES13C3bcok    & 53.02711 & -28.62476 & 18.61674 & 0.02560 & 0.34577 &  LADUMA &               \\
+DES13X3afjd    & 37.00386 &  -4.58049 & 20.75298 & 0.05737 &    $^d$ &          - &             - \\
+DES13C1acmt    & 54.32925 & -26.83371 & 23.18742 & 0.04422 &    $^c$ &      OzDES &             - \\
+DES13X3kgm     & 36.50380 &  -4.86636 & 26.46803 & 0.18709 &    $^d$ &          - &             - \\
+DES13C3uig     & 52.94416 & -27.58544 & 22.17966 & 0.03116 & 0.67346 &       ACES &               \\
+DES13C3nxi     & 51.96356 & -28.35720 & 24.99276 & 0.05177 &    $^c$ &      OzDES &             - \\
+DES13C3asvu    & 52.83670 & -27.36071 & 22.46669 & 0.02874 &    $^d$ &          - &             - \\
+DES13X3pby     & 36.33330 &  -5.31408 & 23.82628 & 0.04671 &    $^c$ &      OzDES &             - \\
+DES13X3aakf    & 35.71205 &  -4.69915 & 25.47453 & 0.09478 &    $^c$ &      OzDES &             - \\
+DES13X2wvv     & 34.86526 &  -6.71603 & 21.89573 & 0.02567 & 0.47503 &      OzDES &       4.50000 \\
+DES13X2oyb     & 35.31056 &  -5.67893 & 22.91589 & 0.06115 &    $^c$ &      OzDES &             - \\
+DES13X3alnb    & 37.18496 &  -5.14232 & 25.04147 & 0.06167 &    $^c$ &      OzDES &             - \\
+DES15X3atd     & 35.84011 &  -4.29142 & 23.87686 & 0.05432 &    $^c$ &      OzDES &             - \\
+DES14S2anq     & 41.27776 &  -0.74529 & 17.57076 & 0.03648 & 0.05211 &      OzDES &       0.75000 \\
+DES14E2xsm     &  9.67624 & -43.58736 & 23.39163 & 0.04458 &    $^c$ &      OzDES &             - \\
+DES14X1bnh     & 33.74902 &  -4.79254 & 21.95260 & 0.03597 & 0.82982 &      OzDES &       3.50000 \\
+DES14E1aqi     &  8.73970 & -43.40182 & 25.61559 & 0.23708 &    $^d$ &          - &             - \\
+DES15S1fli     & 43.18790 &  -0.88620 & 20.98517 & 0.02950 & 0.44739 &      OzDES &       2.33333 \\
+DES14C3gzj     & 52.57168 & -28.14019 & 26.04181 & 0.10494 &    $^d$ &          - &             - \\
+DES14X3pko     & 36.90824 &  -3.69642 & 24.48291 & 0.06326 &    $^d$ &          - &             - \\
+DES15S1fll     & 42.78846 &  -0.19747 & 20.95918 & 0.03719 & 0.22647 &      OzDES &       0.66667 \\
+DES14C1jnd     & 54.35153 & -27.49300 & 24.33143 & 0.08524 &    $^c$ &      OzDES &             - \\
+DES14X3pkl     & 37.21103 &  -4.80741 & 22.40853 & 0.06026 & 0.29537 &      OzDES &       5.16667 \\
+DES13X3npb     & 36.64218 &  -4.13381 & 20.79328 & 0.05336 & 0.49542 &      OzDES &       5.16667 \\
+DES15X2ead     & 36.48913 &  -6.45118 & 20.08582 & 0.03290 & 0.23175 &      OzDES &       2.00000 \\
+DES15C3edw     & 52.55235 & -27.71022 & 22.69331 & 0.03227 &    $^d$ &          - &             - \\
+DES14S2plb     & 41.85667 &  -1.61811 & 18.38419 & 0.03463 & 0.11531 &      OzDES &       2.00000 \\
+DES14S2pli     & 41.22837 &  -1.09830 & 20.86839 & 0.03093 & 0.35478 &      OzDES &       3.41667 \\
+DES15X3kyt     & 36.27500 &  -5.41103 & 24.74520 & 0.07892 &    $^d$ &          - &             - \\
+DES14C3tvw     & 53.32230 & -27.90621 & 21.31841 & 0.02516 & 0.70390 &       ACES &               \\
+DES14C3tnz     & 52.86248 & -28.51318 & 22.26137 & 0.03386 & 0.70452 &      OzDES &       5.79361 \\
+DES15X3mxf     & 36.74009 &  -5.23991 & 22.43347 & 0.04552 & 0.43673 &      OzDES &       9.83333 \\
+DES15X3nlv     & 36.04464 &  -5.02735 & 25.26349 & 0.08375 &    $^d$ &          - &             - \\
+DES15C3mem     & 52.14216 & -29.05851 & 20.28975 & 0.04590 & 0.61618 &     PRIMUS &               \\
+DES15E2lmq     &  9.62005 & -43.98734 & 25.65868 & 0.18116 &    $^d$ &          - &             - \\
+DES15C3lpq     & 52.71204 & -28.61319 & 23.28579 & 0.03610 & 0.61365 &      OzDES &       6.16667 \\
+DES15C3lzm     & 52.17460 & -28.23186 & 20.47636 & 0.02573 & 0.32690 &      ATLAS &               \\
+DES15C3nat     & 52.88528 & -28.72370 & 23.39015 & 0.03154 & 0.83929 &      OzDES &      18.62222 \\
+DES15C3mgq     & 52.76901 & -28.20882 & 22.97470 & 0.03194 & 0.23031 &      OzDES &       8.16667 \\
+DES15E2nqh     &  9.73174 & -43.08707 & 23.29709 & 0.03941 & 0.51525 &      OzDES &       6.83333 \\
+DES15C3opk     & 51.66147 & -28.34737 & 23.05209 & 0.03270 & 0.56984 &      OzDES &      12.16667 \\
+DES15C3opp     & 51.73962 & -28.11496 & 23.25950 & 0.04223 & 0.44242 &      OzDES &      16.75000 \\
+DES15C3pbi     & 52.23620 & -28.00223 & 25.10028 & 0.05470 &    $^d$ &          - &             - \\
+DES16E2pv      &  9.20875 & -43.52782 & 23.00100 & 0.05043 & 0.72608 &      OzDES &       6.00000 \\
+DES16S1bbp     & 43.26389 &   0.37149 & 21.42883 & 0.04524 & 0.19018 &      OzDES &       3.33333 \\
+DES15X3oma     & 36.74617 &  -5.11040 & 24.94606 & 0.07447 &    $^d$ &          - &             - \\
+DES16C3bor     & 52.48232 & -28.04256 & 23.83923 & 0.03711 &    $^c$ &      OzDES &             - \\
+DES16C1bde     & 54.30149 & -26.75840 & 24.96313 & 0.09485 &    $^d$ &          - &             - \\
+DES16X3wt      & 36.23751 &  -5.54488 & 26.90234 & 0.28423 &    $^d$ &          - &             - \\
+DES16X3cxn     & 36.83044 &  -4.95100 & 23.05257 & 0.04442 & 0.58464 &      OzDES &      12.83333 \\
+DES16X2bke     & 36.00989 &  -7.27130 & 25.13096 & 0.16403 &    $^d$ &          - &             - \\
+DES16C1cbd     & 54.85826 & -27.67254 & 20.93909 & 0.03048 & 0.54108 &      OzDES &       7.20000 \\
+DES16C3cdd     & 52.42731 & -27.14317 & 24.27019 & 0.05040 &    $^d$ &          - &             - \\
+DES16E1bir     &  7.74444 & -42.97696 & 24.74236 & 0.07595 &    $^c$ &      OzDES &             - \\
+DES16C3auv     & 51.90215 & -27.59087 & 24.39158 & 0.05296 &    $^c$ &      OzDES &             - \\
+DES16C3axz     & 52.80904 & -28.66678 & 20.41796 & 0.03716 & 0.22673 &  LADUMA &               \\
+DES16X3ega     & 37.09820 &  -4.77643 & 19.53601 & 0.04874 & 0.25762 &       GAMA &       1.00000 \\
+DES16X3erw     & 36.20545 &  -4.51438 & 22.23157 & 0.02865 & 0.45885 &      OzDES &       2.00000 \\
+DES16X1ddm     & 33.82824 &  -4.36428 & 21.46049 & 0.04767 &    $^c$ &      OzDES &             - \\
+DES16X3ddi     & 35.43936 &  -4.68602 & 23.93720 & 0.04360 &    $^c$ &      OzDES &             - \\
+DES16C3gin     & 52.76276 & -28.29145 & 21.52696 & 0.03653 & 0.34745 &      OzDES &       3.33333 \\
+DES16S1dxu     & 42.68141 &  -0.71039 & 21.35662 & 0.03193 & 0.13528 &      OzDES &       1.33333 \\
+DES16X1eho     & 35.34537 &  -4.52566 & 22.28516 & 0.07277 & 0.80735 &      OzDES &       6.75000 \\
+DES17X3gmp     & 37.40191 &  -4.65060 & 24.44397 & 0.06946 &    $^d$ &          - &             - \\
+DES17X2dqk     & 35.46926 &  -7.10815 & 25.96184 & 0.19576 &    $^d$ &          - &             - \\
+DES17C3gop     & 53.53574 & -28.40024 & 22.74858 & 0.03107 & 0.69185 &      OzDES &       4.00000 \\
+DES17C3gen     & 52.93346 & -29.01119 & 22.79380 & 0.04204 &    $^c$ &      OzDES &             - \\
+DES17X3fhq     & 35.93682 &  -3.97690 & 24.70876 & 0.05177 &    $^d$ &          - &             - \\
+DES17S2fee     & 41.40953 &  -1.33278 & 18.16644 & 0.04681 & 0.23737 &      OzDES &       2.00000 \\
+DES17X1hjj     & 34.24036 &  -4.21180 & 24.07284 & 0.05854 &    $^c$ &      OzDES &             - \\
+DES17X1dge     & 34.80886 &  -5.40370 & 24.15755 & 0.10116 &    $^d$ &          - &             - \\
+DES17C1fes     & 54.23372 & -27.57015 & 24.42015 & 0.10382 &    $^c$ &      OzDES &             - \\
+DES17E1gsx     &  8.11588 & -42.76823 & 22.70982 & 0.04695 &    $^c$ &      OzDES &             - \\
+DES17X3dxu     & 36.55911 &  -3.84432 & 22.83789 & 0.03973 & 0.85565 &      OzDES &       7.50000 \\
+DES17S1emy     & 43.36298 &   0.41758 & 22.51310 & 0.05326 &    $^d$ &          - &             - \\
+DES17X2cvk     & 35.93444 &  -7.32167 & 21.60107 & 0.06456 &    $^d$ &          - &             - \\
+DES17X3cdp     & 37.28283 &  -4.30434 & 25.10651 & 0.08381 &    $^c$ &      OzDES &             - \\
+DES17X3cds     & 36.27737 &  -3.79891 & 22.45168 & 0.06098 & 0.49444 &      OzDES &       5.50000 \\
+DES17C3fwd     & 52.90461 & -27.46979 & 20.46182 & 0.02355 & 0.34561 &    LADUMA &               \\
+DES17S1hih     & 42.57627 &  -0.76193 & 24.94967 & 0.12010 &    $^d$ &          - &             - \\
+DES17C3fjt     & 51.46785 & -28.14106 & 28.04246 & 0.44157 &    $^d$ &          - &             - \\
+DES17X3hxi     & 35.79624 &  -4.51713 & 23.36715 & 0.03375 & 0.62457 &      OzDES &       2.00000 \\
+DES13E2lpk     & 10.09911 & -43.53903 & 20.49379 & 0.03567 & 0.47541 &      OzDES &       6.00000 \\
+DES15C2eal     & 54.06180 & -29.23000 & 22.99891 & 0.03276 & 0.22347 &      OzDES &      16.90833 \\
+DES16C2ggt     & 53.89079 & -29.22496 & 21.09210 & 0.03142 & 0.31057 &      OzDES &       2.66667 \\
+DES16C2grk     & 55.06853 & -29.28963 & 20.45434 & 0.03869 &    $^d$ &          - &             - \\
+DES17C2hno     & 53.72691 & -29.19742 & 22.69257 & 0.07398 & 0.59953 &      OzDES &       4.66667 \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
@@ -283,7 +368,7 @@ The host galaxy properties of the above samples are not all derived using the sa
 The host galaxy photometry for the sample of RETs is taken from the catalogue of \citet{Wiseman2020}, which is based upon deep coadds reaching $r$-band limiting magnitudes of 26.5. The coadds were created using data from all five seasons of DES-SN, but by excluding one season at a time in order for that coadd not to include contamination from the transients in that season. For this sample, the limiting magnitude for obtaining a spectroscopic redshift (Section \ref{subsec:spec}) is $\sim 24.5$, meaning that all hosts in the sample are detected with a high S/N.
 
 \subsection{Spectroscopy \label{subsec:spec}}
-Accurate redshifts for DES-SN were obtained by OzDES, a dedicated DES spectroscopic follow-up campaign based at the $3.9~\textrm{m}$ Anglo-Australian Telescope (AAT) using the AAOmega fibre-fed spectrograph and 2dF fibre positioner. The observation strategy of OzDES was to point at one of the ten DES-SN fields, and place fibres at the positions of transient hosts, continually coadding the spectra of a particular host until a redshift was obtained at which point the fibre could be allocated to a different transient. The spectra have a resolution of 1400-1700 and a wavelength range of $3700~8800$~\AA, and are reduced using the OzDES pipeline which makes use of a modified version of v6.46 of the 2dfdr \citep{Croom2004} along with internal scripts. \replychris{We use internal data release 7, a preliminary version of the public data release is detailed in \citet{Lidman2020}.} Extensive description and discussion of OzDES can be found in \citet{Yuan2015,Childress2017,Lidman2020}. \replychris{We also obtained redshifts for some transient hosts as part of the Looking at the Distant Universe with the MeerKAT Array (LADUMA) survey (PI: A. Baker) \citep{Baker2020} (labelled NOAO in Table \ref{tab:obs}}.
+Accurate redshifts for DES-SN were obtained by OzDES, a dedicated DES spectroscopic follow-up campaign based at the $3.9~\textrm{m}$ Anglo-Australian Telescope (AAT) using the AAOmega fibre-fed spectrograph and 2dF fibre positioner. The observation strategy of OzDES was to point at one of the ten DES-SN fields, and place fibres at the positions of transient hosts, continually coadding the spectra of a particular host until a redshift was obtained at which point the fibre could be allocated to a different transient. The spectra have a resolution of 1400-1700 and a wavelength range of $3700~8800$~\AA, and are reduced using the OzDES pipeline which makes use of a modified version of v6.46 of the 2dfdr \citep{Croom2004} along with internal scripts. \replychris{We use internal data release 7, a preliminary version of the public data release is detailed in \citet{Lidman2020}.} Extensive description and discussion of OzDES can be found in \citet{Yuan2015,Childress2017,Lidman2020}. \replychris{We also obtained redshifts for some transient hosts serendipitously as part of the Looking at the Distant Universe with the MeerKAT Array (LADUMA\footnte{\url{http://www.laduma.uct.ac.za}}) survey  \citep{Baker2020}, three of which are present in our sample} .
 Objects for which the host already had a publicly available redshift were not observed with OzDES, but merged into the GRC nontheless.  Where the spectra from which those redshifts were derived are also public they are included in this analysis. These comprise the Galaxy and Mass Assembly survey (GAMA \citealt{Driver2009,Baldry2018}) and SDSS. In total we analyse 42 spectra, with a mean continuum signal-to-noise ratio (SNR) of 2.56/pixel. We stress that the emission lines are detected with a higher SNR than this.
 
 \begin{figure*}
@@ -308,8 +393,7 @@ To estimate the physical properties of the DES RET host galaxies, we generate sy
 
 To estimate parameters from the OzDES host galaxy spectra requires several processing steps. We first apply a flux calibration by `mangling' the spectrum such that the integrated flux over the wavelength ranges of the DES photometric bands matches that measured in the photometry (further details on the mangling process are provided in \citealt{Swann2020}). We use a circular aperture of diameter 2\arcsec, matching the size of the spectrograph fibres. \replylluis{This way the resulting spectrum is a more accurate representation of the true spectrum at that point in the galaxy. This only holds, however, for the area covered by the fibre and we note that the resulting spectrum is not necessarily representative of the galaxy as a whole. There are several reasons this may not be the case, such as metallicity and age gradients or structure such as bars and discs (see e.g. \citealt{Iglesias-Paramo2013,Iglesias-Paramo2016}), and proceed with our analysis with this caveat acknowledged.}
 
-In order to subtract the stellar component of the host galaxy spectra, we use the Penalized PiXel-Fitting software (\texttt{pPXF}; \citealt{Cappellari2004,Cappellari2012,Cappellari2017}), using the MILES library of single stellar populations \citep{Vazdekis2010}. By subtracting the best-fitting composite stellar spectrum from the \texttt{pPXF} fit, we are left with a `gas' spectrum, comprising the emission lines. An example of this procedure is shown in Fig. \ref{fig:host_spec}. We fit the emission lines with Gaussian profiles. In order to estimate the uncertainty on the emission line fluxes, we fit $10^4$ realisations of the line, each time adding perturbations to the line by drawing from a Gaussian distribution centered on 0, and with a standard deviation equal to the root-mean-square (RMS) of the measured flux noise in a 100~\AA~window around the central wavelength of the line. We take the mean and standard deviation of the resulting fits as our flux and its uncertainty, respectively.
-
+In order to subtract the stellar component of the host galaxy spectra, we use the Penalized PiXel-Fitting software (\texttt{pPXF}; \citealt{Cappellari2004,Cappellari2012,Cappellari2017}), using the MILES library of single stellar populations \citep{Vazdekis2010}. By subtracting the best-fitting composite stellar spectrum from the \texttt{pPXF} fit, we are left with a `gas' spectrum, comprising the emission lines. An example of this procedure is shown in Fig. \ref{fig:host_spec}. We fit the emission lines with Gaussian profiles. In order to estimate the uncertainty on the emission line fluxes, we fit $10^4$ realisations of the line, each time adding perturbations to the line by drawing from a Gaussian distribution \replychris{based on the variance spectrum}. We take the mean and standard deviation of the resulting fits as our flux and its uncertainty, respectively.
 
 \begin{table*}
 
@@ -390,15 +474,13 @@ DES17C2hno &   $9.56 _{\scriptscriptstyle 0.21} ^{\scriptscriptstyle 0.16}$ &  $
 
 \subsection{Estimating metallicities \label{subsec:calc_Z}}
 
-The most common method used to estimate the metallicity of galaxies is to use emission line ratios that have been calibrated using theoretical or empirical models in order to approximate the gas-phase oxygen abundance in the interstellar medium. Emission lines originate from regions of ionised gas, but there are a number of possible causes of this ionisation. Using the Baldwin-Phillips-Terlevich diagram (Fig. \ref{fig:bpt}; \citealt{Baldwin1981}), we demonstrate that the emission line ratios measured in RET hosts are consistent with ionisation caused by star-formation as opposed to AGN. 
+The most common method used to estimate the metallicity of galaxies is to use emission line ratios that have been calibrated using theoretical or empirical models in order to approximate the gas-phase oxygen abundance in the interstellar medium. Emission lines originate from regions of ionised gas, but there are a number of possible causes of this ionisation. Using the Baldwin-Phillips-Terlevich diagram (Fig. \ref{fig:bpt}; \citealt{Baldwin1981}), we demonstrate that the emission line ratios measured in RET hosts are consistent with ionisation caused by star-formation as opposed to AGN. \replylluis{We note than only 11 of the 44 RET host spectra have the necessary lines to plot a BPT diagram. This is also the case for the \SII and \OI versions of the diagram, and we find no evidence AGN amongst the 12 hosts in those diagrams either.}
 
 Due to the low S/N of the spectra in this sample, we are constrained to a subset of metallicity diagnostics by the availability of only a handful of the strongest emission lines, namely \halpha, \hbeta, \OII 3727, \OIII 4959/5007, \NII 6548/6583, and \SII 6717/6731. Furthermore, for each host galaxy only a subset of these lines are detected - for example, \halpha, \NII~and \SII~are redshifted out of the spectral coverage at $z>0.3$, leaving only the oxygen and \hbeta~lines available, mandating the use of the R23 diagnostic. For hosts at $z<0.3$ we are able to use the \OIII /\NII~(O3N2), \NII /\halpha~(N2), and \SII /\NII~(S2N2) line ratios. 
 
 Due to the redshift range of our sample, and the limited wavelength coverage of the spectra ($3000-8000$~\AA), we are unable to use a single line ratio to estimate the oxygen abundances. We thus determine a set of indicators for which to calculate abundances. For the O3N2 and N2 indicators we use the calibration of \citet{Pettini2004} (PP04), and if \SII~is detected we derive an abundance using the S2N2 diagnostic of \citet{Dopita2016}. For the R23 indicator, we use the calibration of \citet{Kobulnicky2004} (KK04). At abundances around $12 + \log \mathrm{(O/H)} \sim 8.4$, the R23 indicator becomes two-tailed, with a low and a high value of metallicity corresponding to a single R23 ratio. In cases where the lines are available, we break this degeneracy by cross-calibrating with the \NII/\OII~ratio \citep{Kewley2008}. In the cases where \NII~is not available, and there are no other diagnostics that can be used to inform the choice of branch, we use the host galaxy stellar mass to derive a crude metallicity estimate from the mass-metallicity relation (MZR) of \citet{Kewley2008} based upon the PP04 O3N2 diagnostic. For $12 + \log \mathrm{(O/H)}_{\mathrm{MZR}} < 8.4$ we chose the lower branch, while for higher MZR metallicities we choose the upper branch. \replychris{We note that this is a rough estimation}. If we leave the branch choice for those with no \NII~to be random, we find that the results are consistent to within uncertainties 
 
-Following the prescription of \citet{Kruehler2015} we simultaneously minimise the oxygen abundance against the results from the probability density functions (PDFs) of the various different diagnostics, resulting in a final `best' PDF. We take $1\sigma$ uncertainties from the 16th and 84th percentiles of these PDFs, and display the results in Table \ref{tab:derived}.
-
-The samples to which we compare metallicities span different redshift ranges, were observed with different equipment, and in many cases were compiled before certain (particularly the D16) diagnostics were devised. Therefore, in order to compare oxygen abundances between different samples we transform all abundances onto the scale of PP04 (O3N2) using the conversion from \citet{Kewley2008}. This is not possible for the D16 diagnostic, so we discard it from the rest of our analysis, although for completeness we provide it for DES RET hosts where available. For samples that quoted multiple diagnostics, or for which sufficient line flux measurements were provided from which to calculate multiple diagnostics, we calculate a weighted mean of the values after transforming them to the PP04 O3N2 scale.
+The samples to which we compare metallicities span different redshift ranges, were observed with different equipment, and in many cases were compiled before certain (particularly the D16) diagnostics were devised. Therefore, in order to compare oxygen abundances between different samples we transform all abundances onto the PP04 O3N2 scale using the conversion from \citet{Kewley2008}. This is not possible for the D16 diagnostic, so we discard it from the rest of our analysis, although for completeness we provide it for DES RET hosts where available. For samples that quoted multiple diagnostics, or for which sufficient line flux measurements were provided from which to calculate multiple diagnostics, we transform them all to the PP04 O3N2 scale. Following the prescription of \citet{Kruehler2015} we simultaneously minimise the oxygen abundance against the probability density functions (PDFs) of the various different diagnostics \replylluis{scaled to PP04 O3N2}, resulting in a final `best' PDF. We take $1\sigma$ uncertainties from the 16th and 84th percentiles of these PDFs, and \replylluis{for DES RETs} display the results in Table \ref{tab:derived}.
 
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{figs/sSFR_Mike.png}
@@ -416,12 +498,13 @@ The samples to which we compare metallicities span different redshift ranges, we
 \label{sec:analysis} % used for referring to this section from elsewhere
 
 \subsection{Star formation rate \label{subsec:res_sfr}}
-Fig.~\ref{fig:sfms_sfr} shows the `star formation main sequence' (SFMS) of RET host galaxies along with that for the comparison samples and for the field galaxies of SDSS. RETs follow CCSNe, LGRBs and SLSNe in systematically avoiding passive galaxies, evidence that RETs require the presence of star-formation and thus are linked to massive stars. The local rapid transients Cow, Koala and SN2018gep are
+Fig.~\ref{fig:sfms_sfr} shows the `star formation main sequence' (SFMS) of RET host galaxies, \replychris{as determined from photometric SED fitting} along with that for the comparison samples and for the field galaxies of SDSS. RETs follow CCSNe, LGRBs and SLSNe in systematically avoiding passive galaxies, evidence that RETs require the presence of star-formation and thus are linked to massive stars. The local rapid transients Cow, Koala and SN2018gep \replychris{are lower in mass than the majority of RETs. SN2018gep and Cow lie along the SFMS, while Koala sits in the starburst regime, which is not heavily populated by DES RETs.} 
 
-Fig.~\ref{fig:sfms_ssfr} is similar to Fig.~\ref{fig:sfms_sfr}, except that here SFR has been normalised by stellar mass, and thus shows the specific star-formation rate (sSFR), which is more representative measure of the star-forming intensity. It is once again clear that RET hosts lie systematically above the majority of SDSS star-forming galaxies. Normalised by mass, it is here perhaps clearer to see that RET hosts lie at higher sSFR than CCSNe hosts, but not in the extremely starforming environments home to LGRBs or SLSNe.
+Fig.~\ref{fig:sfms_ssfr} is similar to Fig.~\ref{fig:sfms_sfr}, except that here SFR has been normalised by stellar mass, and thus shows the specific star-formation rate (sSFR), which is more representative measure of the star-forming \replylluis{efficiency}. It is once again clear that RET hosts lie systematically above the majority of SDSS star-forming galaxies. Normalised by mass, it is here perhaps clearer to see that RET hosts lie at higher sSFR than CCSNe hosts, but not in the extremely starforming environments home to LGRBs or SLSNe.
 
-We show the cumulative distribution of sSFR in Fig.~\ref{fig:ssfr_cum}. The RET hosts are clearly shifted to higher sSFRs than CCSNe. To statistically compare the host sSFR distribution of RETs with the other samples, we employ the method of \citet{Wiseman2020}. For each pair of samples, we model the PDFs as skewed normal distributions. For both samples, we use identical normal priors for the `loc' (location, i.e. central value, identical to mean \replychris{for zero skewness}) and `scale' (spread, identical to standard deviation for \replychris{zero skewness})\footnote{See \citet{Wiseman2020} for a detailed description of the fitting procedure and the parameters describing the skewed normal distributions}, centred on the mean and twice the standard deviation of the two samples combined. The results from the simultaneous fitting are displayed in Appendix \ref{app:b}. The comparison shows RET hosts to be shifted to higher sSFRs CCSNe. In 100\% of the posterior samples the RETs were located at higher average sSFRs than SNe II, while the same was true 76\% of the time for RETs when comparing with SESNe. 
+We show the cumulative distribution of sSFR in Fig.~\ref{fig:ssfr_cum}. The RET hosts are clearly shifted to higher sSFRs than CCSNe. To statistically compare the host sSFR distribution of RETs with the other samples, we employ the method of \citet{Wiseman2020}. For each pair of samples, we model the PDFs as skewed normal distributions \replylluis{described by the parameters `loc' (location, identical to mean \replychris{for zero skewness}), `scale' (spread, identical to standard deviation for \replychris{zero skewness})\footnote{See \citet{Wiseman2020} for a detailed description of the fitting procedure and the parameters describing the skewed normal distributions}, and `skewness'. To impose priors on loc and scale, we combine the two samples and use normal priors centered on the combined mean and twice the combined standard deviation respectively, while for skewness the prior is a broad normal distribution centered on 0. We note that the loc parameter describes the location of the distribution (its relative position on the x-axis) and is not a mean, median, or mode. A highly-skewed distribution may have a loc that lies above almost the entire sample. A worked example as well as} the results from the simultaneous fitting are displayed in Appendix \ref{app:b}. 
 
+The comparison shows RET hosts to be shifted to higher sSFRs CCSNe. In 100\% of the posterior samples the RETs were located at higher average sSFRs than SNe II, while the same was true 76\% of the time for RETs when comparing with SESNe. 
 RET host galaxies are significantly lower in sSFR than LGRBs. While the distributions are similar in shape, with a mean difference in scale of 0.28, the mean difference in loc is -1.64, with no overlap between the posterior distributions. The sSFR distribution of SLSNe hosts is heavily positively skewed (with alpha values of $5.54^{+1.8}_{-0.98}$ compared to $-0.18^{+0.75}_{-0.76}$ for RET hosts). The strong high-sSFR tail shows SLSNe to \replychris{occur in a different galaxy }population to RETs.
 
 \subsection{Metallicity \label{subsec:res_metallicity}}
@@ -434,23 +517,23 @@ RET host galaxies are significantly lower in sSFR than LGRBs. While the distribu
 
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{figs/RET_MZR.png}
-\caption{The mass-metallicity relation (MZR) for RET host galaxies.
+\caption{The mass-metallicity relation (MZR) for RET host galaxies. \replylluis{Upward- and downward-pointing triangles reflect lower and upper limits respectively. The DES RETs with no metallicity measurement have been placed at the top of the figure for completeness.}
 \label{fig:mzr}}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{figs/mag_dist.png}
-\caption{Observer-frame $r$-band magnitude distribution for the host galaxies of RETs in DES. The orange histogram represents the 97/106 DES RETs for which a host was detected. The green histogram shows those that did not have a successful redshift measurement, while blue shows those with no redshift despite being targetted by OzDES.
+\caption{Observer-frame $r$-band magnitude distribution for the host galaxies of RETs in DES. The orange histogram represents the 96/106 DES RETs for which a host was detected. The green histogram shows those that did not have a successful redshift measurement, while blue shows those with no redshift despite being targetted by OzDES.
 \label{fig:mag_dist}}
 \end{figure}
 
-In the Section \ref{subsec:res_sfr} we demonstrate that RETs occur in galaxies with systematically higher sSFR than CCSNe, to which one explanation is that they are related to more massive stars. A further property that could directly impact the composition of stellar populations harbouring potential RET progenitors is the metallicity. Using the gas-phase oxygen abundances calculated in Section \ref{subsec:calc_Z} as a proxy for metallicity, we can compare the chemical state of RET host galaxies with CCSNe and star-forming field galaxies. The cumulative distributions of metallicity are displayed in Fig. \ref{fig:oh_cum}, and show RET hosts to be inconsistent with SNe II and field galaxies. The RET curve lies at lower metallicity than those galaxies, and appears visually similar to the curves for SESNe. RETs occur, on average, in slightly more metal-rich environments than LGRBs and SLSNe.
+In the Section \ref{subsec:res_sfr} we demonstrate that RETs occur in galaxies with systematically higher sSFR than CCSNe, to which one explanation is that they are related to more massive stars. A further property that could directly impact the composition of stellar populations harbouring potential RET progenitors is the metallicity. Using the gas-phase oxygen abundances calculated in Section \ref{subsec:calc_Z} as a proxy for metallicity, we can compare the chemical state of RET host galaxies with CCSNe and star-forming field galaxies. The cumulative distributions of metallicity are displayed in Fig. \ref{fig:oh_cum}, and show RET hosts to be inconsistent with SNe II and field galaxies. The RET curve lies at lower metallicity than those galaxies, and appears visually similar to the curves for SESNe. \replylluis{The metallicity distribution of SESNe is, however, quite broad \citep[e.g.][]{Anderson2010}, with different subclasses showing different trends (with SNe Ic host environments exhibiting higher metallicity than Ib, and IIb much lower).} RETs occur, on average, in slightly more metal-rich environments than LGRBs and SLSNe.
 
 We compare the metallicity distributions in the same way as the sSFRs. The RET host metallicity distribution shows a broad peak, leading to two families of skewed-Gaussians that fit it well, one with a low-valued centre  ($12 + \log \mathrm{(O/H)} \sim 8.1$) and a positive skew, and the other with a higher-valued centre ($12 + \log \mathrm{(O/H)} \sim 8.6$). Comparing the DES RETs to the \citet{Stoll2013} SNe II shows the latter to be centred around 8.8, with the centre being greater than the RETs in 94\% of samples. We determine that the RET host metallicities are derived from a different population to the SNe II. On the other hand, simultaneous fits with SESNe show very similar distributions, including a smaller higher-metallicity peak, such that they are indistinguishable statistically. 
 
-The median CDFs of LGRBs and SLSNe show divergence from the RETs, particularly at low metallicity. As a result, the central locations of their fits are shifted compared to the RETs. In 67\% of samples, the RET sample had a higher central metallicity than the LGRBS, with RETs also showing a broader distribution 67\% of the time. While these effects are not as significant as with the RETs - SNe II comparison, there is mild evidence that RETs located in galaxies with higher metal content than LGRBs. The effect is more pronounced for SLSNe, where the RETs have a higher metallicity for the distribution peak 92\% of the time. The SLSN distribution is also more strongly skewed, with 89\% of the posterior distribution being more strongly skewed than the RETs. There is thus mild-to-strong evidence that RETs occur in more metal-rich environments than SLSNe. 
+The median CDFs of LGRBs and SLSNe show divergence from the RETs, particularly at low metallicity. As a result, the \replychris{locs} of their fits are shifted compared to the RETs. In 67\% of samples, the RET sample had a higher \replychris{loc} than the LGRBS, with RETs also showing a broader distribution 67\% of the time. While these effects are not as significant as with the RETs - SNe II comparison, there is mild evidence that RETs located in galaxies with higher metal content than LGRBs. The effect is more pronounced for SLSNe, where the RETs have a higher metallicity for the distribution peak 92\% of the time. The SLSN distribution is also more strongly skewed, with 89\% of the posterior distribution being more strongly skewed than the RETs. There is thus mild-to-strong evidence that RETs occur in more metal-rich environments than SLSNe. 
 
-In Fig.~\ref{fig:mzr} we show the MZR for the RET and comparison samples. The contours show the MZR for low-redshift ($\hat{z}=0.08$) star-forming galaixes from SDSS, adjusted to the PP04 O3N2 diagnostic. We use the MZR parameterisation \citet{Zahid2014} to show the best fit to the MZR for star-forming galaxies. The blue dashed line shows the fit to the low-z data, while the orange dashed line corresponds to the MZR at $z=0.45$, the mean redshift of the RET host sample. The RET hosts lie systematically below the galaxy MZR fits as well as the bulk of the SDSS galaxies, meaning that for a given stellar mass they have a lower metallicity. They populate similar regions to SESNe, LGRBs and SLSNe but are clearly offset from the SNe II.
+In Fig.~\ref{fig:mzr} we show the MZR for the RET and comparison samples. The contours show the MZR for low-redshift ($\hat{z}=0.08$) star-forming galaixes from SDSS, adjusted to the PP04 O3N2 diagnostic. We use the MZR parameterisation \citet{Zahid2014} to show the best fit to the MZR for star-forming galaxies. The blue dashed line shows the fit to the low-z data, while the green dashed line corresponds to the MZR at $z=0.45$, the mean redshift of the RET host sample. The RET hosts lie systematically below the galaxy MZR fits as well as the bulk of the SDSS galaxies, meaning that for a given stellar mass they have a lower metallicity. They populate similar regions to SESNe, LGRBs and SLSNe but are clearly offset from the SNe II.
 
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{figs/mag_v_colour.png}
@@ -466,7 +549,7 @@ In Fig.~\ref{fig:mzr} we show the MZR for the RET and comparison samples. The co
 \label{fig:ret_v_host}}
 \end{figure}
 \subsection{Selection Biases \label{subsec:disc_bias}}
-The properties presented in Section \ref{sec:analysis} are derived from a subset of the total sample of RETs. Of 106 objects, under half (49/106) have secure host galaxy redshifts. Three of these were obtained from transient spectra, for which we are unable to disentangle the host and transient contributions, and six were obtained by programmes for which we do not have access to the spectra. Of the remaining 42, it was possible to derive a metallicity for 37 host galaxies. The observed metallicity distribution could have arisen if the galaxies without redshifts (and metallicities) are systematically higher in metallicity than those for which measurements were possible. This scenario is unlikely. For low SNR objects, redshifts are typically obtained from only two of the strongest lines (e.g. \halpha, \hbeta, \OIII, and \OII), whose absolute luminosity is not strongly dependent on metallicity. It is likely that the redshifts were not obtained because of low SNR, caused by the galaxies being smaller and at higher redshift. We do not envisage a plausible scenario where those galaxies are systematically higher in metallicity.
+The properties presented in Section \ref{sec:analysis} are derived from a subset of the total sample of RETs. Of 106 objects, under half \replylluis{(52/106)} have secure host galaxy redshifts. Three of these were obtained from transient spectra, for which we are unable to disentangle the host and transient contributions, and four were obtained by programmes for which we do not have access to the spectra. Of the remaining 45, it was possible to derive a metallicity \replylluis{or at least a limmit} for 40 host galaxies, \replylluis{while five exceeded the redshift range for the necessary lines to fall within the wavelength coverage of AAOmega}. The observed metallicity distribution could have arisen if the galaxies without redshifts (and metallicities) are systematically higher in metallicity than those for which measurements were possible. For low SNR objects, redshifts are typically obtained from only two of the strongest lines (e.g. \halpha, \hbeta, \OIII, and \OII). \replylluis{It is likely that the redshifts were not obtained because the galaxies are physically smaller or are at higher redshift. However, galaxies with high metallicity have weaker \OIII~lines, meaning they are less likely to have a positive redshift detection compared to less enriched galaxies with the same mass and redshift. Future, deeper spectral observation programmes as well as large, complete low-redshift samples are necessary to eliminate this possible bias.}
 
 Another possibility is that the hosts without a redshift are mostly non-starforming, passive galaxies, for which a redshift is typically harder to obtain than for emission-line galaxies \citep{Yuan2015,Childress2017,Lidman2020}. In order to test this possibility, we examined the RETs that do not have a host galaxy redshift. Table \ref{tab:z_cuts} shows the numbers of RETs that failed various stages of the redshifting process, and is summarised in Fig. \ref{fig:mag_dist}. Of the 48 objects without a redshift, 40 of them have host galaxies detected in the SN Deep coadds of \citet{Wiseman2020}. Of more significance is that only 34 have host galaxies in the SVA1 catalogues which were used for targetting during the OzDES campaign. The other, `hostless', objects are either transients that are located remotely from a galaxy that was detected, or are hosted by a galaxy that was not detected. Non-detected hosts are either intrinsically faint and thus low in mass, situated at high redshift, or both. Neither are expected to be systematically higher in metallicity than the detected hosts. Similarly, a further 16 hosts were detected but not targetted by OzDES, due to being too faint to pass the selection criteria ($m_r < 24.5$), leaving 18 that were targetted but no redshift was found. The resulting redshift completeness of targetted objects is 70\% (82\% for objects brighter than $m_r = 24$~mag, which is in line with the average for OzDES as a whole \citep{Lidman2020}.
 In Fig. \ref{fig:g-i} we show the observer-frame $r$-band magnitudes and $g-i$ colours for all RET hosts that were detected. The 40 objects with detected hosts but no redshift lie at fainter magnitudes, and appear to extend to bluer colours than those with secure redshifts. This is contrary to the hypothesis that they are high-redshift and/or passive hosts, but instead are low-mass, star-forming galaxies whose line fluxes were not strong enough to be detected.
