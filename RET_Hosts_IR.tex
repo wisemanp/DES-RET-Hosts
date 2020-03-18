@@ -726,11 +726,20 @@ DES17C2hno &   $19.1 \pm 6.2$ &    $2.1 \pm 1.5$ &     $6.2 \pm 1.5$ &          
 \label{app:b}
 
 \begin{figure*}
-\includegraphics[width=0.5\textwidth]{mc_figs/rets_p16_histfit_ssfr_final.png}
-\caption{Blah
+\includegraphics[width=0.5\textwidth]{mc_figs/rets_s12_histfit_ssfr_final.png}
+\caption{Results of the MCMC fits to the PDFs of sSFR for DES RETs and SESNe, accounting for uncertainties in each bin.
 \label{fig:histfit}}
 \end{figure*}
 
+\begin{figure*}
+\includegraphics[width=\textwidth]{mc_figs/rets_s12_param_diffs_ssfr_final.png}
+\caption{Blah
+\label{fig:param_diffs}}
+\end{figure*}
+To compare two distributions we follow the method outlined in \citet{Wiseman2020}. We fit the PDFs, along with the uncertainty on the value in each bin, simultaneously with the same priors using the No U-Turn Sampler Hamiltonian Monte Carlo algorithm via \texttt{pymc3}\footnote{https://docs.pymc.io/} to explore the posterior distribution. Fig. \ref{histfit} displays an example of the resulting fit where the DES RETs and \citet{Sanders2012} sSFR distributions are compared. Each resulting distribution is described by the `loc' (location), `scale' (spread), and `alpha' (skewness). We then compare the differences in these parameters, as seen in Fig. \ref{fig:param_diffs}, by reporting objectively the percentages of posterior samples that overlap, and subjectively what this means for the similarity of the distributions. \phil{Note to Chris and Lluis: I also plot 'effect size' which is leftover from the original work in \citet{Kruschke2012} based on simple normal distributions. I don't like it for me skewed-normals as I haven't worked out how to fit skewness in (skewness is fairly degenerate with scale). So please ignore that panel as it will be removed tommorrow}
+
+\section{Bayesian Fits - Metallicity}
+\label{app:c}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
