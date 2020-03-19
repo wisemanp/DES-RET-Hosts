@@ -732,60 +732,61 @@ DES17C2hno &   $19.1 \pm 6.2$ &    $2.1 \pm 1.5$ &     $6.2 \pm 1.5$ &          
 \end{figure*}
 
 \begin{figure*}
-\includegraphics[width=\textwidth]{mc_figs/rets_s12}
+\includegraphics[width=\textwidth]{mc_figs/rets_s12_param_diffs_ssfr_final.png}
 \caption{Histograms showing the differences between the fit parameters across the MCMC samples.
 \label{fig:param_diffs}}
 \end{figure*}
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{mc_figs/rets_s12_ssfr_corner_final.png}
-\caption{Corner plot showing the posterior samples from the MCMC fit to the DES RETs and \citet{Sanders2012} sSFRs. Notable features are: 1) the RET distribution is better constrained than the SESNe (S12); 2) the skewness (alpha) for S12 is not well constrained due do the sharp cut off at $-9.5$ (see Fig. \ref{fig:histfit_s12_ssfr}); 3) the RETs scale vs alpha distribution is two-tailed due to alpha being centered close to 0; 4) there is a degeneracy to (3) between RETs loc and alpha for the same reason.
+\caption{\replychris{Corner plot showing the posterior samples from the MCMC fit to the DES RETs and \citet{Sanders2012} sSFRs. Notable features are: 1) the RET distribution is better constrained than the SESNe (S12); 2) the skewness (alpha) for S12 is not well constrained due do the sharp cut off at $-9.5$ (see Fig. \ref{fig:histfit_s12_ssfr}); 3) the RETs scale vs alpha distribution is two-tailed due to alpha being centered close to 0; 4) there is a degeneracy to (3) between RETs loc and alpha for the same reason. Figure produced using the \texttt{corner} package \citep{Foreman-Mackey2016}.}
 \label{fig:corner}}
 \end{figure*}
 
-\replychris{To compare two distributions we follow the method outlined in \citet{Wiseman2020}. We fit the PDFs, along with the uncertainty on the value in each bin, simultaneously with the same priors using the No U-Turn Sampler (NUTS; \citealt{Hoffman2014}) Hamiltonian Monte Carlo algorithm via the  \texttt{pymc3}\footnote{https://docs.pymc.io/} package to explore the posterior distribution. We use a warm-up period of $5\times10^3$ iterations and a fit period of $10^4$ iterations. Fig. \ref{histfit} displays an example of the resulting fit where the DES RETs and \citet{Sanders2012} sSFR distributions are compared. Each resulting distribution is described by the `loc' (location), `scale' (spread), and `alpha' (skewness). We then compare the differences in these parameters, as seen in Fig. \ref{fig:param_diffs}, by reporting objectively the percentages of posterior samples that overlap, and subjectively what this means for the similarity of the distributions.} 
-\begin{figure*}
+\replychris{To compare two distributions we follow the method outlined in \citet{Wiseman2020}. We fit the PDFs, along with the uncertainty on the value in each bin, simultaneously with the same priors using the No U-Turn Sampler (NUTS; \citealt{Hoffman2014}) Hamiltonian Monte Carlo algorithm via the  \texttt{pymc3}\footnote{https://docs.pymc.io/} package to explore the posterior distribution. We use a warm-up period of $5\times10^3$ iterations and a fit period of $10^4$ iterations. Fig. \ref{fig:histfit} displays an example of the resulting fit where the DES RETs and \citet{Sanders2012} sSFR distributions are compared. Each resulting distribution is described by the `loc' (location), `scale' (spread), and `alpha' (skewness). We then compare the differences in these parameters, as seen in Fig. \ref{fig:param_diffs}, by reporting objectively the percentages of posterior samples that overlap, and subjectively what this means for the similarity of the distributions.} 
+\twocolumn
+\begin{figure}
 \includegraphics[width=0.5\textwidth]{mc_figs/rets_s13_histfit_ssfr_final.png}
 \caption{Results of the MCMC fits to the PDFs of sSFR for DES RETs and SNe II, accounting for uncertainties in each bin.
 \label{fig:histfit}}
-\end{figure*}
-\begin{figure*}
+\end{figure}
+\begin{figure}
 \includegraphics[width=0.5\textwidth]{mc_figs/rets_k15_histfit_ssfr_final.png}
 \caption{Results of the MCMC fits to the PDFs of sSFR for DES RETs and LGRBs, accounting for uncertainties in each bin.
 \label{fig:histfit}}
-\end{figure*}
-\begin{figure*}
+\end{figure}
+\begin{figure}
 \includegraphics[width=0.5\textwidth]{mc_figs/rets_p16_histfit_ssfr_final.png}
 \caption{Results of the MCMC fits to the PDFs of sSFR for DES RETs and SLSNe, accounting for uncertainties in each bin.
 \label{fig:histfit}}
-\end{figure*}
+\end{figure}
 
 \section{Bayesian Fits - Metallicity}
 \label{app:c}
 
-\begin{figure*}
-\includegraphics[width=0.5\textwidth]{mc_figs/rets_s12_histfit_OH_final.png}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{mc_figs/rets_s12_OH_histfit_final.png}
 \caption{Results of the MCMC fits to the PDFs of metallicity for DES RETs and SESNe, accounting for uncertainties in each bin.
 \label{fig:histfit}}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}
-\includegraphics[width=0.5\textwidth]{mc_figs/rets_s13_histfit_OH_final.png}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{mc_figs/rets_s13_OH_histfit_final.png}
 \caption{Results of the MCMC fits to the PDFs of metallicity for DES RETs and SNe II, accounting for uncertainties in each bin.
 \label{fig:histfit}}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}
-\includegraphics[width=0.5\textwidth]{mc_figs/rets_k15_histfit_OH_final.png}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{mc_figs/rets_k15_OH_histfit_final.png}
 \caption{Results of the MCMC fits to the PDFs of metallicity for DES RETs and LGRBs, accounting for uncertainties in each bin.
 \label{fig:histfit}}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}
-\includegraphics[width=0.5\textwidth]{mc_figs/rets_p16_histfit_OH_final.png}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{mc_figs/rets_p16_OH_histfit_final.png}
 \caption{Results of the MCMC fits to the PDFs of metallicity for DES RETs and SLSNe, accounting for uncertainties in each bin.
 \label{fig:histfit}}
-\end{figure*}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
