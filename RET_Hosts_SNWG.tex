@@ -697,7 +697,7 @@ DES17C2hno &   $19.1 \pm 6.2$ &    $2.1 \pm 1.5$ &     $6.2 \pm 1.5$ &          
 
 \begin{figure*}
 \includegraphics[width=\textwidth]{mc_figs/rets_s12_param_diffs_ssfr_final.png}
-\caption{Histograms showing the differences between the fit parameters across the MCMC samples.
+\caption{Histograms showing the differences between the fit parameters across the MCMC samples for the comparison between RETs and SESNe. 
 \label{fig:param_diffs}}
 \end{figure*}
 
@@ -707,7 +707,7 @@ DES17C2hno &   $19.1 \pm 6.2$ &    $2.1 \pm 1.5$ &     $6.2 \pm 1.5$ &          
 \label{fig:corner}}
 \end{figure*}
 
-To compare two distributions we follow the method outlined in \citetalias{Wiseman2020}. We fit the PDFs, along with the uncertainty on the value in each bin, simultaneously with the same priors using the No U-Turn Sampler (NUTS; \citealt{Hoffman2014}) Hamiltonian Monte Carlo algorithm via the  \texttt{pymc3}\footnote{https://docs.pymc.io/} package to explore the posterior distribution. We use a warm-up period of $5\times10^3$ iterations and a fit period of $10^4$ iterations. Fig. \ref{fig:histfit_s12_ssfr} displays an example of the resulting fit where the DES RETs and \citet{Sanders2012} sSFR distributions are compared. Each resulting distribution is described by the `loc' (location), `scale' (spread), and `alpha' (skewness). We then compare the differences in these parameters, as seen in Fig. \ref{fig:param_diffs}, by reporting objectively the percentages of posterior samples that overlap, and subjectively what this means for the similarity of the distributions.
+To compare two distributions we follow the method outlined in \citetalias{Wiseman2020}. We fit the PDFs, along with the uncertainty on the value in each bin, simultaneously with the same priors using the No U-Turn Sampler (NUTS; \citealt{Hoffman2014}) Hamiltonian Monte Carlo algorithm via the  \texttt{pymc3}\footnote{https://docs.pymc.io/} package to explore the posterior distribution. We utilise two chains, for a warm-up period of $5\times10^3$ iterations per chain and a fit period of $5\times10^3$ iterations per chain. Fig. \ref{fig:histfit_s12_ssfr} displays an example of the resulting fit where the DES RETs and \citet{Sanders2012} sSFR distributions are compared. Each resulting distribution is described by the `loc' (location), `scale' (spread), and `alpha' (skewness). We then compare the differences in these parameters, as seen in Fig. \ref{fig:param_diffs}, by reporting objectively the percentages of posterior samples that overlap, and subjectively what this means for the similarity of the distributions.
 \twocolumn
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{mc_figs/rets_s13_histfit_ssfr_final.png}
