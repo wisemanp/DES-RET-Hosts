@@ -116,22 +116,86 @@
 \title[RET host galaxies in DES]{The Host Galaxies of Rapidly Evolving Transients in the Dark Energy Survey}
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
-\author[P. Wiseman et al.]{
-P. Wiseman$^1$\thanks{E-mail: p.s.wiseman@soton.ac.uk (PW)},
- %M. Pursiainen$^1$,
- %M. J. Childress$^1$,
- %M. Smith$^1$,
- %E. Swann$^2$,
- and Other Authors$^{1,2,3}$,
-\newauthor
-(The DES Collaboration)
-\\
-% List of institutions
-$^{1}$School of Physics and Astronomy, University of Southampton, Southampton, SO17 1BJ, UK\\
-$^{2}$Other Institutions\\
-%$^{3}$Another Department, Different Institution, Street Address, City Postal Code, Country
+\author[DES Collaboration]{
+\parbox{\textwidth}{
+\Large
+P.~Wiseman,$^{1}$
+M.~Pursiainen,$^{1}$
+M.~Childress,$^{1}$
+E.~Swann,$^{2}$
+M.~Smith,$^{1}$
+L.~Galbany,$^{3}$
+C.~Lidman,$^{4}$
+T.~M.~Davis,$^{5}$
+A.~M\"oller,$^{6}$
+B.~P.~Thomas,$^{7,2}$
+C.~Frohmaier,$^{2}$
+R.~J.~Foley,$^{8}$
+S.~R.~Hinton,$^{5}$
+L.~Kelsey,$^{1}$
+G.~F.~Lewis,$^{9}$
+M.~Sako,$^{10}$
+D.~Scolnic,$^{11}$
+M.~Sullivan,$^{1}$
+M.~Vincenzi,$^{2}$
+B.~E.~Tucker,$^{4}$
+C.~P.~Guti\'errez,$^{1}$
+T.~M.~C.~Abbott,$^{12}$
+M.~Aguena,$^{13,14}$
+S.~Allam,$^{15}$
+J.~Annis,$^{15}$
+E.~Bertin,$^{16,17}$
+S.~Bhargava,$^{18}$
+D.~Brooks,$^{19}$
+D.~L.~Burke,$^{20,21}$
+A.~Carnero~Rosell,$^{7}$
+D.~Carollo,$^{7,22}$
+M.~Carrasco~Kind,$^{23,24}$
+J.~Carretero,$^{25}$
+M.~Costanzi,$^{26,27}$
+L.~N.~da Costa,$^{14,28}$
+H.~T.~Diehl,$^{15}$
+P.~Doel,$^{19}$
+S.~Everett,$^{8}$
+J.~Frieman,$^{15,29}$
+J.~Garc\'ia-Bellido,$^{30}$
+E.~Gaztanaga,$^{31,32}$
+K.~Glazebrook,$^{33}$
+D.~Gruen,$^{34,20,21}$
+R.~A.~Gruendl,$^{23,24}$
+J.~Gschwend,$^{14,28}$
+G.~Gutierrez,$^{15}$
+K.~Honscheid,$^{35,36}$
+D.~J.~James,$^{37}$
+K.~Kuehn,$^{38,39}$
+N.~Kuropatkin,$^{15}$
+M.~Lima,$^{13,14}$
+M.~A.~G.~Maia,$^{14,28}$
+J.~L.~Marshall,$^{40}$
+P.~Martini,$^{35,41}$
+F.~Menanteau,$^{23,24}$
+R.~Miquel,$^{42,25}$
+A.~Palmese,$^{15,29}$
+F.~Paz-Chinch\'{o}n,$^{43,24}$
+A.~A.~Plazas,$^{44}$
+A.~K.~Romer,$^{18}$
+E.~Sanchez,$^{45}$
+M.~Schubnell,$^{46}$
+S.~Serrano,$^{31,32}$
+I.~Sevilla-Noarbe,$^{45}$
+N.~E.~Sommer,$^{4}$
+E.~Suchyta,$^{47}$
+M.~E.~C.~Swanson,$^{24}$
+G.~Tarle,$^{46}$
+D.~L.~Tucker,$^{15}$
+T.~N.~Varga,$^{48,49}$
+and A.~R.~Walker$^{12}$
+\begin{center} (DES Collaboration) \end{center}
 }
-
+\vspace{0.4cm}
+\\
+\parbox{\textwidth}{Affiliations are listed at the end of the paper}
+}
 % These dates will be filled out by the publisher
 \date{Accepted XXX. Received YYY; in original form ZZZ}
 
@@ -293,7 +357,7 @@ To assess the unique photometric properties of RETs, we take the sample of 72 fr
 \item $g$- and $r$-band observations used for the colour had to be taken within 2 days of each other in the observer frame.
 \end{enumerate}
 
-Of objects passing these cuts, the RETs cluster at shorter timescales and bluer colours than other SNe, even in the observer frame. However, using photometric data points directly has several problems that can be improved. For one, measuring peak colour is problematic: DES-SN did not always observe $g$- and $r$-bands on the same or even consecutive nights, thus making it impossible to measure the peak colour in a number of cases. Measuring rise times of 10-15 days is difficult to perform with a one week cadence when it has to be done without fitting a light curve model, hence the rise time values are spread over a wide range. To negate this issue, we use lightcurves interpolated using Gaussian Processes (GP) as presented in \citetalias{Pursiainen2020}. The interpolated light curves have a 0.5 day cadence and every epoch and band has a flux value, and an associated uncertainty. Using this technique, SNe Ia and RETs populate two distinct regions of $g-r$ vs. $t_{\mathrm{rise; r}}$ parameter space (Fig. \ref{fig:selection}), where $t_{\mathrm{rise; r}}$ is the time to rise from non-detection to peak $r$-band brightness, and the $g-r$ colour is measured at peak brightness. We define a region in this parameter space which minimises the contamination of non-RETs (purity) while maximising the total fraction of RETs (completeness). The resulting limits are $-1.5 < g-r < 0.6 $ and $t_{\mathrm{rise; r}} <16.5$, and the parameter space can be seen in Fig. \ref{fig:selection}.
+Of objects passing these cuts, the RETs cluster at shorter timescales and bluer colours than other SNe, even in the observer frame. However, using photometric data points directly has several problems that can be improved. For one, measuring peak colour is problematic: DES-SN did not always observe $g$- and $r$-bands on the same or even consecutive nights, thus making it impossible to measure the peak colour in a number of cases. Measuring rise times of 10-15 days is difficult to perform with a one week cadence when it has to be done without fitting a light curve model, hence the rise time values are spread over a wide range. To negate this issue, we use lightcurves interpolated using Gaussian Processes (GP) as presented in \citet{Pursiainen2020}. The interpolated light curves have a 0.5 day cadence and every epoch and band has a flux value, and an associated uncertainty. Using this technique, SNe Ia and RETs populate two distinct regions of $g-r$ vs. $t_{\mathrm{rise; r}}$ parameter space (Fig. \ref{fig:selection}), where $t_{\mathrm{rise; r}}$ is the time to rise from non-detection to peak $r$-band brightness, and the $g-r$ colour is measured at peak brightness. We define a region in this parameter space which minimises the contamination of non-RETs (purity) while maximising the total fraction of RETs (completeness). The resulting limits are $-1.5 < g-r < 0.6 $ and $t_{\mathrm{rise; r}} <16.5$, and the parameter space can be seen in Fig. \ref{fig:selection}.
 
 We process all $\sim 30,000$ DES-SN transient candidates with GP. In order to reduce the contamination from active galactic nuclei (AGN), we use a basic convolutional neural network (CNN) classifier. We train the CNN on spectroscopically confirmed SNe of all types and on spectroscopically typed AGN, and use it to separate the sample into two photometric subtypes: AGN-like and SNe-like. The classifier returns SNe-like objects with an accuracy of 0.992 on the test set; the remaining AGN are removed by manual vetting.
 The SNe passing the CNN classifier are subjected to LC quality cuts, resulting in 2259 objects, of which 939 lie inside the colour and rise-time region which we defined as RETs. These objects are subject to a further set of cuts. We impose a cut based on a fit of the LC with the \texttt{PSNID} software \citep{Sako2008}. We use thresholds of \texttt{FITPROB}$<0.91$ and \texttt{PBAYES}$<0.82$ to remove highly-probably SNe Ia, which removes 46 objects from the RET parameter space. In order to further remove longer-lived SNe, the decline time to half of the peak brightness must be $<24$ days. This removes 347 SNe, resulting in 546 objects remaining inside the parameter space. The final 546 transients have been visually inspected, with the majority rejected for being spurious detections, obvious multi-season variability that was not picked up by the CNN, or showing evidence for a longer timescale decline. 
@@ -309,7 +373,7 @@ The observational properties of the 96 detected hosts are displayed in Table \re
 In order to compare the host galaxies of DES RETs to those discovered in other surveys as well as other types of explosive transient, we draw upon samples in the literature. 
 
 \subsubsection{RETs \label{subsubsec:compare_rets}}
-Since the DES sample of RETs is by far the largest discovered to date, there is no other large sample of RETs with which to compare host galaxy properties. \citet{Drout2014} present host galaxies of 10 RETs discovered in the Pan-STARRS survey, with measurements of stellar masses, SFRs, and metallicities. We also compare with the host galaxy of SNLS04D4ec \citep{Arcavi2016}. To this we add the low-redshift transient AT2018cow (nicknamed ``The Cow'') with host galaxy photometric measurements from \citet{Perley2019} and metallicity (\citealt{Pettini2004} O3N2) from \citet{Morokuma-Matsui2019}, SN2018gep with data from  \citet{Ho2019}, and ZTF18abvkwla (nicknamed ``The Koala'') from \citet{Ho2020}.
+Since the DES sample of RETs is by far the largest discovered to date, there is no other large sample of RETs with which to compare host galaxy properties. \citet{Drout2014} present host galaxies of 10 RETs discovered in the Pan-STARRS survey, with measurements of stellar masses, SFRs, and metallicities. We also compare with the host galaxy of SNLS04D4ec \citep{Arcavi2016}. To this we add the low-redshift transient AT2018cow (nicknamed ``The Cow''). The host galaxy of AT2018cow has been studied with photometric measurements \citep{Perley2019} as well as with an integral field spectrograph \citep{Lyman2020}, with consistent results. For our comparison, we use the galaxy-averaged stellar mass and SFR from \citet{Lyman2020} and the metallicity from the host nucleus as reported by both \citet{Morokuma-Matsui2019} and \citet{Lyman2020} as it best represents the method of obtaining spectra for our RET sample. We further compare to SN2018gep with data from  \citet{Ho2019}, and ZTF18abvkwla (nicknamed ``The Koala'') from \citet{Ho2020}.
 
 \subsubsection{SNe and GRBs \label{subsubsec:compare_CCSNe}}
 
@@ -545,7 +609,7 @@ Many classes of transients show trends between properties intrinsic to the objec
 
 \subsection{Comparison with individual RETs \label{subsec:disc_lowz}}
 
-The nearby transient AT2018cow has drawn many comparisons to the cosmological RETs from DES and PS1 \citep[e.g.][]{Perley2019,Margutti2019,Fox2019,Mohan2020} due to its rapid evolution and blue colour. AT2018cow displayed a contracting photosphere as well as evidence for central-engine power alongside an unusual spectrum that showed similarities to broad-lined SNe Ic (SN Ic-bl) at early stages \citep[e.g.][]{Xu2018,Izzo2018} , developing to something entirely different later on \citep{Perley2019} with hints of similarities to interacting SNe Ibn \citep{Fox2019}. There have been several suggestions that AT2018cow is indeed an analogue of the high-z RETs. The host galaxy of AT2018cow appears to be moderately star forming and lies very close to the centre of the SFMS (Figs. \ref{fig:sfms_sfr},\ref{fig:sfms_ssfr}), along with many of the DES RET hosts. However, the host lies significantly above the fiducial MZR in Fig. \ref{fig:mzr}, suggesting that it has an abnormally high metallicity for its stellar mass. This is in contrast to the DES RET hosts, which are systematically less enriched for a given stellar mass. 
+The nearby transient AT2018cow has drawn many comparisons to the cosmological RETs from DES and PS1 \citep[e.g.][]{Perley2019,Margutti2019,Fox2019,Mohan2020} due to its rapid evolution and blue colour. AT2018cow displayed a contracting photosphere as well as evidence for central-engine power alongside an unusual spectrum that showed similarities to broad-lined SNe Ic (SN Ic-bl) at early stages \citep[e.g.][]{Xu2018,Izzo2018} , developing to something entirely different later on \citep{Perley2019} with hints of similarities to interacting SNe Ibn \citep{Fox2019}. There have been several suggestions that AT2018cow is indeed an analogue of the high-z RETs. The host galaxy of AT2018cow appears to be moderately star forming and lies very close to the centre of the SFMS (\citealt{Lyman2020}; Figs. \ref{fig:sfms_sfr},\ref{fig:sfms_ssfr}), along with many of the DES RET hosts. However, the host lies somewhat above the fiducial MZR in Fig. \ref{fig:mzr}, suggesting that it has an unusually high metallicity for its stellar mass. While consistent with SNe II, this is in contrast to the DES RET hosts which are systematically less enriched for a given stellar mass. 
 
 Other local rapid transients include SN2018gep \citep{Ho2019}, a spectroscopically classified SN Ic-bl with a rapid rise. The host of SN2018gep appears more similar to the DES RET sample, lying in the same $M_*$-SFR and $M*$-sSFR plane, as well as lying below the MZR. While the SN2018gep host is lower in stellar mass than any DES RET $\left(\log \left(M/M_{\odot}\right) =8.11\right)$, galaxies of that mass are unlikely to have been detected at the redshifts of the DES RETs \citep{Wiseman2020}. The authors' conclusion that SN2018gep is related to a shock-breakout of a massive, stripped-envelope star is similar to that posited in Section \ref{subsec:disc_origin}. 
 
@@ -559,7 +623,7 @@ SN2018kzr \citep{McBrien2019} is one of the most rapidly declining transients ev
 \section{Conclusions}
 \label{sec:conc}
 By analysing the host galaxies of 49 rapidly evolving transients (RETs) discovered in the Dark Energy Survey, we have been able to place constraints on the nature of these as-yet unexplained phenomena. We conclude that RETs are strongly linked to massive stars, due to their hosts all exhibiting signatures of star formation. They likely originate from stars more massive, on average, than than those that cause SNe II, and perhaps all SESNe, as they occur in galaxies with higher sSFR. RET hosts are significantly lower in metallicity than SN II hosts, and marginally lower than SESN hosts, suggesting some reliance on rotational energy or other metallicity-dependent effects.
-Of the RET analogues discovered in modern large-area, high-cadence surveys, ZTF18abvkwla shares the most similar host galaxy characteristics with the DES RET population. SN2018gep appears in a galaxy too faint to have been detected by DES-SN at the redshift of most of the DES RETs, while the host of AT2018cow is much higher in metallicity.
+Of the RET analogues discovered in modern large-area, high-cadence surveys, ZTF18abvkwla shares the most similar host galaxy characteristics with the DES RET population. SN2018gep appears in a galaxy too faint to have been detected by DES-SN at the redshift of most of the DES RETs, while the host of AT2018cow is higher in metallicity.
 
 While current surveys such as ZTF \citep{Bellm2019}, GOTO \citep{Dyer2018}, and BlackGEM \citep{Bloemen2016} are well equipped to find low-redshift RETs, a sample similar to that presented here will likely not be collected until LSST comes online. With several hundreds of objects, detailed studies of RETs and their hosts will be possible in a systematic and more complete manner as has been achieved with LGRBs and SLSNe.
 
@@ -753,7 +817,8 @@ In this section, we present the Bayesian fits to the metallicity distributions o
 \label{fig:histfit_oh_p16}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\onecolumn
+\input{affiliations.tex}
 
 % Don't change these lines
 \bsp	% typesetting comment
