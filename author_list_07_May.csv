@@ -1,13 +1,11 @@
 Lastname,Firstname,Email,Authorname,JoinedAsBuilder,Affiliation,ORCID
-Möller,Anais,anaismoller@gmail.com,A.~M\"oller,False,"Universit\{'e} Clermont Auvergne, CNRS/IN2P3, LPC, F-63000 Clermont-Ferrand, France",
-Thomas,Benjamin P.,benjamin.thomas@port.ac.uk,B.~P.~Thomas,False,"",
+Möller,Anais,anaismoller@gmail.com,A.~M\"oller,False,"Universit\'e Clermont Auvergne, CNRS/IN2P3, LPC, F-63000 Clermont-Ferrand, France",
 Thomas,Benjamin P.,benjamin.thomas@port.ac.uk,B.~P.~Thomas,False,"Institute of Cosmology and Gravitation, University of Portsmouth, Portsmouth, PO1 3FX, UK",
-Tucker,Brad E.,brad@mso.anu.edu.au,B.~E.~Tucker,False,"The Research School of Astronomy and Astrophysics, Australian National University, ACT 2601, Australia",
+Tucker,Brad E.,brad@mso.anu.edu.au,B.~E.~Tucker,True,"The Research School of Astronomy and Astrophysics, Australian National University, ACT 2601, Australia",
 Frohmaier,Christopher,chris.frohmaier@port.ac.uk,C.~Frohmaier,False,"Institute of Cosmology and Gravitation, University of Portsmouth, Portsmouth, PO1 3FX, UK",
 Lidman,Christopher,christopher.lidman@anu.edu.au,C.~Lidman,False,"The Research School of Astronomy and Astrophysics, Australian National University, ACT 2601, Australia",0000-0003-1731-0497
 Gutierrez,Claudia,C.P.Gutierrez-Avendano@soton.ac.uk,C.~P.~Guti\'errez,False,"School of Physics and Astronomy, University of Southampton,  Southampton, SO17 1BJ, UK",
 Scolnic,Daniel,daniel.scolnic@duke.edu,D.~Scolnic,False,"Department of Physics, Duke University Durham, NC 27708, USA",
-Carollo,Daniela,daniela.carollo@inaf.it,D.~Carollo,True,"",
 Carollo,Daniela,daniela.carollo@inaf.it,D.~Carollo,True,"INAF, Astrophysical Observatory of Turin, I-10025 Pino Torinese, Italy",
 Swann,Elizabeth,elizabeth.swann@port.ac.uk,E.~Swann,False,"Institute of Cosmology and Gravitation, University of Portsmouth, Portsmouth, PO1 3FX, UK",
 Lewis,Geraint,geraint.lewis@sydney.edu.au,G.~F.~Lewis,False,"Sydney Institute for Astronomy, School of Physics, A28, The University of Sydney, NSW 2006, Australia",0000-0003-3081-9319
@@ -20,6 +18,8 @@ Sako,Masao,masao@sas.upenn.edu,M.~Sako,False,"Department of Physics and Astronom
 Smith,Mathew,mat.smith@soton.ac.uk,M.~Smith,False,"School of Physics and Astronomy, University of Southampton,  Southampton, SO17 1BJ, UK",0000-0002-3321-1432
 Childress,Michael,m.j.childress@soton.ac.uk,M.~Childress,False,"School of Physics and Astronomy, University of Southampton,  Southampton, SO17 1BJ, UK",
 Sommer,Natalia Eire,natalia.eire.sommer@anu.edu.au,N.~E.~Sommer,True,"The Research School of Astronomy and Astrophysics, Australian National University, ACT 2601, Australia",
+Kessler,Richard,kessler@kicp.uchicago.edu,R.~Kessler,False,"Department of Astronomy and Astrophysics, University of Chicago, Chicago, IL 60637, USA",0000-0003-3221-0419
+Kessler,Richard,kessler@kicp.uchicago.edu,R.~Kessler,False,"Kavli Institute for Cosmological Physics, University of Chicago, Chicago, IL 60637, USA",0000-0003-3221-0419
 Foley,Ryan,foley@ucsc.edu,R.~J.~Foley,False,"Santa Cruz Institute for Particle Physics, Santa Cruz, CA 95064, USA",
 Hinton,Samuel,samuelreay@gmail.com,S.~R.~Hinton,False,"School of Mathematics and Physics, University of Queensland,  Brisbane, QLD 4072, Australia",
 Davis,Tamara,tamarad@physics.uq.edu.au ,T.~M.~Davis,False,"School of Mathematics and Physics, University of Queensland,  Brisbane, QLD 4072, Australia",0000-0002-4213-8783
@@ -27,7 +27,7 @@ Walker,Alistair,awalker@ctio.noao.edu,A.~R.~Walker,True,"Cerro Tololo Inter-Amer
 Plazas Malagón,Andrés,plazasmalagon@gmail.com,A.~A.~Plazas,True,"Department of Astrophysical Sciences, Princeton University, Peyton Hall, Princeton, NJ 08544, USA",0000-0002-2598-0514
 Palmese,Antonella,palmese@fnal.gov,A.~Palmese,True,"Fermi National Accelerator Laboratory, P. O. Box 500, Batavia, IL 60510, USA",0000-0002-6011-0530
 Palmese,Antonella,palmese@fnal.gov,A.~Palmese,True,"Kavli Institute for Cosmological Physics, University of Chicago, Chicago, IL 60637, USA",0000-0002-6011-0530
-Carnero Rosell,Aurelio,aurelio.crosell@gmail.com,A.~Carnero~Rosell,True,"",0000-0003-3044-5150
+Carnero Rosell,Aurelio,aurelio.crosell@gmail.com,A.~Carnero~Rosell,True,"Centro de Investigaciones Energ\'eticas, Medioambientales y Tecnol\'ogicas (CIEMAT), Madrid, Spain",0000-0003-3044-5150
 Gruen,Daniel,dgruen@stanford.edu,D.~Gruen,True,"Department of Physics, Stanford University, 382 Via Pueblo Mall, Stanford, CA 94305, USA",0000-0003-3270-7644
 Gruen,Daniel,dgruen@stanford.edu,D.~Gruen,True,"Kavli Institute for Particle Astrophysics \& Cosmology, P. O. Box 2450, Stanford University, Stanford, CA 94305, USA",0000-0003-3270-7644
 Gruen,Daniel,dgruen@stanford.edu,D.~Gruen,True,"SLAC National Accelerator Laboratory, Menlo Park, CA 94025, USA",0000-0003-3270-7644
