@@ -347,6 +347,10 @@ DES15X3kyt     & 36.27500 &  -5.41103 & $24.74 \pm 0.07$ &    $^d$ &          - 
 \label{sec:sample}
 We derive our sample from the 106 RETs discovered in the 5-year DES-SN transient survey. This number expands upon the 72 of \citetalias{Pursiainen2018}. The first reason for the increased sample size is the use of the 5th year of DES-SN, as \citetalias{Pursiainen2018} were only able to make use of the first four years. By imposing the \citetalias{Pursiainen2018} selection criteria on season 5, the sample is increased to 92 objects. The second reason is an update to the sample selection technique, outlined in the following subsection, which adds a further 14 transients.
 
+\subsection{The DES supernova programme \label{subsec:desdata}}
+
+\replyrick{The Dark Energy Survey (DES) makes use of the Dark Energy Camera (DECam; \citealt{Flaugher2015}) to survey $5000\deg^2$ of the southern sky between 2013 and 2019. The supernova programme (DES-SN), designed primarily to perform cosmology with type Ia SNe \citep{Bernstein2012}, consisted of five 6-month seasons of approximately 7 day cadence \citep{DAndrea2018}} in ten single pointings, known as the SN fields. Of these fields, two were observed with longer exposure times and are referred to as deep fields; the remaining eight are labelled shallow. Transient detection was performed by difference imaging using a custom pipeline \citep{Kessler2015}. Transient candidates were vetted via machine-learning techniques \citep{Goldstein2015}, leading to $\sim 30,000$ viable supernova candidates over the full five seasons. A full description of the search for rapid transients in DES can be found in \citetalias{Pursiainen2018}.
+
 \subsection{Improvements to the search method \label{subsec:new_method}}
 
 The original method of finding RETs in the DES-SN data (and presented in \citetalias{Pursiainen2018}) was designed to be simple and used light curve modelling with Gaussian and linear fits. The simplistic method made it possible to look for exotic transients without knowing their observed characteristics beforehand and resulted in a large sample of photometrically selected fast transients. However, as the search was simplistic and relied heavily on visual inspection of the available data (etc. images, light curves, host galaxy information), it is impossible to \replyrick{quantify the completeness of the sample}. For instance, due to the large redshift range within the sample it is entirely possible that distant events \replyrick{with longer rise times could have been missed due to time dilation stretching their lightcurves, while faster events and low redshift may evolve on timescales quicker than the survey cadence}. Here, a more sophisticated search method is presented. As only a fraction of transients in DES-SN have redshift information from their host galaxies, \replyrick{we perform the search} in the observer frame. The key features of RETs that separate them from most traditional SNe types are the fast light curve evolution (rise to peak in $\lesssim15$ days) and blue colour at peak ($g-r \lesssim 0.5$). Even though both of these quantities depend on the redshift of the transient, they still effectively distinguish the the fast events from traditional SN types. We thus attempt to select a sample based on observed rise times and colours at peak brightness.
@@ -397,7 +401,7 @@ The host galaxy properties of the above samples are not all derived using the sa
 
 \subsection{Field Galaxies \label{subsubsec:sdss}}
 
-To show how RETs compare to the galaxy population as a whole, we use the MPA-JHU catalogues of stellar masses (based on the methods of \citealt{Kauffmann2003,Salim2007}), SFRs (based off \citealt{Brinchmann2004}), and metallicities (based off \citealt{Tremonti2004}) from the  catalogues of SDSS Data Relase 7 (DR7; \citealt{Abazajian2009}). The mean redshift is 0.08 which is much lower than for the RETs, such that significant evolution in the galaxy population has happened between the majority of RET hosts and the SDSS sample. We do not correct for this, but take it into account when analysing our findings. 
+To show how RETs compare to the galaxy population as a whole, we use \replyrick{a sample of $\sim800,000$ measurements from the} MPA-JHU catalogues of stellar masses (based on the methods of \citealt{Kauffmann2003,Salim2007}), SFRs (based off \citealt{Brinchmann2004}), and metallicities (based off \citealt{Tremonti2004}) from the  catalogues of SDSS Data Relase 7 (DR7; \citealt{Abazajian2009}). The mean redshift is 0.08 which is much lower than for the RETs, such that significant evolution in the galaxy population has happened between the majority of RET hosts and the SDSS sample. We do not correct for this, but take it into account when analysing our findings. 
 \section{Host galaxy observations}
 \label{sec:obs}
 \subsection{Photometry \label{subsec:phot}}
@@ -497,19 +501,6 @@ DES17C2hno &   $9.56 _{\scriptscriptstyle 0.21} ^{\scriptscriptstyle 0.16}$ &  $
 \label{tab:derived}
 \end{table*}
 
-
-\begin{figure}
-\includegraphics[width=0.5\textwidth]{figs/SFR_Mike_RETs.png}
-\caption{The $M_*$ - SFR sequence of RET hosts, hosts of other transients, and SDSS field galaxies (grey contours). SFRs have not been corrected for redshift evolution. RET hosts lie slightly above the low-$z$ star-formation main sequence \replyrick{upper half of the SDSS contours}, and systematically avoid passive galaxies (dense SDSS contours in the lower right).
-\label{fig:sfms_sfr}}
-\end{figure}
-
-%\begin{figure}
-%\includegraphics[width=0.5\textwidth]{figs/cum_SFR_mike.png}
-%\caption{Cumulative distributions of the SFR of RET hosts, compared to CCSNe and the low-z SDSS sample.
-%\label{fig:sfr_cum}}
-%\end{figure}
-
 \subsection{Estimating metallicities \label{subsec:calc_Z}}
 
 The most common method used to estimate the metallicity of galaxies is to use emission line ratios that have been calibrated using theoretical or empirical models in order to approximate the gas-phase oxygen abundance in the interstellar medium. Emission lines originate from regions of ionised gas, but there are a number of possible causes of this ionisation. Using the Baldwin-Phillips-Terlevich diagram (Fig. \ref{fig:bpt}; \citealt{Baldwin1981}), we demonstrate that the emission line ratios measured in RET hosts are consistent with ionisation caused by star-formation as opposed to AGN. Only 12 of the 45 RET host spectra have the necessary lines to plot an \NII BPT diagram. This is also the case for the \SII~and \OI~versions of the diagram, and we find no evidence of AGN amongst the 12 hosts in those diagrams either.
@@ -521,9 +512,27 @@ Due to the redshift range of our sample, and the limited wavelength coverage of 
 The samples to which we compare metallicities span different redshift ranges, were observed with different equipment, and in many cases were compiled before certain (particularly the D16) diagnostics were devised. Therefore, in order to compare oxygen abundances between different samples we transform all abundances onto the PP04 O3N2 scale using the conversion factors given in \citet{Kewley2008}. This is not possible for the D16 diagnostic, so we discard it from the rest of our analysis, although for completeness we provide it for DES RET hosts where available. For samples that quoted multiple diagnostics, or for which sufficient line flux measurements were provided from which to calculate multiple diagnostics, we transform them all to the PP04 O3N2 scale. Following the prescription of \citet{Kruehler2015} we simultaneously minimise the oxygen abundance against the PDFs of the various different diagnostics scaled to PP04 O3N2, resulting in a final `best' PDF. We take $1\sigma$ uncertainties from the 16\textsuperscript{th} and 84\textsuperscript{th} percentiles of these PDFs, and for DES RETs display the results in Table \ref{tab:derived}.
 
 \begin{figure}
-\includegraphics[width=0.5\textwidth]{figs/sSFR_Mike.png}
-\caption{The $M_*$ - sSFR sequence of RET hosts and comparison samples, along with the SDSS field galaxies.
+\includegraphics[width=0.5\textwidth]{figs/SFR_Mike_RETs.png}
+\caption{The $M_* -$ SFR sequence of RET hosts, hosts of other rapid transients and SNe II, and SDSS field galaxies (grey contours). SFRs have not been corrected for redshift evolution. RET hosts lie slightly above the low-$z$ star-formation main sequence \replyrick{upper half of the SDSS contours}, and systematically avoid passive galaxies (dense SDSS contours in the lower right).
+\label{fig:sfms_sfr}}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figs/SFR_Mike_Other.png}
+\caption{Same as Fig. \ref{fig:sfms_sfr}, but comparing RET hosts with hosts of SESNe, LGRBs and SLSNe, and SDSS field galaxies (grey contours).
+\label{fig:sfms_sfr_other}}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figs/sSFR_Mike_RETs.png}
+\caption{The $M_* -$ sSFR sequence of RET hosts as well as local rapid transients and SNe II, along with the SDSS field galaxies.
 \label{fig:sfms_ssfr}}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{figs/sSFR_Mike_other.png}
+\caption{Same as Fig. \ref{fig:sfms_ssfr} but comparing RET hosts with hosts of SESN, LGRB, and SLSN hosts, along with the SDSS field galaxies.
+\label{fig:sfms_ssfr_other}}
 \end{figure}
 
 \begin{figure}
@@ -536,9 +545,9 @@ The samples to which we compare metallicities span different redshift ranges, we
 \label{sec:analysis} % used for referring to this section from elsewhere
 
 \subsection{Star formation rate \label{subsec:res_sfr}}
-Fig.~\ref{fig:sfms_sfr} shows the `star formation main sequence' (SFMS) of RET host galaxies, as determined from photometric SED fitting along with that for the comparison samples and for the field galaxies of SDSS. RETs follow CCSNe, LGRBs and SLSNe in avoiding passive galaxies, evidence that RETs require the presence of star-formation and thus are linked to massive stars. One object (DES16C1cbd) lies among passive galaxies. The spectrum of this object is red in colour, but does exhibit \OII~emission indicative of recent star-formation activity consistent with the upper end of the sSFR error bar. The \replyrick{hosts of} individual rapid transients Cow, Koala and SN2018gep are lower in mass than the majority of RETs. SN2018gep and Cow lie along the SFMS, while Koala sits in the starburst regime, which is not heavily populated by DES RETs. SNLS04D4ec is consistent with the peak of the DES RET mass and SFR distributions. 
+Figs.~\ref{fig:sfms_sfr} and \ref{fig:sfms_sfr_other}, \replyrick{split in two for clarity,} show the `star formation main sequence' (SFMS) of RET host galaxies, as determined from photometric SED fitting along with that for the comparison samples and for the field galaxies of SDSS. RETs follow CCSNe, LGRBs and SLSNe in avoiding passive galaxies, evidence that RETs require the presence of star-formation and thus are linked to massive stars. One object (DES16C1cbd) lies among passive galaxies. The spectrum of this object is red in colour, but does exhibit \OII~emission indicative of recent star-formation activity consistent with the upper end of the sSFR error bar. The \replyrick{hosts of} individual rapid transients Cow, Koala and SN2018gep are lower in mass than the majority of RETs. SN2018gep and Cow lie along the SFMS, while Koala sits in the starburst regime, which is not heavily populated by DES RETs. SNLS04D4ec is consistent with the peak of the DES RET mass and SFR distributions. 
 
-Fig.~\ref{fig:sfms_ssfr} is similar to Fig.~\ref{fig:sfms_sfr}, except that here SFR has been normalised by stellar mass, and thus shows the specific star-formation rate (sSFR), which is a more representative measure of the star-forming efficiency. It is once again clear that RET hosts lie systematically above the majority of SDSS star-forming galaxies in terms of sSFR. Normalised by mass, it is here perhaps clearer to see that RET hosts lie at higher sSFR than CCSNe hosts, but not in the extremely star-forming environments \replyrick{of} LGRBs or SLSNe.
+Figs.~\ref{fig:sfms_ssfr} and \ref{fig:sfms_ssfr_other} are similar to Figs.~\ref{fig:sfms_sfr} and \ref{fig:sfms_ssfr_other}, except that here SFR has been normalised by stellar mass, and thus shows the specific star-formation rate (sSFR), which is a more representative measure of the star-forming efficiency. It is once again clear that RET hosts lie systematically above the majority of SDSS star-forming galaxies in terms of sSFR. Normalised by mass, it is here perhaps clearer to see that RET hosts lie at higher sSFR than CCSNe hosts, but not in the extremely star-forming environments \replyrick{of} LGRBs or SLSNe.
 
 We show the cumulative distribution of sSFR in Fig.~\ref{fig:ssfr_cum}. The RET hosts are clearly shifted to higher sSFRs than CCSNe. To statistically compare the host sSFR distribution of RETs with the other samples, we employ the method of \citetalias{Wiseman2020}. For each pair of samples, we model the PDFs as skewed normal distributions described by the parameters `loc' (location, identical to the mean for zero skewness), `scale' (spread, identical to the standard deviation for zero skewness)\footnote{See \citetalias{Wiseman2020} for a detailed description of the fitting procedure and the parameters describing the skewed normal distributions.}, and `skewness'. To impose priors on loc and scale, we combine the two samples and use normal priors centered on the combined mean and twice the combined standard deviation respectively, while for skewness the prior is a broad normal distribution centered on 0. We note that the loc parameter describes the location of the distribution (its relative position on the x-axis) and is not a mean, median, or mode. A highly-skewed distribution may have a loc that lies above almost the entire sample. A worked example as well as the results from the simultaneous fitting are displayed in Appendix \ref{app:b}.
 
