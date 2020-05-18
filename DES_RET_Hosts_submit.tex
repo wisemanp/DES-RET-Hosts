@@ -61,10 +61,7 @@
 \setlength{\rotFPtop}{0pt plus 1fil}% <- add this line after loading rotating
 \setlength{\rotFPbot}{0pt plus 1fil}% <- maybe its better to add this line too
 \usepackage{threeparttable}
-\makeatletter
-%\newlength{\abovecaptionskip}%
-%\setlength{\abovecaptionskip}{10\p@}
-\makeatother
+
 \usepackage{booktabs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -94,7 +91,12 @@
 \newcommand{\SIII}[0]{$[\textnormal{\textsc{Siii}}]$}
 \newcommand{\NII}[0]{$[\textnormal{\textsc{Nii}}]$}
 \newcommand{\msun}[0]{M_{\odot}}
-
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\@combinedblfloats{\box\@outputbox}{\unvbox\@outputbox}{}{%
+  \errmessage{\noexpand\@combinedblfloats could not be patched}%
+}%
+\makeatother
 
 \defcitealias{Pursiainen2018}{P18}
 \defcitealias{Wiseman2020}{W20}
