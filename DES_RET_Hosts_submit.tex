@@ -55,7 +55,7 @@
 \usepackage{multicol}
 %\usepackage{wrapfig}
 \usepackage{ctable}
-\usepackage{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 \captionsetup{compatibility=false}
 
 \setlength{\rotFPtop}{0pt plus 1fil}% <- add this line after loading rotating
@@ -103,11 +103,11 @@
 %This if a fix from https://tex.stackexchange.com/questions/249579/pdfendlink-ended-up-in-different-nesting-level-than-pdfstartlink-error-with/249743#249743 to sort hyperref breaking in pdfendlink when a reference spills over a page
 %\usepackage{etoolbox}
 %\makeatletter
-%\patchcmd\@combinedblfloats{\box\@outputbox}{\unvbox\@outputbox}{}{%
+%\patchcmd\@combinedblfloats{\box\@outputbox}{\unvbox\@outpu%tbox}{}{%
 %  \errmessage{\noexpand\@combinedblfloats could not be patched}%
 %}%
 %\makeatother
-%
+
 %\defcitealias{Smith2019}{S19}
 %\defcitealias{Kelly2012}{KK12}
 %%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
