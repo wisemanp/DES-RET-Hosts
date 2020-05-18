@@ -1,3 +1,7 @@
 *.pdf
 for_arxiv/
 all_obs.dat
+order.csv
+RET_Hosts_CWR.tex
+RET_Hosts_IR.tex
+
