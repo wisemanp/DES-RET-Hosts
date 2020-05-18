@@ -1,4 +1,5 @@
 *.pdf
+!*scheme.pdf
 for_arxiv/
 all_obs.dat
 order.csv
