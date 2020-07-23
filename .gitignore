@@ -5,4 +5,5 @@ all_obs.dat
 order.csv
 RET_Hosts_CWR.tex
 RET_Hosts_IR.tex
-
+*Table*.tex
+DES_RET_Hosts_ref_response.pdf
